@@ -11,7 +11,7 @@
 #
 default: &default
   adapter: mysql2
-  encoding: utf8mb4
+  encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   username: root
   password:
@@ -50,5 +50,6 @@ test:
 production:
   <<: *default
   database: fleamarket_sample_79bb_production
-  username: fleamarket_sample_79bb
-  password: <%= ENV['FLEAMARKET_SAMPLE_79BB_DATABASE_PASSWORD'] %>
+  username: root
+  password: <%= ENV['DATABASE_PASSWORD'] %>
+  socket: /var/lib/mysql/mysql.sock
