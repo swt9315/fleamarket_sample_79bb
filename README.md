@@ -87,9 +87,10 @@ Things you may want to cover:
 |------|----|-------|
 |name|string|null: false|
 |introduction|text|null: false|
+|category_id|references|null: false, foreign_key: true|
 |brand|string||
 |condition|string|null: false|
-|postage|string|null: false|
+|postage_user|string|null: false|
 |prefecture|string|null: false|
 |preparation|string|null: false|
 |price|integer|null: false|
@@ -97,8 +98,7 @@ Things you may want to cover:
 ### Association
 
 - has_many :images
-- has_many :products_categoreis
-- has_many :categories, through: :products_categories
+- belongs_to :category
 
 
 ## Imageテーブル
@@ -117,20 +117,8 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
+|ancestry|integer|null :false|
 
 ### Association
 
-- has_many :products_categoreis
-- has_many :products, through: :products_categories
-
-##  Products_categoriesテーブル
-
-|Column|Type|Options|
-|------|----|-------|
-|product_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
-
-### Association
-
-- has_many :products_categories
-- has_many :products, through: :products_categories
+- has_many :products
