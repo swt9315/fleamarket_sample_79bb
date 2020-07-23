@@ -70,9 +70,9 @@ Things you may want to cover:
 |family_name_kana|string|null: false|
 |first_name_kana|string|null: false|
 |post_code|integer|null: false|
-|prefecture|string|null: false|
+|prefecture_id (active_hash)|integer|null: false|
 |city|string|null: false|
-|adress|string|null: false|
+|address|string|null: false|
 |building_name|string||
 |phone_number|string||
 |user_id|references|null: false, foreign_key: true|
@@ -83,22 +83,29 @@ Things you may want to cover:
 
 ## Productテーブル
 
+以下のカラムはenumを使用
+- condittion
+- postage_user
+- preparation
+
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |introduction|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand|string||
-|condition|integer|null: false|
-|postage_user|string|null: false|
-|prefecture|string|null: false|
-|preparation|string|null: false|
+|condition|integer|null: false, default: 0|
+|postage_user|integer|null: false, default: 0||
+|prefecture_id (active_hash)|integer|null: false|
+|preparation|integer|null: false, default: 0||
 |price|integer|null: false|
+|user_id|references|null: false, foreign_key: true|
 
 ### Association
 
 - has_many :images
 - belongs_to :category
+- belongs_to :user
 
 
 ## Imageテーブル
