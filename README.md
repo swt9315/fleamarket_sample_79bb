@@ -74,7 +74,7 @@ Things you may want to cover:
 |city|string|null: false|
 |adress|string|null: false|
 |building_name|string||
-|phone_number|integer||
+|phone_number|string||
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -89,7 +89,7 @@ Things you may want to cover:
 |introduction|text|null: false|
 |category_id|references|null: false, foreign_key: true|
 |brand|string||
-|condition|string|null: false|
+|condition|integer|null: false|
 |postage_user|string|null: false|
 |prefecture|string|null: false|
 |preparation|string|null: false|
