@@ -66,46 +66,48 @@
         %p.pick-new 新規投稿商品
       .pick-ca__inner__topic
         .pick-ca__inner__topic__main
-          .pick-ca__inner__topic__main--one
-            .pick-ca__inner__topic__main--one__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--one__img__picture"
-            .pick-ca__inner__topic__main--one__content
-              .pick-ca__inner__topic__main--one__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
-          .pick-ca__inner__topic__main--two
-            .pick-ca__inner__topic__main--two__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--two__img__picture"
-            .pick-ca__inner__topic__main--two__content
-              .pick-ca__inner__topic__main--two__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
-          .pick-ca__inner__topic__main--three
-            .pick-ca__inner__topic__main--three__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--three__img__picture"
-            .pick-ca__inner__topic__main--three__content
-              .pick-ca__inner__topic__main--three__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
-          .pick-ca__inner__topic__main--four
-            .pick-ca__inner__topic__main--four__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--four__img__picture"
-            .pick-ca__inner__topic__main--four__content
-              .pick-ca__inner__topic__main--four__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
+          - @items.first(4).each do |item|
+            .pick-ca__inner__topic__main--one         
+              .pick-ca__inner__topic__main--one__img
+                -# = image_tag item.images.first.image, alt: "no-image", class: "pick-ca__inner__topic__main--one__img__picture" if item.images.present?
+              .pick-ca__inner__topic__main--one__content
+                .pick-ca__inner__topic__main--one__content__group
+                  %li.pick-ca__name
+                    = item.name
+                  .pick-ca__middle
+                    %li.pick-ca__middle__price #{(item.price * 1.1).floor}円
+                    %li.pick-ca__middle__price ★1
+                  %li.pick-ca__tax (税込)
+          -# .pick-ca__inner__topic__main--two
+          -#   .pick-ca__inner__topic__main--two__img
+          -#     =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--two__img__picture"
+          -#   .pick-ca__inner__topic__main--two__content
+          -#     .pick-ca__inner__topic__main--two__content__group
+          -#       %li.pick-ca__name カレー
+          -#       .pick-ca__middle
+          -#         %li.pick-ca__middle__price 1000円
+          -#         %li.pick-ca__middle__price ★1
+          -#       %li.pick-ca__tax (税込)
+          -# .pick-ca__inner__topic__main--three
+          -#   .pick-ca__inner__topic__main--three__img
+          -#     =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--three__img__picture"
+          -#   .pick-ca__inner__topic__main--three__content
+          -#     .pick-ca__inner__topic__main--three__content__group
+          -#       %li.pick-ca__name カレー
+          -#       .pick-ca__middle
+          -#         %li.pick-ca__middle__price 1000円
+          -#         %li.pick-ca__middle__price ★1
+          -#       %li.pick-ca__tax (税込)
+          -# .pick-ca__inner__topic__main--four
+          -#   .pick-ca__inner__topic__main--four__img
+          -#     =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--four__img__picture"
+          -#   .pick-ca__inner__topic__main--four__content
+          -#     .pick-ca__inner__topic__main--four__content__group
+          -#       %li.pick-ca__name カレー
+          -#       .pick-ca__middle
+          -#         %li.pick-ca__middle__price 1000円
+          -#         %li.pick-ca__middle__price ★1
+          -#       %li.pick-ca__tax (税込)
   -# ピックアップブランドのアーカイブ
   .pick-bra
     .pick-bra__inner
@@ -157,4 +159,3 @@
   -# フッター上のイメージ写真
   .footer
     = render "footer"
-  
