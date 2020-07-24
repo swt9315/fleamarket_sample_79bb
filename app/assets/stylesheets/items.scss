@@ -1,3 +1,295 @@
-// Place all the styles related to the items controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.toppage {
+  .header {
+    padding-top: 15px;
+    &__inner{
+      padding:0px 50px;
+      &__main{
+        display:flex;
+        justify-content: center;
+        &__logo{
+          &__img{
+            height:40px;
+            width:120px;
+          }
+        }
+        &__searchbox{
+          display:flex;
+          justify-content: center;
+          &__input{
+            &__search{
+              &__keyword{
+                width:800px;
+                height: 30px;
+                margin-left:30px;
+                font-size:16px;
+              }
+            }
+          }
+        }
+      }
+    &__nav{
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      &__left{
+        display:flex;
+        justify-content: center;
+        &__cat{
+          cursor: pointer;
+          font-size: 14px;
+          margin-right: 50px;
+        }
+        &__brand{
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+      &__right{
+        display:flex;
+        justify-content: center;
+        &__login{
+          cursor: pointer;
+          font-size: 14px;
+          margin-right: 30px;
+        }
+        &__new{
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+    }
+  }
+
+  .mainimage{
+    position: relative;
+    &__visual{
+      height: 550px;
+      width:1000px;
+      &__content{
+        font-size:60px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 150px;
+        left: 50px;
+      }
+      &__text{
+        font-size:14px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 250px;
+        left: 50px;
+        padding-top:0px;
+      }
+    }
+  }
+  .reason{
+    &__inner{
+      &__subtitle{
+        h2.subtitle{
+          text-align: center;
+          margin:50px 0px;
+        }
+        h2.border{
+          text-align: center;
+          color: #3CCACE;
+          font-weight: bold;
+        }
+      }
+      &__introduction{
+        display: flex;
+        justify-content: space-around;
+          &__content1{
+            position:relative;
+            &__img{
+              &__picture{
+                height:300px;
+                width:300px;
+              }
+              &__num{
+                position:absolute;
+                top:0px;
+                left:0px;
+                color: white;
+                background-color: #3CCACE;
+                font-weight: bold;
+                padding: 10px 15px;
+                font-size: 24px;
+              }
+            }     
+            &__text{
+              font-size:20px;
+              font-weight: bold;
+              text-align:center;
+              margin:30px 0px;
+            }
+            &__comments{
+              font-size:12px;
+              text-align:center;
+            }
+        }
+        &__content2{
+          &__img{
+            position:relative;
+            &__picture{
+              height:300px;
+              width:300px;
+            }
+            &__num{
+              position:absolute;
+              top:0px;
+              left:0px;
+              color: white;
+              background-color: #3CCACE;
+              font-weight: bold;
+              padding: 10px 15px;
+              font-size: 24px;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+          }
+          &__comments{
+            font-size:12px;
+            text-align:center;
+          }
+        }
+        &__content3{
+          &__img{
+            position:relative;
+            &__picture{
+              height:300px;
+              width:300px;
+            }
+            &__num{
+              position:absolute;
+              top:0px;
+              left:0px;
+              color: white;
+              background-color: #3CCACE;
+              font-weight: bold;
+              padding: 10px 15px;
+              font-size: 24px;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+          }
+          &__comments{
+            font-size:12px;
+            text-align:center;
+          }
+        }
+      }
+    }
+  }
+​
+  .middleimage{
+    position: relative;
+    margin-top: 100px;
+    &__visual{
+      height: 450px;
+      width:100%;
+      &__content{
+        font-size:60px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 150px;
+        left: 50px;
+      }
+      &__text{
+        font-size:18px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 250px;
+        left: 50px;
+        padding-top:0px;
+      }
+    }
+  }
+​
+  .feauture{
+    &__inner{
+      &__subtitle{
+        h2.subtitle{
+          text-align: center;
+          margin:50px 0px;
+        }
+        h2.border{
+          text-align: center;
+          color: #3CCACE;
+          font-weight: bold;
+        }
+      }
+      &__introduction{
+        display: flex;
+        justify-content: space-around;
+          &__content1{
+            &__img{
+              &__picture{
+                height:300px;
+                width:300px;
+            }  
+          }   
+            &__text{
+              font-size:20px;
+              font-weight: bold;
+              text-align:center;
+              margin:30px 0px;
+            }
+            &__comments{
+              font-size:12px;
+              text-align:center;
+            }
+        
+      }
+        &__content2{
+          &__img{
+            &__picture{
+              height:300px;
+              width:300px;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+          }
+          &__comments{
+            font-size:12px;
+            text-align:center;
+          }
+        }
+        &__content3{
+          &__img{
+            &__picture{
+              height:300px;
+              width:300px;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+          }
+          &__comments{
+            font-size:12px;
+            text-align:center;
+          }
+        }
+      }
+    }
+  }
+}

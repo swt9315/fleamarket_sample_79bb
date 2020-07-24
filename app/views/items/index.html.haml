@@ -1,0 +1,72 @@
+.toppage
+  .header
+    .header__inner
+      .header__inner__main
+        .header__inner__main__logo
+          =image_tag "logo.png", alt: "FURIMA：", class: "header__inner__main__logo__img"
+        .header__inner__main__searchbox
+          .header__inner__main__searchbox__input
+            = form_with(url: root_path, local: true, method: :get, class: "header__inner__main__searchbox__input__search") do |form|
+              = form.text_field :keyword, placeholder: "キーワードから探す", class: "header__inner__main__searchbox__input__search__keyword"
+              = form.submit "さがす", class: "search-btn" 
+          .header__inner__main__searchbox__btn
+      .header__inner__nav
+        .header__inner__nav__left
+          .header__inner__nav__left__cat カテゴリー
+          .header__inner__nav__left__brand  ブランド
+        .header__inner__nav__right
+          .header__inner__nav__right__login　ログイン
+          .header__inner__nav__right__new  新規会員登録
+  .mainimage
+    =image_tag "bg-mainVisual-pict_pc.jpg", alt: "no-image", class: "mainimage__visual"
+    .mainimage__visual__content 人生を変えるフリマアプリ
+    .mainimage__visual__text　FURIMAはだれでもかんたんに出品・購入できるフリマアプリです
+  .reason
+    .reason__inner
+      .reason__inner__subtitle
+        %h2.subtitle　FURIMAが選ばれる3つの理由
+        %h2.border  
+      .reason__inner__introduction
+        .reason__inner__introduction__content1
+          .reason__inner__introduction__content1__img
+            =image_tag "pict-reason-02.jpg", alt: "FURIMA：", class: "reason__inner__introduction__content1__img__picture"
+            .reason__inner__introduction__content1__img__num １
+          .reason__inner__introduction__content1__text 3分ですぐに出品
+          .reason__inner__introduction__content1__comments  スマホで入力するだけで%bra簡単に出品できる！
+        .reason__inner__introduction__content2
+          .reason__inner__introduction__content2__img
+            =image_tag "pict-reason-02.jpg", alt: "FURIMA：", class: "reason__inner__introduction__content2__img__picture"
+            .reason__inner__introduction__content2__img__num 2
+          .reason__inner__introduction__content2__text シンプルで使いやすい
+          .reason__inner__introduction__content2__comments  めんどうくさい入力は必要なく、検索も購入もスムーズ！
+        .reason__inner__introduction__content3
+          .reason__inner__introduction__content3__img
+            =image_tag "pict-reason-03.jpg", alt: "FURIMA：", class: "reason__inner__introduction__content3__img__picture"
+            .reason__inner__introduction__content3__img__num 3
+          .reason__inner__introduction__content3__text 手数料　業界最安
+          .reason__inner__introduction__content3__comments  最大3%でお得に出品&購入！
+  .middleimage
+    =image_tag "bg-topMiddleDl-pict.jpg", alt: "no-image", class: "middleimage__visual"
+    .middleimage__visual__content 会員数日本一位
+    .middleimage__visual__text　FURIMAは、フリマアプリで最も人気。出品・購入回数も業界最多です！ほしかったあの商品に出会えるかもしれません。
+  .feauture
+    .feauture__inner
+      .feauture__inner__subtitle
+        %h2.subtitle　FURIMAが選ばれる3つの理由
+        %h2.border  
+      .feauture__inner__introduction
+        .feauture__inner__introduction__content1
+          .feauture__inner__introduction__content1__img
+            =image_tag "icon-01.png", alt: "FURIMA：", class: "feauture__inner__introduction__content1__img__picture"
+          .feauture__inner__introduction__content1__text 簡単に売り買いできる
+          .feauture__inner__introduction__content1__comments  スマホひとつで、いつでもどこでも簡単に出品・購入が可能！
+        .feauture__inner__introduction__content2
+          .feauture__inner__introduction__content2__img
+            =image_tag "icon-03.png", alt: "FURIMA：", class: "feauture__inner__introduction__content2__img__picture"
+          .feauture__inner__introduction__content2__text 売上金は即日振込みに対応
+          .feauture__inner__introduction__content2__comments  午前9時までに振込を依頼いただければ、翌日に指定の口座に入金いたします!
+        .feauture__inner__introduction__content3
+          .feauture__inner__introduction__content3__img
+            =image_tag "icon-04.png", alt: "FURIMA：", class: "feauture__inner__introduction__content2__img__picture"
+          .feauture__inner__introduction__content3__text 様々な支払いに対応
+          .feauture__inner__introduction__content3__comments お支払いは、クレジットカードだけでなく、ポイントや売上金など多彩な方法があります。
