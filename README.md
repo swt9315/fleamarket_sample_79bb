@@ -44,7 +44,7 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :products
+- has_many :items
 - has_one :card
 - has_one :destination
 
@@ -81,23 +81,26 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## Productテーブル
+## itemテーブル
 
 以下のカラムはenumを使用
 - condittion
 - postage_user
-- preparation
+- preparation_day
+
+以下のカラムはgem: active_hashを使用
+- category_id
 
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
 |introduction|text|null: false|
-|category_id|references|null: false, foreign_key: true|
+|category_id|references|null: false|
 |brand|string||
 |condition|integer|null: false, default: 0|
 |postage_user|integer|null: false, default: 0||
 |prefecture_id (active_hash)|integer|null: false|
-|preparation|integer|null: false, default: 0||
+|preparation_day|integer|null: false, default: 0||
 |price|integer|null: false|
 |user_id|references|null: false, foreign_key: true|
 
@@ -113,11 +116,11 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 
-- belongs_to :product
+- belongs_to :item
 
 ## Categoryテーブル
 
@@ -128,4 +131,4 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :products
+- has_many :items
