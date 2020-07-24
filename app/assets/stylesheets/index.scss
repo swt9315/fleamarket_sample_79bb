@@ -1,0 +1,435 @@
+.New__content{
+  &__topic{
+    &__logo{
+      text-align: center;
+      margin-top:30px;
+      &__img{
+        height: 40px;
+        width: 120px;
+      }
+    }
+    &__info{
+      text-align: center;
+      p.registration__text{
+        //font-weight: bold;
+        font-size: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgb(233, 231, 231);
+      }
+      .registration__nickname__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.nickname{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__text{
+          }
+          &__type{
+            width:300px;
+            height:40px;
+            border: 1px solid rgb(180, 179, 179);
+            font-size: 16px;
+            border-radius: 5px;
+          }
+        }
+      }
+      .registration__email__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.email{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__text{
+          }
+          &__type{
+            width:300px;
+            height:40px;
+            border: 1px solid rgb(180, 179, 179);
+            font-size: 16px;
+            border-radius: 5px;
+          }
+        }
+      }
+
+      .registration__password__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.password{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__text{
+          }
+          &__type{
+            width:300px;
+            height:40px;
+            border: 1px solid rgb(180, 179, 179);
+            font-size: 16px;
+            border-radius: 5px;
+          }
+        }
+        p.registration__password__attention{
+          font-size: 12px;
+      }
+      }
+      .registration__repassword__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.password{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__text{
+          }
+          &__type{
+            width:300px;
+            height:40px;
+            border: 1px solid rgb(180, 179, 179);
+            font-size: 16px;
+            border-radius: 5px;
+          }
+        }
+      }
+      p.registration__sentense{
+        font-size:6px;
+        margin-bottom: 30px;
+      }
+
+
+
+
+
+      .registration__birthday__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.bir{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:10px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__text{
+            display: flex;
+            justify-content: center;
+          &__year{
+            &__birth{
+              width:84px;
+              height:40px;
+              border: 1px solid rgb(180, 179, 179);
+              font-size: 16px;
+              border-radius: 5px;
+            }
+          }
+          &__month{
+            &__birth{
+              width:84px;
+              height:40px;
+              border: 1px solid rgb(180, 179, 179);
+              font-size: 16px;
+              border-radius: 5px;
+              margin: 0 15px;
+            }
+          }
+          &__day{
+            &__birth{
+              width:84px;
+              height:40px;
+              border: 1px solid rgb(180, 179, 179);
+              font-size: 16px;
+              border-radius: 5px;
+            }
+          }
+        }
+      }
+
+      }
+
+
+      .registration__name__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.name{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__box{
+            display: flex;
+            justify-content: center;
+            &__sur{
+              &__name{
+                width:145px;
+                height:40px;
+                border: 1px solid rgb(180, 179, 179);
+                font-size: 16px;
+                border-radius: 5px;
+              }
+            }
+            &__main{
+              &__name{
+                width:145px;
+                height:40px;
+                border: 1px solid rgb(180, 179, 179);
+                font-size: 16px;
+                border-radius: 5px;
+                margin-left:10px;
+              }
+            }
+          }
+        }
+      }
+
+      .registration__kananame__form{
+        &__explain{
+          display: flex;
+          justify-content: center;
+          padding-bottom:0px;
+          p.kananame{
+            font-size: 14px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+          p.absolute{
+            font-size:6px;
+            background-color: #ffb340;
+            color:white;
+            padding: 5px;
+            padding-bottom:0px;
+            border-radius: 10px;
+            height: 20px;
+          }
+        }
+        &__input{
+          &__box{
+            display: flex;
+            justify-content: center;
+            &__sur{
+              &__name{
+                width:145px;
+                height:40px;
+                border: 1px solid rgb(180, 179, 179);
+                font-size: 16px;
+                border-radius: 5px;
+              }
+            }
+            &__main{
+              &__name{
+                width:145px;
+                height:40px;
+                border: 1px solid rgb(180, 179, 179);
+                font-size: 16px;
+                border-radius: 5px;
+                margin-left:10px;
+              }
+            }
+          }
+        }
+      }
+
+
+      p.registration__re-registration{
+        font-size:10px;
+        margin-bottom: 30px;
+      }
+    }
+  
+      .New__content__topic__btn{
+        display:flex;
+        justify-content: center;
+        .New__content__topic__pushbtn{
+        background-color: #3CCACE;
+        height: 40px;
+        width: 300px;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+          .New__content__topic__btn__next{
+          text-decoration: none;
+          color: white;
+          font-size:18px;
+          }
+        }
+      }
+  }
+}
+    
+.Login  
+  .Login__content{
+    &__topic{
+      border-bottom: 1px solid rgb(180, 179, 179);
+      margin-top: 30px;
+      &__logo{
+        text-align: center;
+        &__img{
+          height: 40px;
+          width: 120px;
+        }
+      }
+      p.Login__content__topic__sentense{
+        font-size: 16px;
+        text-align: center;
+      }
+      .Login__content__go-topic__button{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        .Login__content__go-topic__btn{
+          height: 40px;
+          width: 300px;
+          border-radius: 5px;
+          background-color: #3CCACE;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          .Login__content__go-topic__btn__next{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+      }
+    }
+  }
+}
+.Login__info{
+  text-align: center;
+  p.login__address{
+    font-size:14px;
+  }
+  .Login__address__form{ 
+    .login__address__form__type{
+      .login__address__form__text{
+      .login__address__form__type{
+        width:300px;
+        height:40px;
+        border: 1px solid rgb(180, 179, 179);
+        font-size: 16px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      }
+    }
+  } 
+  p.login__password{
+    font-size:14px;
+  }
+  .Login__password__form{ 
+    .login__password__form__type{
+      .login__password__form__text{
+      .login__password__form__type{
+        width:300px;
+        height:40px;
+        border: 1px solid rgb(180, 179, 179);
+        font-size: 16px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      }
+    }
+  } 
+}
+
+
+.Login__content__button{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  .Login__content__btn{
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #3CCACE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .Login__content__topic__btn__next{
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+  }
+}
+
