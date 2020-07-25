@@ -1,0 +1,115 @@
+.New__content
+  .New__content__topic
+    .New__content__topic__logo
+      =image_tag "logo.png", alt: "FURIMA：", class: "New__content__topic__logo__img"
+    .New__content__topic__info
+      %p.registration__text
+        会員情報入力
+        //= ニックネーム
+      .registration__nickname__form
+        .registration__nickname__form__explain
+          %p.nickname ニックネーム
+          %p.absolute 必須
+        .registration__nickname__form__input
+        = form_with local: true , class: "registration__nickname__form__input__text" do |f|
+          = f.text_field :name, class: "registration__nickname__form__input__type", placeholder: "(例)フリマ太郎"
+          //= メールアドレス
+      .registration__email__form
+        .registration__email__form__explain
+          %p.email メールアドレス
+          %p.absolute 必須
+        .registration__email__form__input
+        = form_with local: true , class: "registration__email__form__input__text" do |f|
+          = f.text_field :name, class: "registration__email__form__input__type", placeholder: "PC.携帯どちらでも可"
+          //= パスワード
+      .registration__password__form
+        .registration__password__form__explain
+          %p.password パスワード
+          %p.absolute 必須
+        .registration__password__form__input
+        = form_with local: true , class: "registration__password__form__input__text" do |f|
+          = f.text_field :name, class: "registration__password__form__input__type", placeholder: "7文字以上の半角英数字"
+        %p.registration__password__attention ※英字と数字の両方を含めて、設定してください。
+        //= パスワード（確認用）
+      .registration__repassword__form
+        .registration__repassword__form__explain
+          %p.password パスワード(確認用)
+          %p.absolute 必須
+        .registration__repassword__form__input
+        = form_with local: true , class: "registration__repassword__form__input__text" do |f|
+          = f.text_field :name, class: "registration__repassword__form__input__type", placeholder: "再度パスワードを入力してください"
+      %p.registration__sentense 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        //= 誕生日
+      .registration__birthday__form
+        .registration__birthday__form__explain
+          %p.bir お誕生日
+          %p.absolute 必須
+        .registration__birthday__form__input
+          .registration__birthday__form__input__text
+            = form_with local: true , class: "registration__birthday__form__input__text__year" do |f|
+              = f.text_field :name, class: "registration__birthday__form__input__text__year__birth", placeholder: "西暦"
+            = form_with local: true , class: "registration__birthday__form__input__text__month" do |f|
+              = f.text_field :name, class: "registration__birthday__form__input__text__month__birth", placeholder: "月"  
+            = form_with local: true , class: "registration__birthday__form__input__text__day" do |f|
+              = f.text_field :name, class: "registration__birthday__form__input__text__day__birth", placeholder: "日" 
+              //= お名前（全角）
+      .registration__name__form
+        .registration__name__form__explain
+          %p.name お名前（全角）
+          %p.absolute 必須
+        .registration__name__form__input
+          .registration__name__form__input__box
+            = form_with local: true , class: "registration__name__form__input__box__sur" do |f|
+              = f.text_field :name, class: "registration__name__form__input__box__sur__name", placeholder: "(例)降間"
+            = form_with local: true , class: "registration__name__form__input__box__main" do |f|
+              = f.text_field :name, class: "registration__name__form__input__box__main__name", placeholder: "(例)公彦"  
+         //= お名前（カナ）     
+      .registration__kananame__form
+        .registration__kananame__form__explain
+          %p.kananame お名前（カナ）
+          %p.absolute 必須
+        .registration__kananame__form__input
+          .registration__kananame__form__input__box
+            = form_with local: true , class: "registration__kananame__form__input__box__sur" do |f|
+              = f.text_field :name, class: "registration__kananame__form__input__box__sur__name", placeholder: "(例)フリマ"
+            = form_with local: true , class: "registration__kananame__form__input__box__main" do |f|
+              = f.text_field :name, class: "registration__kananame__form__input__box__main__name", placeholder: "(例)キミヒコ"
+
+
+
+      %p.registration__re-registration ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+
+    .New__content__topic__btn
+      .New__content__topic__pushbtn
+        = link_to "登 録", root_path, method: :get, class: 'New__content__topic__btn__next'
+        
+
+
+.Login
+  .Login__content
+    .Login__content__topic
+      .Login__content__topic__logo
+        =image_tag "logo.png", alt: "FURIMA：", class: "Login__content__topic__logo__img"
+      %p.Login__content__topic__sentense　アカウントをお持ちでない方はこちら
+      .Login__content__go-topic__button
+        .Login__content__go-topic__btn
+          = link_to "新規会員登録", root_path, method: :get, class: 'Login__content__go-topic__btn__next'
+.Login__info
+  %p.login__address  メールアドレス
+  .Login__address__form
+    .Login__address__form__type
+      = form_with local: true , class: "login__address__form__text" do |f|
+        = f.text_field :name, class: "login__address__form__type", placeholder: "メールアドレス"
+        //= f.label :name
+  %p.login__password  パスワード
+  .Login__password__form
+    .Login__password__form__type
+      = form_with local: true , class: "login__password__form__text" do |f|
+        = f.text_field :name, class: "login__password__form__type", placeholder: "パスワード"
+        //= f.label :name
+.Login__content__button
+  .Login__content__btn
+    = link_to "登録", root_path, method: :get, class: 'Login__content__topic__btn__next'
+
+
+
