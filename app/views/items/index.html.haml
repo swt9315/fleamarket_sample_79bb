@@ -1,0 +1,160 @@
+
+.toppage
+  .header
+    = render "header"
+    -# トップイメージ画像
+  .mainimage
+    =image_tag "bg-mainVisual-pict_pc.jpg", alt: "no-image", class: "mainimage__visual"
+    .mainimage__visual__content 人生を変えるフリマアプリ
+    .mainimage__visual__text　FURIMAはだれでもかんたんに<br>出品・購入できるフリマアプリです
+    -# フリマが選ばれる３つの理由
+  .reason
+    .reason__inner
+      .reason__inner__subtitle
+        %h2.subtitle  　　FURIMAが選ばれる3つの理由
+        %h2.border  
+      .reason__inner__introduction
+        .reason__inner__introduction__content1
+          .reason__inner__introduction__content1__img
+            =image_tag "pict-reason-01.jpg", alt: "FURIMA：", class: "reason__inner__introduction__content1__img__picture"
+            .reason__inner__introduction__content1__img__num １
+          .reason__inner__introduction__content1__text <span>3分</span> ですぐに出品
+          .reason__inner__introduction__content1__comments  スマホで入力するだけで<br>簡単に出品できる！
+        .reason__inner__introduction__content2
+          .reason__inner__introduction__content2__img
+            =image_tag "pict-reason-02.jpg", alt: "FURIMA：", class: "reason__inner__introduction__content2__img__picture"
+            .reason__inner__introduction__content2__img__num 2
+          .reason__inner__introduction__content2__text <span>シンプル</span> で使いやすい
+          .reason__inner__introduction__content2__comments  めんどうくさい入力は必要なく、<br>検索も購入もスムーズ！
+        .reason__inner__introduction__content3
+          .reason__inner__introduction__content3__img
+            =image_tag "pict-reason-03.jpg", alt: "FURIMA：", class: "reason__inner__introduction__content3__img__picture"
+            .reason__inner__introduction__content3__img__num 3
+          .reason__inner__introduction__content3__text 手数料 <span>業界最安</span>
+          .reason__inner__introduction__content3__comments  最大3%でお得に出品&購入！
+  .middleimage
+    =image_tag "bg-topMiddleDl-pict.jpg", alt: "no-image", class: "middleimage__visual"
+    .middleimage__visual__content 会員数日本一位
+    .middleimage__visual__text　FURIMAは、フリマアプリで最も人気。<br>出品・購入回数も業界最多です！<br>ほしかったあの商品に出会えるかもしれません。
+    -# フリマの特徴
+  .feauture
+    .feauture__inner
+      .feauture__inner__subtitle
+        %h2.subtitle 　　　FURIMAの特徴
+        %h2.border  
+      .feauture__inner__introduction
+        .feauture__inner__introduction__content1
+          .feauture__inner__introduction__content1__img
+            =image_tag "icon-01.png", alt: "FURIMA：", class: "feauture__inner__introduction__content1__img__picture"
+          .feauture__inner__introduction__content1__text 簡単に売り買いできる
+          .feauture__inner__introduction__content1__comments  スマホひとつで、<br>いつでもどこでも<br>簡単に出品・購入が可能！
+        .feauture__inner__introduction__content2
+          .feauture__inner__introduction__content2__img
+            =image_tag "icon-03.png", alt: "FURIMA：", class: "feauture__inner__introduction__content2__img__picture"
+          .feauture__inner__introduction__content2__text 売上金は即日振込みに対応
+          .feauture__inner__introduction__content2__comments  午前9時までに振込を依頼いただければ、<br>翌日に指定の口座に入金いたします!
+        .feauture__inner__introduction__content3
+          .feauture__inner__introduction__content3__img
+            =image_tag "icon-04.png", alt: "FURIMA：", class: "feauture__inner__introduction__content2__img__picture"
+          .feauture__inner__introduction__content3__text 様々な支払いに対応
+          .feauture__inner__introduction__content3__comments お支払いは、クレジットカードだけでなく、<br>ポイントや売上金など<br>多彩な方法があります。
+    -# ピックアップカテゴリー
+  .pick-ca
+    .pick-ca__inner
+      .pick-ca__inner__title
+        %p.pick-ca ピックアップカテゴリー
+        %p.pick-new 新規投稿商品
+      .pick-ca__inner__topic
+        .pick-ca__inner__topic__main
+          .pick-ca__inner__topic__main--one
+            .pick-ca__inner__topic__main--one__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--one__img__picture"
+            .pick-ca__inner__topic__main--one__content
+              .pick-ca__inner__topic__main--one__content__group
+                %li.pick-ca__name カレー
+                .pick-ca__middle
+                  %li.pick-ca__middle__price 1000円
+                  %li.pick-ca__middle__price ★1
+                %li.pick-ca__tax (税込)
+          .pick-ca__inner__topic__main--two
+            .pick-ca__inner__topic__main--two__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--two__img__picture"
+            .pick-ca__inner__topic__main--two__content
+              .pick-ca__inner__topic__main--two__content__group
+                %li.pick-ca__name カレー
+                .pick-ca__middle
+                  %li.pick-ca__middle__price 1000円
+                  %li.pick-ca__middle__price ★1
+                %li.pick-ca__tax (税込)
+          .pick-ca__inner__topic__main--three
+            .pick-ca__inner__topic__main--three__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--three__img__picture"
+            .pick-ca__inner__topic__main--three__content
+              .pick-ca__inner__topic__main--three__content__group
+                %li.pick-ca__name カレー
+                .pick-ca__middle
+                  %li.pick-ca__middle__price 1000円
+                  %li.pick-ca__middle__price ★1
+                %li.pick-ca__tax (税込)
+          .pick-ca__inner__topic__main--four
+            .pick-ca__inner__topic__main--four__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--four__img__picture"
+            .pick-ca__inner__topic__main--four__content
+              .pick-ca__inner__topic__main--four__content__group
+                %li.pick-ca__name カレー
+                .pick-ca__middle
+                  %li.pick-ca__middle__price 1000円
+                  %li.pick-ca__middle__price ★1
+                %li.pick-ca__tax (税込)
+  -# ピックアップブランドのアーカイブ
+  .pick-bra
+    .pick-bra__inner
+      .pick-bra__inner__title
+        %p.pick-bra ピックアップブランド
+        %p.pick-new アーカイバ
+      .pick-bra__inner__topic
+        .pick-bra__inner__topic__main
+          .pick-bra__inner__topic__main--one
+            .pick-bra__inner__topic__main--one__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--one__img__picture"
+            .pick-bra__inner__topic__main--one__content
+              .pick-bra__inner__topic__main--one__content__group
+                %li.pick-ca__name カレー
+                .pick-bra__middle
+                  %li.pick-bra__middle__price 1000円
+                  %li.pick-bra__middle__price ★1
+                %li.pick-bra__tax (税込)
+          .pick-bra__inner__topic__main--two
+            .pick-bra__inner__topic__main--two__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--two__img__picture"
+            .pick-bra__inner__topic__main--two__content
+              .pick-bra__inner__topic__main--two__content__group
+                %li.pick-bra__name カレー
+                .pick-bra__middle
+                  %li.pick-bra__middle__price 1000円
+                  %li.pick-bra__middle__price ★1
+                %li.pick-bra__tax (税込)
+          .pick-bra__inner__topic__main--three
+            .pick-bra__inner__topic__main--three__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--three__img__picture"
+            .pick-bra__inner__topic__main--three__content
+              .pick-bra__inner__topic__main--three__content__group
+                %li.pick-bra__name カレー
+                .pick-bra__middle
+                  %li.pick-bra__middle__price 1000円
+                  %li.pick-bra__middle__price ★1
+                %li.pick-bra__tax (税込)
+          .pick-bra__inner__topic__main--four
+            .pick-bra__inner__topic__main--four__img
+              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--four__img__picture"
+            .pick-bra__inner__topic__main--four__content
+              .pick-bra__inner__topic__main--four__content__group
+                %li.pick-bra__name カレー
+                .pick-bra__middle
+                  %li.pick-bra__middle__price 1000円
+                  %li.pick-bra__middle__price ★1
+                %li.pick-bra__tax (税込)
+  -# フッター上のイメージ写真
+  .footer
+    = render "footer"
+  

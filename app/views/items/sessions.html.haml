@@ -1,0 +1,25 @@
+.Login
+  .Login__content
+    .Login__content__topic
+      .Login__content__topic__logo
+        =image_tag "logo.png", alt: "FURIMA：", class: "Login__content__topic__logo__img"
+      %p.Login__content__topic__sentense　アカウントをお持ちでない方はこちら
+      .Login__content__go-topic__button
+        .Login__content__go-topic__btn
+          = link_to "新規会員登録", root_path, method: :get, class: 'Login__content__go-topic__btn__next'
+.Login__info
+  %p.login__address  メールアドレス
+  .Login__address__form
+    .Login__address__form__type
+      = form_with local: true , class: "login__address__form__text" do |f|
+        = f.text_field :name, class: "login__address__form__type", placeholder: "メールアドレス"
+        //= f.label :name
+  %p.login__password  パスワード
+  .Login__password__form
+    .Login__password__form__type
+      = form_with local: true , class: "login__password__form__text" do |f|
+        = f.text_field :name, class: "login__password__form__type", placeholder: "パスワード"
+        //= f.label :name
+.Login__content__button
+  .Login__content__btn
+    = link_to "登録", root_path, method: :get, class: 'Login__content__topic__btn__next'
