@@ -1,0 +1,591 @@
+//フッターの会社情報のリンク先それぞれ
+@mixin company{
+  text-align:center;
+  margin:20px;
+  cursor: pointer;
+}
+//フッターの会社情報のリンク先上のタイトル
+@mixin company-title{
+  font-weight:bold;
+  text-align:center;
+  margin:20px;
+  font-size:16px;
+}
+
+*{
+  box-sizing: border-box;
+  
+  .detail{
+    //ヘッダー
+    .header{
+      padding-top: 15px;
+      &__inner{
+        padding:0px 60px;
+        &__main{
+          display:flex;
+          justify-content: center;
+          &__logo{
+            &__img{
+              height:40px;
+              width:120px;
+              cursor: pointer;
+            }
+          }
+          &__searchbox{
+            display:flex;
+            justify-content: center;
+            &__input{
+              &__search{
+                display:flex;
+                justify-content: right;
+                position:relative;
+                &__keyword{
+                  width: calc(100vw - 350px);
+                  height: 36px;
+                  margin-left:30px;
+                  font-size:16px;
+                }
+                .search-btn{
+                  background-color: #3CCACE;
+                  color: #3CCACE;;
+                  border: 1px solid  #3CCACE;
+                  width: 40px;}
+                .search-btn__icon{
+                  position:absolute;
+                  top:9px;
+                  left:calc(100vw - 310px);
+                  width:20px;
+                  height:20px;
+                  cursor: pointer;
+                }
+              }
+            }
+          }
+        }
+      &__nav{
+        //ヘッダー下のカテゴリーボタン
+        display: flex;
+        justify-content: space-between;
+        margin: 10px;
+        &__left{
+          display:flex;
+          justify-content: center;
+          &__cat{
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 40px;
+          }
+          &__brand{
+            cursor: pointer;
+            font-size: 14px;
+          }
+        }
+        &__right{
+          display:flex;
+          justify-content: center;
+          &__login{
+            cursor: pointer;
+            font-size: 14px;
+            margin-right: 20px;
+          }
+          &__new{
+            cursor: pointer;
+            font-size: 14px;
+          }
+        }
+      }
+      }
+    }
+      nav.breadCrumbs{
+        ul{
+          display:flex;
+          justify-content:left;
+          list-style: none;
+          text-decoration: none;
+          font-size:14px;
+          border-top: 1px solid #eee;
+          padding: 20px 60px;
+          box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
+          li.top{
+            text-decoration: none;
+            color: black;
+            .parent-category{
+              margin: 0px 10px;
+              text-decoration: none;
+              color: black;
+            }
+          }
+          li.icon{
+            color: black;
+            text-decoration:none;
+
+          }
+          li.second{
+            .child-category{
+              margin: 0px 10px;
+              color: black;
+              text-decoration:none;
+            }
+          }
+          li.third{
+            .child-category__2{
+              margin: 0px 10px;
+              color: black;
+              text-decoration:none;
+            }
+          }
+          li.forth{
+            .child-category__3{
+              margin: 0px 10px;
+              color: black;
+              text-decoration:none;
+            }
+          }
+          li.fifth{
+            .child-category__now{
+              font-weight: bold;
+              margin: 0px 10px;
+              color: black;
+              text-decoration:none;
+            }
+          }
+        }
+      }
+    &__content{
+      background-color: rgb(244, 244, 244);
+      text-align: center;
+      padding: 30px 80px;
+      width:100vw;
+
+
+
+      &__inner{
+        background-color: white;
+        text-align:center;
+        padding:0px 20px;
+        width:700px;
+        margin: 0 auto;
+
+
+      
+      &__name{
+        text-align:center;
+        font-weight: bold;
+        font-size: 24px;
+        padding-top:40px;
+
+      }
+      &__picture{
+        text-align: center;
+        &__main{
+          width:400px;
+          height:400px;
+          padding-top:10px;
+
+        }
+      }
+      &__sub{
+        display: flex;
+        justify-content: center;
+        &__img1{
+          &__picture{
+            width:150px;
+            height:150px;
+            margin:10px 5px;
+
+          }
+        }
+        &__img2{
+          &__picture{
+            width:150px;
+            height:150px;
+            margin:10px 5px;
+            
+          }
+        }
+        &__img3{
+          &__picture{
+            width:150px;
+            height:150px;
+            margin:10px 5px;
+            
+          }
+        }
+      }
+      &__price{
+        font-size:40px;
+        font-weight:bold;
+
+      }
+      &__tax{
+        margin-bottom: 20px;
+
+      }
+      &__introduction{
+        text-align: left;
+        font-size: 17px;
+        padding: 20px 40px;
+        &__text{
+
+        }
+      }
+      &__infomation{
+        &__data{
+          &__exhibitor{
+            display:flex;
+            justify-content:center;
+            margin-top:20px;
+
+
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              
+
+            }
+          }
+          &__category{
+            display:flex;
+            justify-content:center;
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;  
+              font-size: 14px;
+              text-align: center;
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              color:#3CCACE;
+            }
+          }
+          &__brand{
+            display:flex;
+            justify-content:center;
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              
+            }
+          }
+          &__condition{
+            display:flex;
+            justify-content:center;
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              
+            }
+          }
+          &__postage{
+            display:flex;
+            justify-content:center;
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              
+            }
+          }
+          &__prefacture{
+            display:flex;
+            justify-content:center;
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              color:#3CCACE;
+              
+            }
+          }
+          &__preparation{
+            display:flex;
+            justify-content:center;
+            &__subject{
+              width:250px;
+              background-color: #eee;
+              font-weight: 400;
+              padding: 16px;
+              border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;
+              border-left:1px solid #dedede;
+              font-size: 14px;
+              text-align: center;
+              //preparationだけmixinできない注意
+
+            }
+            &__content{
+              width:650px;
+              text-align:left;
+              border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              border-bottom: 1px solid #dedede;
+              padding: 16px;
+              font-size: 14px;
+              
+            }
+          }
+          &__footer{
+            display:flex;
+            justify-content: space-between;
+            &__star{
+              margin-right: auto;
+              padding: 6px 10px;
+              border-radius: 40px;
+              color: #3CCACE;
+              border: 1px solid #ffb340;
+              margin:30px 0px;
+            }
+            &__warning{
+              padding: 6px 10px;
+              display: inline-block;
+              border-radius: 4px;
+              color: #333;
+              border: 1px solid #333;
+              text-decoration: none;
+              margin:30px 0px;
+              font-size:14px;
+            }
+          }
+        }
+      }
+
+    }
+  }
+    &__comment{
+      &__inner{
+        &__text{
+          &__box{
+            &__form{
+
+            }
+            p.attention{
+
+            }
+            .detail__comment__inner__btn{
+
+            }
+          }
+        }
+      }
+    }
+
+
+
+
+//下にあるイメージ画像　誰でも簡単人生をかえるフリマアプリ
+  .bottomimage{
+    position: relative;
+    margin-top: 0px;
+    &__visual{
+      height: 450px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      width:100%;
+      &__content{
+        font-size:24px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 90px;
+        font-weight: bold;
+        text-align: center;
+        padding: 80px;
+      }
+      &__text{
+        font-size:32px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 190px;
+        padding-top:0px;
+        text-align: center;
+        padding: 80px;
+      }
+    }
+  }
+  //企業案内
+  .bottom{
+    width:100%;
+    background-color:black;
+    color: white;
+    &__inner{
+      &__box{
+        padding:60px 50px 0px 50px;
+        display:flex;
+        justify-content: space-evenly;
+        font-size:12px;
+        &__content--one{
+          &--title1{
+            @include company-title;
+          }
+          &--click1{
+            @include company;
+          }
+          &--click2{
+            @include company;
+          }
+          &--click3{
+            @include company;
+          }
+          &--click4{
+            @include company;
+          }
+        }
+        &__content--two{
+          &--title2{
+            @include company-title;
+          }
+          &--click1{
+            @include company;
+          }
+          &--click2{
+            @include company;
+          }
+        }
+        &__content--three{
+          &--title3{
+            @include company-title;
+          }
+          &--click1{
+            @include company;
+          }
+          &--click2{
+            @include company;
+          }
+          &--click3{
+            @include company;
+          }
+        }
+      }
+      .bottom__inner__image{
+        &__img{
+          text-align:center;
+          &__logo{
+            width:150px;
+            height:45px;
+            cursor: pointer;
+          }
+        }
+        &__company{
+          text-align:center;
+          padding: 0px 0px 80px 0px;
+        }
+      }
+    }
+  }
+}
+//出品カメラボタン
+  .purchasebtn{
+    position:fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 120px;
+    height: 120px;
+    background-color: #3CCACE;
+    border-radius: 4%;
+    padding:15px;
+    text-align:center;
+    cursor: pointer;
+    &:hover{
+      opacity:90%;
+    }
+    
+    &__text{
+      font-size: 18px;
+      color: white;
+    }
+    &__icon{
+      margin-top:5px;
+      &__camera{
+        width:55px;
+        height:55px;
+      }
+    }
+  
+
+  }
+}

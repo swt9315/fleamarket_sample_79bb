@@ -1,0 +1,70 @@
+.detail
+  .header
+    = render "header"
+  %nav.breadCrumbs
+    %ul
+      %li.top
+        = link_to "FURIMA", root_path, method: :get, class: 'parent-category'
+      %li.icon >
+      %li.second
+        = link_to "ベビー・キッズ", root_path, method: :get, class: 'child-category'
+      %li.icon >
+      %li.third 
+        = link_to "ベビー服（男女兼用）〜95cm", root_path, method: :get, class: 'child-category__2'
+      %li.icon >
+      %li.forth 
+        = link_to "アウター", root_path, method: :get, class: 'child-category__3'
+      %li.icon >
+      %li.fifth
+        = link_to "product3", root_path, method: :get, class: 'child-category__now'
+  .detail__content
+    .detail__content__inner
+      .detail__content__inner__name curry
+      .detail__content__inner__picture
+        =image_tag "curry.png", alt: "no-image", class: "detail__content__inner__picture__main"
+      .detail__content__inner__sub
+        .detail__content__inner__sub--img1
+          =image_tag "curry.png", alt: "no-image", class: "detail__content__inner__sub__img1__picture"
+        .detail__content__inner__sub--img2
+          =image_tag "curry.png", alt: "no-image", class: "detail__content__inner__sub__img2__picture"
+        .detail__content__inner__sub--img3
+          =image_tag "curry.png", alt: "no-image", class: "detail__content__inner__sub__img3__picture"
+      .detail__content__inner__price  ¥1,000
+      .detail__content__inner__tax  (税込) 送料込み
+      .detail__content__inner__introduction
+        .detail__content__inner__introduction__text 親譲りの無鉄砲で小供の時から損ばかりしている。小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。なぜそんな無闇をしたと聞く人があるかも知れぬ。別段深い理由でもない。新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。弱虫やーい。と囃したからである。小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰
+      .detail__content__inner__infomation
+        .detail__content__inner__infomation__data
+          .detail__content__inner__infomation__data__exhibitor  
+            .detail__content__inner__infomation__data__exhibitor__subject 出品者
+            .detail__content__inner__infomation__data__exhibitor__content わしの
+          .detail__content__inner__infomation__data__category
+            .detail__content__inner__infomation__data__category__subject  カテゴリー
+            .detail__content__inner__infomation__data__category__content  ベビー、キッズ
+          .detail__content__inner__infomation__data__brand
+            .detail__content__inner__infomation__data__brand__subject ブランド
+            .detail__content__inner__infomation__data__brand__content CoCo壱番屋
+          .detail__content__inner__infomation__data__condition
+            .detail__content__inner__infomation__data__condition__subject 商品の状態
+            .detail__content__inner__infomation__data__condition__content 未使用に近い
+          .detail__content__inner__infomation__data__postage
+            .detail__content__inner__infomation__data__postage__subject 配送料の負担
+            .detail__content__inner__infomation__data__postage__content 送料込み（出品者負担）
+          .detail__content__inner__infomation__data__prefacture
+            .detail__content__inner__infomation__data__prefacture__subject  発送元の地域
+            .detail__content__inner__infomation__data__prefacture__content  愛知県
+          .detail__content__inner__infomation__data__preparation
+            .detail__content__inner__infomation__data__preparation__subject 発送日の目安
+            .detail__content__inner__infomation__data__preparation__content 4-7日で発送
+          .detail__content__inner__infomation__data__footer
+            .detail__content__inner__infomation__data__footer__star ★お気に入り０
+            .detail__content__inner__infomation__data__footer__warning 不適切な商品の通報
+  .detail__comment
+    .detail__comment__inner
+      .detail__comment__inner__text
+        = form_with local: true , class: ".detail__comment__inner__text__box" do |f|
+          = f.text_area :name, class: ".detail__comment__inner__text__box__form"
+          %p.attention  相手のことを考え丁寧なコメントを心がけましょう。<br>不快な言葉遣いなどは利用制限や退会処分となることがあります。
+          = f.submit "コメントする", class: "detail__comment__inner__btn "
+  .footer
+    = render "footer"
