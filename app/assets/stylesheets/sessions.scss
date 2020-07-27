@@ -1,0 +1,96 @@
+.Login  
+  .Login__content{
+    &__topic{
+      border-bottom: 1px solid rgb(180, 179, 179);
+      margin-top: 30px;
+      &__logo{
+        text-align: center;
+        &__img{
+          height: 40px;
+          width: 120px;
+        }
+      }
+      p.Login__content__topic__sentense{
+        font-size: 16px;
+        text-align: center;
+      }
+      .Login__content__go-topic__button{
+        display: flex;
+        justify-content: center;
+        margin-bottom: 50px;
+        .Login__content__go-topic__btn{
+          height: 40px;
+          width: 300px;
+          border-radius: 5px;
+          background-color: #3CCACE;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          &__next{
+            text-decoration: none;
+            color: white;
+            font-size: 18px;
+        }
+      }
+    }
+  }
+}
+.Login__info{
+  text-align: center;
+  p.login__address{
+    font-size:14px;
+  }
+  .Login__address__form{ 
+    &__type{
+      .login__address__form__text{
+      .login__address__form__type{
+        width:300px;
+        height:40px;
+        border: 1px solid rgb(180, 179, 179);
+        font-size: 16px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      }
+    }
+  } 
+  p.login__password{
+    font-size:14px;
+  }
+  .Login__password__form{ 
+    &__type{
+      .login__password__form__text{
+      .login__password__form__type{
+        width:300px;
+        height:40px;
+        border: 1px solid rgb(180, 179, 179);
+        font-size: 16px;
+        border-radius: 5px;
+        margin-bottom: 30px;
+      }
+      }
+    }
+  } 
+}
+
+
+.Login__content__button{
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+  .Login__content__btn{
+    height: 40px;
+    width: 300px;
+    border-radius: 5px;
+    background-color: #3CCACE;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .Login__content__topic__btn__next{
+      text-decoration: none;
+      color: white;
+      font-size: 18px;
+    }
+  }
+}
+

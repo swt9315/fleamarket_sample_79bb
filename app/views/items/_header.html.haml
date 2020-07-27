@@ -1,0 +1,18 @@
+.header__inner
+  .header__inner__main
+    .header__inner__main__logo
+      =image_tag "logo.png", alt: "FURIMA：", class: "header__inner__main__logo__img"
+    .header__inner__main__searchbox
+      .header__inner__main__searchbox__input
+        = form_with(url: root_path, local: true, method: :get, class: "header__inner__main__searchbox__input__search") do |form|
+          = form.text_field :keyword, placeholder: "キーワードから探す", class: "header__inner__main__searchbox__input__search__keyword"
+          = form.submit ".", class: "search-btn"
+          = image_tag "icon-search 1.png", alt: "検索", class: "search-btn__icon"
+      .header__inner__main__searchbox__btn
+  .header__inner__nav
+    .header__inner__nav__left
+      .header__inner__nav__left__cat 商品一覧
+      .header__inner__nav__left__brand 　 
+    .header__inner__nav__right
+      .header__inner__nav__right__login　ログイン
+      .header__inner__nav__right__new  新規会員登録

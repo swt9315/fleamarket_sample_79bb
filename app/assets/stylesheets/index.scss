@@ -1,430 +1,787 @@
-.New__content{
-  &__topic{
-    &__logo{
-      text-align: center;
-      margin-top:30px;
-      &__img{
-        height: 40px;
-        width: 120px;
-      }
-    }
-    &__info{
-      text-align: center;
-      p.registration__text{
-        font-size: 20px;
-        padding-bottom: 10px;
-        border-bottom: 1px solid rgb(233, 231, 231);
-      }
-      .registration__nickname__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.nickname{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:5px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__text{
-          }
-          &__type{
-            width:300px;
-            height:40px;
-            border: 1px solid rgb(180, 179, 179);
-            font-size: 16px;
-            border-radius: 5px;
-          }
-        }
-      }
-      .registration__email__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.email{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:5px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__text{
-          }
-          &__type{
-            width:300px;
-            height:40px;
-            border: 1px solid rgb(180, 179, 179);
-            font-size: 16px;
-            border-radius: 5px;
-          }
-        }
-      }
+//FURIMA特徴タイトル下のボーダー
+@mixin border{
+  text-align: center;
+  content: "";
+  width: 70px;
+  height: 4px;
+  background-color: #3CCACE;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  top:30px;
+}
+//ピックアップカテゴリーの黒字タイトル
+@mixin pick-black{
+  text-align: center;
+  padding-top: 80px;
+  font-size:28px;
+  line-height: 1.4;
+  font-weight: bold;
 
-      .registration__password__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.password{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:5px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__text{
-          }
-          &__type{
-            width:300px;
-            height:40px;
-            border: 1px solid rgb(180, 179, 179);
-            font-size: 16px;
-            border-radius: 5px;
-          }
-        }
-        p.registration__password__attention{
-          font-size: 12px;
-      }
-      }
-      .registration__repassword__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.password{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:5px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__text{
-          }
-          &__type{
-            width:300px;
-            height:40px;
-            border: 1px solid rgb(180, 179, 179);
-            font-size: 16px;
-            border-radius: 5px;
-          }
-        }
-      }
-      p.registration__sentense{
-        font-size:6px;
-        margin-bottom: 30px;
-      }
+}
+//ピックアップカテゴリーの青字タイトル
+@mixin pick-blue{
+  text-align:center;
+  font-size:28px;
+  line-height: 1.4;
+  font-weight: bold;
+  color: #3CCACE;
+}
+//ピックアップのグループ
+@mixin pick-group{
+  background-color: white;
+  padding:16px;
+  list-style: none;
+}
+//フッターの会社情報のリンク先それぞれ
+@mixin company{
+  text-align:center;
+  margin:20px;
+  cursor: pointer;
+}
+//フッターの会社情報のリンク先上のタイトル
+@mixin company-title{
+  font-weight:bold;
+  text-align:center;
+  margin:20px;
+  font-size:16px;
+}
+//FURIMAの特徴の青字数字
+@mixin number{
+  position:absolute;
+  top:0px;
+  left:0px;
+  color: white;
+  background-color: #3CCACE;
+  font-weight: bold;
+  padding: 10px 15px;
+  font-size: 24px;
+}
 
-      .registration__birthday__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.bir{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:10px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__text{
-            display: flex;
-            justify-content: center;
-          &__year{
-            &__birth{
-              width:84px;
-              height:40px;
-              border: 1px solid rgb(180, 179, 179);
-              font-size: 16px;
-              border-radius: 5px;
-            }
-          }
-          &__month{
-            &__birth{
-              width:84px;
-              height:40px;
-              border: 1px solid rgb(180, 179, 179);
-              font-size: 16px;
-              border-radius: 5px;
-              margin: 0 15px;
-            }
-          }
-          &__day{
-            &__birth{
-              width:84px;
-              height:40px;
-              border: 1px solid rgb(180, 179, 179);
-              font-size: 16px;
-              border-radius: 5px;
-            }
-          }
-        }
-      }
+*{
+box-sizing: border-box;
 
-      }
-
-
-      .registration__name__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.name{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:5px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__box{
-            display: flex;
-            justify-content: center;
-            &__sur{
-              &__name{
-                width:145px;
-                height:40px;
-                border: 1px solid rgb(180, 179, 179);
-                font-size: 16px;
-                border-radius: 5px;
-              }
-            }
-            &__main{
-              &__name{
-                width:145px;
-                height:40px;
-                border: 1px solid rgb(180, 179, 179);
-                font-size: 16px;
-                border-radius: 5px;
-                margin-left:10px;
-              }
-            }
-          }
-        }
-      }
-
-      .registration__kananame__form{
-        &__explain{
-          display: flex;
-          justify-content: center;
-          padding-bottom:0px;
-          p.kananame{
-            font-size: 14px;
-            padding-bottom:0px;
-            margin-right:5px;
-          }
-          p.absolute{
-            font-size:6px;
-            background-color: #ffb340;
-            color:white;
-            padding: 5px;
-            padding-bottom:0px;
-            border-radius: 10px;
-            height: 20px;
-          }
-        }
-        &__input{
-          &__box{
-            display: flex;
-            justify-content: center;
-            &__sur{
-              &__name{
-                width:145px;
-                height:40px;
-                border: 1px solid rgb(180, 179, 179);
-                font-size: 16px;
-                border-radius: 5px;
-              }
-            }
-            &__main{
-              &__name{
-                width:145px;
-                height:40px;
-                border: 1px solid rgb(180, 179, 179);
-                font-size: 16px;
-                border-radius: 5px;
-                margin-left:10px;
-              }
-            }
-          }
-        }
-      }
-
-
-      p.registration__re-registration{
-        font-size:10px;
-        margin-bottom: 30px;
-      }
-    }
-  
-      .New__content__topic__btn{
+.toppage{
+  //ヘッダー
+  .header{
+    padding-top: 15px;
+    &__inner{
+      padding:0px 60px;
+      &__main{
         display:flex;
         justify-content: center;
-        .New__content__topic__pushbtn{
-        background-color: #3CCACE;
-        height: 40px;
-        width: 300px;
-        border-radius: 5px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-          .New__content__topic__btn__next{
-          text-decoration: none;
-          color: white;
-          font-size:18px;
+        &__logo{
+          &__img{
+            height:40px;
+            width:120px;
+            cursor: pointer;
+          }
+        }
+        &__searchbox{
+          display:flex;
+          justify-content: center;
+          &__input{
+            &__search{
+              display:flex;
+              justify-content: right;
+              position:relative;
+              &__keyword{
+                width: calc(100vw - 350px);
+                height: 36px;
+                margin-left:30px;
+                font-size:16px;
+              }
+              .search-btn{
+                background-color: #3CCACE;
+                color: #3CCACE;;
+                border: 1px solid  #3CCACE;
+                width: 40px;}
+              .search-btn__icon{
+                position:absolute;
+                top:9px;
+                left:calc(100vw - 310px);
+                width:20px;
+                height:20px;
+                cursor: pointer;
+              }
+            }
           }
         }
       }
-  }
-}
-    
-.Login  
-  .Login__content{
-    &__topic{
-      border-bottom: 1px solid rgb(180, 179, 179);
-      margin-top: 30px;
-      &__logo{
-        text-align: center;
-        &__img{
-          height: 40px;
-          width: 120px;
-        }
-      }
-      p.Login__content__topic__sentense{
-        font-size: 16px;
-        text-align: center;
-      }
-      .Login__content__go-topic__button{
-        display: flex;
+    &__nav{
+      //ヘッダー下のカテゴリーボタン
+      display: flex;
+      justify-content: space-between;
+      margin: 10px;
+      &__left{
+        display:flex;
         justify-content: center;
-        margin-bottom: 50px;
-        .Login__content__go-topic__btn{
-          height: 40px;
-          width: 300px;
-          border-radius: 5px;
-          background-color: #3CCACE;
+        &__cat{
+          cursor: pointer;
+          font-size: 14px;
+          margin-right: 40px;
+        }
+        &__brand{
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+      &__right{
+        display:flex;
+        justify-content: center;
+        &__login{
+          cursor: pointer;
+          font-size: 14px;
+          margin-right: 20px;
+        }
+        &__new{
+          cursor: pointer;
+          font-size: 14px;
+        }
+      }
+    }
+    }
+  }
+  //人生を変えるフリマアプリ　メイン写真
+  .mainimage{
+    position: relative;
+    &__visual{
+      height: 560px;
+      width:100%;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      &__content{
+        font-size:60px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 150px;
+        left: 50px;
+      }
+      &__text{
+        font-size:26px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 320px;
+        left: 30px;
+        padding-top:0px;
+      }
+    }
+  }
+  //FURIMAが選ばれる３つの理由
+  .reason{
+    &__inner{
+      &__subtitle{
+        position:relative;
+        h2.subtitle{
+          text-align: center;
+          margin:50px 0px;
+        }
+        h2.border{
+          @include border;
+        }
+      }
+      &__introduction{
+        display: flex;
+        justify-content: space-between;
+        text-align: center;
+        width: 100%;
+        margin: 0 auto;
+          &__content1{
+            position:relative;
+            &__img{
+              &__picture{
+                height:30vw;
+                width:30vw;
+              }
+              &__num{
+               @include number;
+              }
+            }     
+            &__text{
+              font-size:20px;
+              font-weight: bold;
+              text-align:center;
+              margin:30px 0px;
+              span{
+                color:#3CCACE;
+              }
+            }
+            &__comments{
+              font-size:18px;
+              text-align:center;
+            }
+        }
+        &__content2{
+          &__img{
+            position:relative;
+            &__picture{
+              height:30vw;
+              width:30vw;
+            }
+            &__num{
+              @include number;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+            span{
+              color:#3CCACE;
+            }
+          }
+          &__comments{
+            font-size:18px;
+            text-align:center;
+          }
+        }
+        &__content3{
+          &__img{
+            position:relative;
+            &__picture{
+              height:30vw;
+              width:30vw;
+            }
+            &__num{
+              @include number;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+            span{
+              color:#3CCACE;
+            }
+          }
+          &__comments{
+            font-size:18px;
+            text-align:center;
+          }
+        }
+      }
+    }
+  }
+  //会員数日本一真ん中のイメージ写真
+  .middleimage{
+    position: relative;
+    margin-top: 100px;
+    &__visual{
+      height: 450px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      width:100%;
+      &__content{
+        font-size:60px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 150px;
+        left: 50px;
+      }
+      &__text{
+        font-size:26px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 250px;
+        left: 50px;
+        padding-top:0px;
+      }
+    }
+  }
+//フリマの特徴
+  .feauture{
+    &__inner{
+      &__subtitle{
+        position:relative;
+        h2.subtitle{
+          text-align: center;
+          margin:50px 0px;
+        }
+        h2.border{
+          @include border;
+        }
+      }
+      &__introduction{
+        width:100%;
+        display: flex;
+        justify-content: space-around;
+          &__content1{
+            &__img{
+              text-align: center;
+              &__picture{
+                height:30vh;
+                width:20vw;
+            }  
+          }   
+            &__text{
+              font-size:20px;
+              font-weight: bold;
+              text-align:center;
+              margin:30px 0px;
+            }
+            &__comments{
+              font-size:16px;
+              text-align:center;
+            }        
+      }
+        &__content2{
+          &__img{
+            text-align:center;
+            &__picture{
+              height:30vh;
+              width:20vw;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+          }
+          &__comments{
+            font-size:16px;
+            text-align:center;
+          }
+        }
+        &__content3{
+          &__img{
+            text-align: center;
+            &__picture{
+              height:30vh;
+              width:200vw;
+            }
+          }     
+          &__text{
+            font-size:20px;
+            font-weight: bold;
+            text-align: center;
+            margin:30px 0px;
+          }
+          &__comments{
+            font-size:16px;
+            text-align:center;
+          }
+        }
+      }
+    }
+  }
+  //ピックアップカテゴリー
+  .pick-ca{
+    background-color: #f8f8f8;
+    width:100%;
+    &__inner{
+      &__title{
+        p.pick-ca{
+          @include pick-black;
+        }
+        p.pick-new{
+          @include pick-blue;
+        }
+      }
+      &__topic{
+        &__main{
           display: flex;
-          align-items: center;
           justify-content: center;
-          &__next{
-            text-decoration: none;
-            color: white;
-            font-size: 18px;
+          cursor: pointer;
+          &--one{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-ca__name{
+                  font-size:16px;
+                }
+                .pick-ca__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-ca__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-ca__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-ca__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+          &--two{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-ca__name{
+                  font-size:16px;
+                }
+                .pick-ca__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-ca__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-ca__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-ca__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+          &--three{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-ca__name{
+                  font-size:16px;
+                }
+                .pick-ca__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-ca__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-ca__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-ca__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+          &--four{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-ca__name{
+                  font-size:16px;
+                }
+                .pick-ca__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-ca__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-ca__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-ca__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  //ピックアップブランド
+  .pick-bra{
+    background-color: #f8f8f8;
+    width:100%;
+    &__inner{
+      padding-bottom: 80px;
+      &__title{
+        p.pick-bra{
+          @include pick-black;
+          margin-top: 0px;
+        }
+        p.pick-new{
+          @include pick-blue;
+        }
+      }
+      &__topic{
+        &__main{
+          display: flex;
+          justify-content: center;
+          cursor: pointer;
+          &--one{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-bra__name{
+                  font-size:16px;
+                }
+                .pick-bra__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-bra__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-bra__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-bra__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+          &--two{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-bra__name{
+                  font-size:16px;
+                }
+                .pick-bra__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-bra__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-bra__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-bra__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+          &--three{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-bra__name{
+                  font-size:16px;
+                }
+                .pick-bra__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-bra__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-bra__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-bra__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+          &--four{
+            &__img{
+              &__picture{
+                width:200px;
+                height:200px;
+              }
+            }
+            &__content{
+              &__group{
+                @include pick-group;
+                li.pick-bra__name{
+                  font-size:16px;
+                }
+                .pick-bra__middle{
+                  display: flex;
+                  justify-content:space-between;
+                  li.pick-bra__middle__price{
+                    font-size:16px;
+                  }
+                  li.pick-bra__middle__star{
+                    font-size:16px;
+                  }
+                }
+                li.pick-bra__tax{
+                  font-size: 10px;
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+//下にあるイメージ画像　誰でも簡単人生をかえるフリマアプリ
+  .bottomimage{
+    position: relative;
+    margin-top: 0px;
+    &__visual{
+      height: 450px;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: top center;
+      width:100%;
+      &__content{
+        font-size:24px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 90px;
+        font-weight: bold;
+        text-align: center;
+        padding: 80px;
+      }
+      &__text{
+        font-size:32px;
+        color: white;
+        text-shadow: 0 0 5px rgba(0,0,0,0.4);
+        position: absolute;
+        top: 190px;
+        padding-top:0px;
+        text-align: center;
+        padding: 80px;
+      }
+    }
+  }
+  //企業案内
+  .bottom{
+    width:100%;
+    background-color:black;
+    color: white;
+    &__inner{
+      &__box{
+        padding:60px 50px 0px 50px;
+        display:flex;
+        justify-content: space-evenly;
+        font-size:12px;
+        &__content--one{
+          &--title1{
+            @include company-title;
+          }
+          &--click1{
+            @include company;
+          }
+          &--click2{
+            @include company;
+          }
+          &--click3{
+            @include company;
+          }
+          &--click4{
+            @include company;
+          }
+        }
+        &__content--two{
+          &--title2{
+            @include company-title;
+          }
+          &--click1{
+            @include company;
+          }
+          &--click2{
+            @include company;
+          }
+        }
+        &__content--three{
+          &--title3{
+            @include company-title;
+          }
+          &--click1{
+            @include company;
+          }
+          &--click2{
+            @include company;
+          }
+          &--click3{
+            @include company;
+          }
+        }
+      }
+      .bottom__inner__image{
+        &__img{
+          text-align:center;
+          &__logo{
+            width:150px;
+            height:45px;
+            cursor: pointer;
+          }
+        }
+        &__company{
+          text-align:center;
+          padding: 0px 0px 80px 0px;
         }
       }
     }
   }
 }
-.Login__info{
-  text-align: center;
-  p.login__address{
-    font-size:14px;
-  }
-  .Login__address__form{ 
-    &__type{
-      .login__address__form__text{
-      .login__address__form__type{
-        width:300px;
-        height:40px;
-        border: 1px solid rgb(180, 179, 179);
-        font-size: 16px;
-        border-radius: 5px;
-        margin-bottom: 30px;
-      }
-      }
-    }
-  } 
-  p.login__password{
-    font-size:14px;
-  }
-  .Login__password__form{ 
-    &__type{
-      .login__password__form__text{
-      .login__password__form__type{
-        width:300px;
-        height:40px;
-        border: 1px solid rgb(180, 179, 179);
-        font-size: 16px;
-        border-radius: 5px;
-        margin-bottom: 30px;
-      }
-      }
-    }
-  } 
-}
-
-
-.Login__content__button{
-  display: flex;
-  justify-content: center;
-  margin-bottom: 50px;
-  .Login__content__btn{
-    height: 40px;
-    width: 300px;
-    border-radius: 5px;
+//出品カメラボタン
+  .purchasebtn{
+    position:fixed;
+    bottom: 32px;
+    right: 32px;
+    width: 120px;
+    height: 120px;
     background-color: #3CCACE;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    .Login__content__topic__btn__next{
-      text-decoration: none;
-      color: white;
+    border-radius: 4%;
+    padding:15px;
+    text-align:center;
+    cursor: pointer;
+    &:hover{
+      opacity:90%;
+    }
+    
+    &__text{
       font-size: 18px;
+      color: white;
+    }
+    &__icon{
+      margin-top:5px;
+      &__camera{
+        width:55px;
+        height:55px;
+      }
     }
   }
 }
+
 
