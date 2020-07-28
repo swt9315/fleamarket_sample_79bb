@@ -102,38 +102,38 @@
             }
           }
         }
-      &__nav{
-        //ヘッダー下のカテゴリーボタン
-        display: flex;
-        justify-content: space-between;
-        margin: 10px;
-        &__left{
-          display:flex;
-          justify-content: center;
-          &__cat{
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 40px;
+        &__nav{
+          //ヘッダー下のカテゴリーボタン
+          display: flex;
+          justify-content: space-between;
+          margin: 10px;
+          &__left{
+            display:flex;
+            justify-content: center;
+            &__cat{
+              cursor: pointer;
+              font-size: 14px;
+              margin-right: 40px;
+            }
+            &__brand{
+              cursor: pointer;
+              font-size: 14px;
+            }
           }
-          &__brand{
-            cursor: pointer;
-            font-size: 14px;
+          &__right{
+            display:flex;
+            justify-content: center;
+            &__login{
+              cursor: pointer;
+              font-size: 14px;
+              margin-right: 20px;
+            }
+            &__new{
+              cursor: pointer;
+              font-size: 14px;
+            }
           }
         }
-        &__right{
-          display:flex;
-          justify-content: center;
-          &__login{
-            cursor: pointer;
-            font-size: 14px;
-            margin-right: 20px;
-          }
-          &__new{
-            cursor: pointer;
-            font-size: 14px;
-          }
-        }
-      }
       }
     }
     //パンくず機能
@@ -465,22 +465,22 @@
                 margin-top:10px;     
               }
               //購入ボタン
-          .perchase{
-            text-align: center;
-            background: #ffb340;
-            border: 1px solid #ffb340;
-            width: 300px;
-            border-radius: 100px;
-            margin-top:60px;
-            .perchase-btn{
-              font-size: 18px;
-              line-height: 48px;
-              color: #fff;
-              font-size: 18px;
-              margin-top:10px; 
-              text-decoration:none;
+            .perchase{
+              text-align: center;
+              background: #ffb340;
+              border: 1px solid #ffb340;
+              width: 300px;
+              border-radius: 100px;
+              margin-top:60px;
+              .perchase-btn{
+                font-size: 18px;
+                line-height: 48px;
+                color: #fff;
+                font-size: 18px;
+                margin-top:10px; 
+                text-decoration:none;
+              }
             }
-          }
           }
         }
       }    
