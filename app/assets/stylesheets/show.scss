@@ -623,11 +623,10 @@
                 }
               }
             }
+          }
         }
       }
     }
-  
-}
     
 //下にあるイメージ画像　誰でも簡単人生をかえるフリマアプリ
   .bottomimage{
@@ -747,8 +746,7 @@
     cursor: pointer;
     &:hover{
       opacity:90%;
-    }
-    
+    }   
     &__text{
       font-size: 18px;
       color: white;
@@ -761,7 +759,4 @@
       }
     }
   }
-
 }
-
-  
