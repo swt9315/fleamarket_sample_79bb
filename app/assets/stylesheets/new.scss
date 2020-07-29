@@ -68,15 +68,27 @@
           font-weight: bold;
         }
         &__image{
+          text-align:center;
           &__explain{
             display: flex;
             justify-content: center;
             padding-bottom:0px;
-            p.name{
+            p.image{
               @include title;
             }
             p.absolute{
               @include absolute;
+            }
+          }
+          .hidden-content{
+            width:660px;
+            height:150px;
+            background-color: rgb(244, 244, 244);
+            border:1px dotted rgb(182, 179, 179);
+            margin-bottom:50px;
+            p.dragdrop{
+              font-size:12px;
+              margin-top:40px;
             }
           }
           p.img-explain{
@@ -296,6 +308,33 @@
             @include btn;
           }
         }
+      }
+    }
+  }
+  .edit__footer{
+    background-color: rgb(244, 244, 244);
+    &__box{
+      border-top: 1px solid rgb(202, 199, 199);
+      display: flex;
+      justify-content:center;
+      
+      p.footer-rule{
+        margin:50px 10px;
+        font-size:12px;
+      }
+    }
+    &__img{
+      text-align:center;
+      &__logo{
+        width:150px;
+        height:50px;  
+      }
+      p.company{
+        font-size:12px;
+        color:rgb(158, 158, 158);
+        padding-bottom:50px;
+  
+
       }
     }
   }

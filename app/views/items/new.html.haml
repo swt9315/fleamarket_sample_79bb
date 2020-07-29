@@ -1,6 +1,7 @@
 .edit
   .edit__box
     .edit__box__logo
+      = link_to root_path do
       =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
     .edit__box__content
       .edit__box__content__inner
@@ -10,8 +11,9 @@
           .edit__box__content__inner__image__explain
             %p.image 商品画像
             %p.absolute 必須
-          %p.img-explain ※最大10枚まで表示可能です。
+          %p.img-explain ※最大10枚までアップロード可能です。
           .hidden-content
+            %p.dragdrop  ドラッグアンドドロップ<br>またはクリックしてファイルをダウンロード
             -#= form_with local:true , root_path,class"img-picture"do |f|
               -#= f.fields_for :images do |i|
               -#= i.file_field :image, class: "hidden-field"
@@ -38,7 +40,7 @@
             -#商品の金額
         .edit__box__content__inner__price
           .edit__box__content__inner__price__explain
-            %p.price 商品名
+            %p.price 販売価格
             %p.absolute 必須
           .edit__box__content__inner__price__form__input
           = form_with local: true , class: "edit__box__content__inner__price__form__input__text" do |f|
@@ -97,31 +99,14 @@
           = link_to "出品する", root_path, method: :get, class: 'edit-btn'
         .edit__box__btn__inner__return
           = link_to "戻る", root_path, method: :get, class: 'return-btn'
-  .bottomimage
-    =image_tag "bg-appBanner-pict.jpg", alt: "no-image", class: "bottomimage__visual"
-    .bottomimage__visual__content 誰でもかんたん、人生を変えるフリマアプリ
-    .bottomimage__visual__text  今すぐ無料ダウンロード！
-  -# 企業概要
-.bottom
-  .bottom__inner
-    .bottom__inner__box
-      .bottom__inner__box__content--one
-        .bottom__inner__box__content--one--title1  FURIMAについて
-        .bottom__inner__box__content--one--click1 会社概要（会社運営）
-        .bottom__inner__box__content--one--click2 プライバシーポリシー
-        .bottom__inner__box__content--one--click3 FURIMA利用規約
-        .bottom__inner__box__content--one--click4 ポイントに関する特約
-      .bottom__inner__box__content--two
-        .bottom__inner__box__content--two--title2  FURIMAを見る
-        .bottom__inner__box__content--two--click1 カテゴリー一覧
-        .bottom__inner__box__content--two--click2 ブランド一覧
-      .bottom__inner__box__content--three
-        .bottom__inner__box__content--three--title3  ヘルプ＆ガイド
-        .bottom__inner__box__content--three--click1 FURIMAガイド
-        .bottom__inner__box__content--three--click2 FURIMAロゴ利用ガイドライン
-        .bottom__inner__box__content--three--click3 お知らせ
-    .bottom__inner__image
-      .bottom__inner__image__img
-        =image_tag "logo-white.png", alt: "no-image", class: "bottom__inner__image__img__logo"
-      .bottom__inner__image__company  ©️FURIMA
+  .edit__footer
+    .edit__footer__box
+      %p.footer-rule プライバシーポリシー
+      %p.footer-rule FURIMA利用規約
+      %p.footer-rule 特定商取引に関する表記
+    .edit__footer__img
+      =image_tag "logo-white.png", alt: "FURIMA：", class: "edit__footer__img__logo"
+      %p.company  ©️FURIMA
+    
+
 
