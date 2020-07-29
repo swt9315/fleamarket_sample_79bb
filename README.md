@@ -44,17 +44,19 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :products
+- has_many :items
 - has_one :card
 - has_one :destination
 
 ## Cardテーブル
 
+使用gem
+
+- pay.jp
+
 |Column|Type|Options|
 |------|----|-------|
-|card_number|integer|null: false|
-|validated_code|integer|null: false|
-|security_code|integer|null: false|
+|customer_token|string|null: false|
 |user_id|references|null: false, foreign_key: true|
 
 ### Association
@@ -81,9 +83,10 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## Productテーブル
+## Itemテーブル
 
 以下のカラムはenumを使用
+- prefecture
 - condittion
 - postage_user
 - preparation
@@ -99,7 +102,9 @@ Things you may want to cover:
 |prefecture_id (active_hash)|integer|null: false|
 |preparation|integer|null: false, default: 0||
 |price|integer|null: false|
-|user_id|references|null: false, foreign_key: true|
+|seller_id|references|null: false, foreign_key: true|
+|buyer_id|references|foreign_key: true|
+|closed_at|datetime||
 
 ### Association
 
@@ -113,13 +118,17 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |image|string|null: false|
-|product_id|references|null: false, foreign_key: true|
+|item_id|references|null: false, foreign_key: true|
 
 ### Association
 
-- belongs_to :product
+- belongs_to :item
 
 ## Categoryテーブル
+
+使用gem
+
+- ancestry
 
 |Column|Type|Options|
 |------|----|-------|
@@ -128,4 +137,4 @@ Things you may want to cover:
 
 ### Association
 
-- has_many :products
+- has_many :items
