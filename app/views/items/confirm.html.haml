@@ -1,0 +1,41 @@
+.confirm
+  .confirm__header
+    =image_tag "logo.png", alt: "FURIMA：", class: "confirm__header__logo"
+  .confirm__inner
+    .confirm__inner__box
+      .confirm__inner__box__subject
+        %p.confirm-text 購入内容の確認
+      .confirm__inner__box__main
+        .confirm__inner__box__main__img
+          =image_tag "curry.png", alt: "FURIMA：", class: "confirm__inner__box__main__img__picture"
+        .confirm__inner__box__main__information
+          .confirm__inner__box__main__information__name 商品名  カレーライスジャケット
+          .confirm__inner__box__main__information__price  送料込み（税込み）¥7800
+        .confirm__inner__box__main__sum
+          .confirm__inner__box__main__sum__pay  支払い金額
+          .confirm__inner__box__main__sum__price  ¥7800
+        .confirm__inner__box__main__pay
+          .confirm__inner__box__main__pay__style  支払い方法
+          .confirm__inner__box__main__pay__way
+            = link_to "＋登録してください", root_path, method: :get, class: 'credit-btn'
+        .confirm__inner__box__main__address
+          .confirm__inner__box__main__address__style  配送先
+          .confirm__inner__box__main__address__bound  愛知県名古屋市中区栄３丁目×××
+        .confirm__box__btn
+          .confirm__box__btn__inner
+            .confirm__box__btn__inner__buy
+              = link_to "購入する", root_path, method: :get, class: 'buy-btn'
+            .confirm__box__btn__inner__return
+              = link_to "戻る", root_path, method: :get, class: 'return-btn'
+  .confirm__footer
+    .confirm__footer__box
+      %p.footer-rule プライバシーポリシー
+      %p.footer-rule FURIMA利用規約
+      %p.footer-rule 特定商取引に関する表記
+    .confirm__footer__img
+      =image_tag "logo-white.png", alt: "FURIMA：", class: "confirm__footer__img__logo"
+      %p.company  ©️FURIMA
+    
+
+
+      
