@@ -1,0 +1,341 @@
+//必須項目のアイコン
+@mixin absolute{
+  font-size:6px;
+  background-color: #ffb340;
+  color:white;
+  padding: 5px 5px 20px 5px;
+  margin-left:5px;
+  border-radius: 10px;
+  height: 20px;
+}
+//入寮項目名
+@mixin title{
+  font-size: 14px;
+  padding-bottom:0px;
+  margin-right:5px;
+}
+//入力項目の打ち込み箇所
+@mixin text-content{
+  width:300px;
+  height:40px;
+  border: 1px solid rgb(180, 179, 179);
+  font-size: 16px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+//ボタン
+@mixin btn{
+  font-size: 18px;
+  line-height: 48px;
+  color: #fff;
+  font-size: 18px;
+  margin-top:10px; 
+  text-decoration:none;
+}
+//ボタンの親要素
+@mixin parent-btn{
+  text-align: center;
+  width: 300px;
+  border-radius: 100px;
+  margin-top:60px;
+  cursor: pointer;
+}
+
+.edit{
+  &__box{
+    &__logo{
+      text-align:center;
+      padding:30px 0px;
+      &__img{
+        width:150px;
+        height:50px;
+      }
+    }
+    &__content{
+      background-color: rgb(244, 244, 244);
+      text-align: center;
+      padding: 30px 0px 0px 0px;
+      width:100vw;
+      &__inner{
+        background-color: white;
+        text-align:center;
+        padding:0px 20px;
+        width:700px;
+        margin: 0 auto; 
+        p.edit-title{
+          font-size:24px;
+          padding-top:50px;
+          font-weight: bold;
+        }
+        &__image{
+          text-align:center;
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.image{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          .hidden-content{
+            width:660px;
+            height:150px;
+            background-color: rgb(244, 244, 244);
+            border:1px dotted rgb(182, 179, 179);
+            margin-bottom:50px;
+            p.dragdrop{
+              font-size:12px;
+              margin-top:40px;
+            }
+          }
+          p.img-explain{
+            font-size: 12px;
+            padding-bottom:0px;
+            margin-right:5px;
+          }
+        }
+        &__name{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.name{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__introduction{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.introduction{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                width:600px;
+                height:300px;
+                border: 1px solid rgb(180, 179, 179);
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+              }
+            }
+          }
+        }
+        &__price{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.price{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__category{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.category{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__brand{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.brand{
+              @include title;
+            }
+            p.absolute{
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__condition{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.condition{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__postage{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.postage{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__prefecture{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.prefecture{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              &__type{
+                @include text-content;
+              }
+            }
+          }
+        }
+        &__preparation{
+          &__explain{
+            display: flex;
+            justify-content: center;
+            padding-bottom:0px;
+            p.preparation{
+              @include title;
+            }
+            p.absolute{
+              @include absolute;
+            }
+          }
+          &__form__input{
+            &__text{
+              margin-bottom:0px;
+              &__type{
+                @include text-content;
+                margin-bottom:100px;
+              }
+            }
+          }
+        }
+      }
+    }
+    .edit__box__btn{
+      &__inner{
+        display: flex;
+        flex-direction:column;
+        align-items: center;
+        background-color: rgb(244, 244, 244);
+        padding-bottom:50px;
+        &__edit{
+          @include parent-btn;
+          background: #3CCACE;
+          border: 1px solid #3CCACE;
+          .edit-btn{
+            @include btn;
+          }
+        }
+        &__return{
+          @include parent-btn;
+          background: #ffb340;
+          border: 1px solid #ffb340;
+          .return-btn{
+            @include btn;
+          }
+        }
+      }
+    }
+  }
+  .edit__footer{
+    background-color: rgb(244, 244, 244);
+    &__box{
+      border-top: 1px solid rgb(202, 199, 199);
+      display: flex;
+      justify-content:center;
+      
+      p.footer-rule{
+        margin:50px 10px;
+        font-size:12px;
+      }
+    }
+    &__img{
+      text-align:center;
+      &__logo{
+        width:150px;
+        height:50px;  
+      }
+      p.company{
+        font-size:12px;
+        color:rgb(158, 158, 158);
+        padding-bottom:50px;
+  
+
+      }
+    }
+  }
+}
