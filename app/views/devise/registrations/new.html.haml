@@ -1,0 +1,70 @@
+.New__content
+  .New__content__topic
+    .New__content__topic__logo
+      = link_to root_path do
+        =image_tag "logo.png", alt: "FURIMA：", class: "New__content__topic__logo__img"
+    = form_with model: @user, url: user_registration_path, local: true do |f|
+      .New__content__topic__info
+        %p.registration__text
+          会員情報入力
+          //= ニックネーム
+        .registration__nickname__form
+          .registration__nickname__form__explain
+            %p.nickname ニックネーム
+            %p.absolute 必須
+          .registration__nickname__form__input
+            = f.text_field :name, class: "registration__nickname__form__input__type form-padding", placeholder: "(例)フリマ太郎"
+            //= メールアドレス
+        .registration__email__form
+          .registration__email__form__explain
+            %p.email メールアドレス
+            %p.absolute 必須
+          .registration__email__form__input
+            = f.email_field :email, class: "registration__email__form__input__type form-padding", placeholder: "PC.携帯どちらでも可"
+            //= パスワード
+        .registration__password__form
+          .registration__password__form__explain
+            %p.password パスワード
+            %p.absolute 必須
+          .registration__password__form__input
+            = f.password_field :password, class: "registration__password__form__input__type form-padding", placeholder: "7文字以上の半角英数字"
+          %p.registration__password__attention ※英字と数字の両方を含めて、設定してください。
+          //= パスワード（確認用）
+        .registration__repassword__form
+          .registration__repassword__form__explain
+            %p.password パスワード(確認用)
+            %p.absolute 必須
+          .registration__repassword__form__input
+            = f.password_field :password_confirmation, class: "registration__repassword__form__input__type form-padding", placeholder: "再度パスワードを入力してください"
+        %p.registration__sentense 安心・安全にご利用いただくために、お客さまの本人情報の登録にご協力ください。他のお客さまに公開されることはありません。
+        //= 誕生日
+        .registration__birthday__form
+          .registration__birthday__form__explain
+            %p.bir お誕生日
+            %p.absolute 必須
+          .registration__birthday__form__input
+            .registration__birthday__form__input__text
+              = f.number_field :birthday_year, class: "registration__birthday__form__input__text__year__birth form-padding form-padding", placeholder: "西暦", min: 1900, max: 2020
+              = f.number_field :birthday_month, class: "registration__birthday__form__input__text__month__birth form-padding", placeholder: "月", min: 1, max: 12
+              = f.number_field :birthday_day, class: "registration__birthday__form__input__text__day__birth form-padding", placeholder: "日", min: 1, max: 31
+        //= お名前（全角）
+        .registration__name__form
+          .registration__name__form__explain
+            %p.name お名前（全角）
+            %p.absolute 必須
+          .registration__name__form__input
+            .registration__name__form__input__box
+              = f.text_field :family_name, class: "registration__name__form__input__box__sur__name form-padding", placeholder: "(例)降間"
+              = f.text_field :first_name, class: "registration__name__form__input__box__main__name form-padding", placeholder: "(例)公彦"  
+        //= お名前（カナ）     
+        .registration__kananame__form
+          .registration__kananame__form__explain
+            %p.kananame お名前（カナ）
+            %p.absolute 必須
+          .registration__kananame__form__input
+            .registration__kananame__form__input__box
+              = f.text_field :family_name_kana, class: "registration__kananame__form__input__box__sur__name form-padding", placeholder: "(例)フリマ", pattern: "(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*"
+              = f.text_field :first_name_kana, class: "registration__kananame__form__input__box__main__name form-padding", placeholder: "(例)キミヒコ", pattern: "(?=.*?[\u30A1-\u30FC])[\u30A1-\u30FC\s]*"
+        %p.registration__re-registration ※ 本人情報は正しく入力してください。会員登録後、修正するにはお時間を頂く場合があります。
+        .New__content__topic__btn
+          = f.submit "登 録", class: 'New__content__topic__btn__next New__content__topic__pushbtn'

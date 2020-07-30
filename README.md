@@ -46,7 +46,7 @@ Things you may want to cover:
 
 - has_many :products
 - has_one :card
-- has_one :destination
+- has_one :address
 
 ## Cardテーブル
 
@@ -61,14 +61,10 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## Destinationテーブル
+## Addressテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
 |post_code|integer|null: false|
 |prefecture_id (active_hash)|integer|null: false|
 |city|string|null: false|

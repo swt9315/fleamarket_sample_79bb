@@ -319,15 +319,17 @@
         height: 40px;
         width: 300px;
         border-radius: 5px;
-        display: flex;
+        font-size: 17px;
         align-items: center;
         justify-content: center;
-          .New__content__topic__btn__next{
-          text-decoration: none;
-          color: white;
-          font-size:18px;
-          }
+        color: white;
+        border: none;
+        cursor: pointer;
         }
       }
   }
+}
+
+.form-padding {
+  padding-left: 10px;
 }
