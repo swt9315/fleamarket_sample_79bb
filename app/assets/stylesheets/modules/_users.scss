@@ -1,4 +1,3 @@
-
 .Header {
   width:100%;
   height: 150px;
@@ -69,28 +68,17 @@
       justify-content: space-around;;
       &--link {
         text-decoration: none;
-
-        &__searchCategory {
-        }
         &__searchCategory:hover {
           opacity: 0.4;
-        }
-        &__searchBrand {
         }
         &__searchBrand:hover {
           opacity: 0.4;
         }
-        &__news {
-        }
         &__news:hover {
           opacity: 0.4;
         }
-        &__todo {
-        }
         &__todo:hover {
           opacity: 0.4;
-        }
-        &__mypage {
         }
         &__mypage:hover {
           opacity: 0.4;
@@ -140,8 +128,6 @@
             border-width: 2px;
             border-bottom-style: solid;
             border-bottom-color: #eeeeee;
-
-                
             padding: 0 15px;
           }
           // マウスオーバー時の背景色を指定する
