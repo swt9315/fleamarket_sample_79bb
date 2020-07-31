@@ -1,0 +1,34 @@
+.Footer
+  .Footer__image
+  .Footer__inner
+    .Footer__inner__contents
+      %ul.Footer__inner__contents--title1
+        FURIMAについて
+        = link_to "#", class: "Footer__inner__contents--title1--link" do
+          %li.Footer__inner__contents--title1--link--text 会社概要（運営会社）
+        = link_to "#", class: "Footer__inner__contents--title1--link" do
+          %li.Footer__inner__contents--title1--link--text プライバシーポリシー
+        = link_to "#", class: "Footer__inner__contents--title1--link" do
+          %li.Footer__inner__contents--title1--link--text FURIMA利用規約
+        = link_to "#", class: "Footer__inner__contents--title1--link" do
+          %li.Footer__inner__contents--title1--link--text ポイントに関する特約
+      %ul.Footer__inner__contents--title2
+        FURIMAを見る
+        = link_to "#", class: "Footer__inner__contents--title2--link" do
+          %li.Footer__inner__contents--title2--link--text カテゴリ一覧
+        = link_to "#", class: "Footer__inner__contents--title2--link" do
+          %li.Footer__inner__contents--title2--link--text ブランド一覧
+      %ul.Footer__inner__contents--title3
+        ヘルプ＆ガイド
+        = link_to "#", class: "Footer__inner__contents--title3--link" do
+          %li.Footer__inner__contents--title3--link--text FURIMAガイド
+        = link_to "#", class: "Footer__inner__contents--title3--link" do
+          %li.Footer__inner__contents--title3--link--text FURIMAロゴ利用ガイドライン
+        = link_to "https://master.tech-camp.in/", class: "Footer__inner__contents--title3--link" do
+          %li.Footer__inner__contents--title3--link--text お知らせ
+  .Footer__logo
+    .Footer__logo__box
+      = image_tag "logo-white.png", alt: "FURIMA：", class: "Footer__logo__box__image"
+    .Footer__logo__bottom
+      %p.Footer__logo__bottom--copyright ©
+      %p.Footer__logo__bottom--text FURIMA
