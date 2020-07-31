@@ -295,7 +295,7 @@
         &__edit{
           @include parent-btn;
           background: #3CCACE;
-          border: 1px solid #3CCACE;;
+          border: 1px solid #3CCACE;
           .edit-btn{
             @include btn;
           }

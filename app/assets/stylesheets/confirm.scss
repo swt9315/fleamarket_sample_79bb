@@ -1,0 +1,194 @@
+//購入確認内容の親要素部分
+@mixin subject{
+  display:flex;
+  padding:40px 0px;
+  border-bottom: 1px solid rgb(235, 231, 231);
+}
+//ボタン
+@mixin btn{
+  font-size: 18px;
+  line-height: 48px;
+  color: #fff;
+  font-size: 18px;
+  margin-top:10px; 
+  text-decoration:none;
+}
+//ボタンの親要素
+@mixin parent-btn{
+  text-align: center;
+  width: 300px;
+  border-radius: 100px;
+  margin-top:60px;
+  cursor: pointer;
+}
+.confirm{
+  background-color: rgb(244, 244, 244);
+  &__header{
+    text-align:center;
+    padding:60px 0px 10px 0px;
+    &__logo{
+      width:150px;
+      height:50px;
+    }
+  }
+  &__inner{
+    background-color: rgb(244, 244, 244);
+    text-align: center;
+    padding: 30px 0px 0px 0px;
+    width:100vw;
+    &__box{
+      background-color: white;
+      text-align:center;
+      padding:40px 20px 0px 20px;
+      width:700px;
+      margin: 0 auto; 
+      &__subject{
+        p.confirm-text{
+          font-size:24px;
+          font-weight:bold;
+        }
+      } 
+      &__main{
+        padding:50px 150px;
+        &__content{
+          justify-content:center;
+          @include subject;
+          border-top: 1px solid rgb(235, 231, 231);
+          &__img{
+            &__picture{
+              width:100px;
+              height:100px;
+              border-radius: 10px;
+            }
+          }
+          &__information{
+            &__name{
+              text-align:left;
+              margin-left:50px;
+              font-size:14px;
+            } 
+            &__price{
+              text-align:left;
+              margin-left:50px;
+              font-size:12px;
+              margin-top:20px;
+            } 
+          }
+        }
+        &__sum{
+          justify-content: space-between;
+          @include subject;
+          &__pay{
+            font-weight:bold;
+            font-size:18px;
+          } 
+          &__price{
+            font-weight:bold;
+            font-size:18px;
+            margin-left:20px;
+          } 
+        }
+        &__pay{
+          flex-direction:column;
+          @include subject;
+          text-align:left;
+          &__style{
+            font-weight:bold;
+            margin-bottom:20px;
+            font-size:14px;
+          } 
+          &__way{
+            .credit-btn{
+              text-decoration:none;
+              color: #3CCACE;
+              font-size:12px;
+            }
+          } 
+          .pay-credit{
+            display:flex;
+            flex-direction:column;
+            text-align:left;
+            .pay-card{
+              margin-bottom:2px;
+              font-size:12px;          
+            }
+            .pay-number{
+              margin-bottom:2px;
+              font-size:12px;
+            }
+            .pay-date{
+              font-size:12px;
+            }
+          }
+        }
+        &__address{
+          @include subject;
+          flex-direction:column;
+          text-align: left;
+          &__style{
+            font-weight:bold;
+            font-size:14px;
+            margin-bottom:20px;
+          } 
+          &__bound{
+            text-decoration:none;
+            font-size:12px;
+          } 
+        }
+        p.buy-attention{
+          font-size:14px;
+          padding:30px 0px 60px 0px;
+          color:rgb(158, 157, 157);
+          text-align:left;
+        }
+        .confirm__box__btn{
+          &__inner{
+            display: flex;
+            flex-direction:column;
+            align-items: center;
+            background-color:white;
+            padding-bottom:50px;
+            &__buy{
+              @include parent-btn;     
+              background-color:#3CCACE;              
+              .buy-btn{
+                @include btn;
+                background-color:#3CCACE;
+              }            
+            }
+            &__return{
+              @include parent-btn;
+              background-color:#ffb340;
+              .return-btn{
+                @include btn;
+                background-color:#ffb340;
+              }
+            }
+          }          
+        }
+      }
+    }
+  }
+  &__footer{
+    &__box{
+      display: flex;
+      justify-content:center; 
+      p.footer-rule{
+        margin:50px 10px;
+        font-size:12px;
+      }
+    }
+    &__img{
+      text-align:center;
+      &__logo{
+        width:150px;
+        height:50px;  
+      }
+      p.company{
+        font-size:12px;
+        color:rgb(214, 210, 210);
+        padding-bottom:50px;
+      }
+    }
+  }
+}
