@@ -1,0 +1,49 @@
+.New__content
+  .New__content__topic
+    .New__content__topic__logo
+      = link_to root_path do
+        = image_tag "logo.png", alt: "FURIMA：", class: "New__content__topic__logo__img"
+    = form_with model: @address, local: true do |f|
+      .New__content__topic__info
+        %p.registration__title
+          住所情報登録
+          = render 'layouts/error_form', locals: { user: @user }
+        .registration__form
+          .registration__form__label
+            %p.title 郵便番号
+            %p.require 必須
+          .registration__form__input
+            = f.text_field :post_code, class: "registration__form__input__type form-padding", placeholder: "例）123-4567"
+        .registration__form
+          .registration__form__label
+            %p.title 都道府県
+            %p.require 必須
+          .registration__form__input
+            -# = f.text_field :post_code, class: "registration__form__input__type form-padding"
+            = f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: false}, {class: "registration__form__input__type form-padding"}
+        .registration__form
+          .registration__form__label
+            %p.title 市区町村
+            %p.require 必須
+          .registration__form__input
+            = f.text_field :city, class: "registration__form__input__type form-padding", placeholder: "例）大阪市中央区"
+        .registration__form
+          .registration__form__label
+            %p.title 番地
+            %p.require 必須
+          .registration__form__input
+            = f.text_field :house_number, class: "registration__form__input__type form-padding", placeholder: "例）難波5-1-60"
+        .registration__form
+          .registration__form__label
+            %p.title 建物名
+            %p.any 任意
+          .registration__form__input
+            = f.text_field :building_name, class: "registration__form__input__type form-padding", placeholder: "例）なんばスカイオ15階"
+        .registration__form
+          .registration__form__label
+            %p.title 電話番号
+            %p.require 必須
+          .registration__form__input
+            = f.text_field :phone_number, class: "registration__form__input__type form-padding", placeholder: "例）09012345678"
+        .New__content__topic__btn
+          = f.submit "新規登録", class: 'New__content__topic__btn__next New__content__topic__pushbtn'
