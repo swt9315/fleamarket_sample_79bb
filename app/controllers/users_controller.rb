@@ -1,5 +1,6 @@
 class UsersController < ApplicationController
-  
+  before_action :user
+
   def index
   end
 
@@ -9,4 +10,10 @@ class UsersController < ApplicationController
   def update
   end
 
+  private
+  
+  def set_user
+    @user = User.find(params[:id])
+  end
+  
 end
