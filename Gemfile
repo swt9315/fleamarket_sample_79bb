@@ -71,3 +71,5 @@ end
 gem 'devise'
 
 gem 'active_hash', '~> 2.3.0'
+
+gem 'font-awesome-sass', '~> 5.4.1'
