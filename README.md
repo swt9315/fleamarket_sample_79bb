@@ -46,7 +46,7 @@ Things you may want to cover:
 
 - has_many :items
 - has_one :card
-- has_one :destination
+- has_one :address
 
 ## Cardテーブル
 
@@ -63,18 +63,14 @@ Things you may want to cover:
 
 - belongs_to :user
 
-## Destinationテーブル
+## Addressテーブル
 
 |Column|Type|Options|
 |------|----|-------|
-|family_name|string|null: false|
-|first_name|string|null: false|
-|family_name_kana|string|null: false|
-|first_name_kana|string|null: false|
 |post_code|integer|null: false|
-|prefecture_id (active_hash)|integer|null: false|
+|prefecture_id (active_hash)|string|null: false|
 |city|string|null: false|
-|address|string|null: false|
+|house_number|string|null: false|
 |building_name|string||
 |phone_number|string||
 |user_id|references|null: false, foreign_key: true|
@@ -99,7 +95,7 @@ Things you may want to cover:
 |brand|string||
 |condition|integer|null: false, default: 0|
 |postage_user|integer|null: false, default: 0||
-|prefecture_id (active_hash)|integer|null: false|
+|prefecture_id (active_hash)|string|null: false|
 |preparation|integer|null: false, default: 0||
 |price|integer|null: false|
 |seller_id|references|null: false, foreign_key: true|

@@ -133,6 +133,9 @@ box-sizing: border-box;
           cursor: pointer;
           font-size: 14px;
           margin-right: 20px;
+          &--link {
+            text-decoration: none;
+          }
         }
         &__new{
           cursor: pointer;
