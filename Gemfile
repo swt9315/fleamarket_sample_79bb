@@ -28,8 +28,12 @@ gem 'jbuilder', '~> 2.7'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.2', require: false
 
+gem 'active_hash', '~> 2.3.0'
+gem 'carrierwave', '~> 0.11.2'
+gem 'devise'
+gem 'fog-aws'
 gem 'font-awesome-sass', '~> 5.4.1'
-gem "haml-rails", "~> 2.0"
+gem 'haml-rails', '~> 2.0'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -68,9 +72,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
-
-gem 'devise'
-
-gem 'active_hash', '~> 2.3.0'
-
-gem 'font-awesome-sass', '~> 5.4.1'
