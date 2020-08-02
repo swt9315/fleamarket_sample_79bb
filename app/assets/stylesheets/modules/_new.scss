@@ -22,6 +22,8 @@
   font-size: 16px;
   border-radius: 5px;
   cursor: pointer;
+  margin-bottom:30px;
+  margin-top:5px;
 }
 //ボタン
 @mixin btn{
@@ -138,6 +140,8 @@
                 font-size: 16px;
                 border-radius: 5px;
                 cursor: pointer;
+                margin-bottom:30px;
+                margin-top:5px;
               }
             }
           }
@@ -155,9 +159,23 @@
             }
           }
           &__form__input{
+            display:flex;
+            justify-content:center;
+            p.yen{
+              font-size:28px;
+              margin-right:20px;
+              color:rgb(170, 169, 169);
+            }
             &__text{
               &__type{
-                @include text-content;
+                width:260px;
+                height:40px;
+                border: 1px solid rgb(180, 179, 179);
+                font-size: 16px;
+                border-radius: 5px;
+                cursor: pointer;
+                margin-bottom:30px;
+                margin-top:5px;
               }
             }
           }
@@ -216,7 +234,9 @@
           &__form__input{
             &__text{
               &__type{
+                #item_condition{
                 @include text-content;
+                }
               }
             }
           }
@@ -236,7 +256,9 @@
           &__form__input{
             &__text{
               &__type{
+                #item_postage_user{
                 @include text-content;
+                }
               }
             }
           }
@@ -256,7 +278,9 @@
           &__form__input{
             &__text{
               &__type{
-                @include text-content;
+                #item_prefecture_id{
+                  @include text-content;
+                }
               }
             }
           }
@@ -277,8 +301,10 @@
             &__text{
               margin-bottom:0px;
               &__type{
+                #item_preparation{
                 @include text-content;
                 margin-bottom:100px;
+                }
               }
             }
           }

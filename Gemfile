@@ -72,3 +72,10 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'devise'
+
+gem 'active_hash', '~> 2.3.0'
+
+gem 'font-awesome-sass', '~> 5.4.1'
+

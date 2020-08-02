@@ -1,9 +1,10 @@
 .edit
   .edit__box
     .edit__box__logo
-      = link_to root_path do
+      = link_to root_path 
       =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
     .edit__box__content
+    = form_with model: @item, url: items_path,local: true, method: :post, class: "edit__box__content" do |f|
       .edit__box__content__inner
         %p.edit-title 商品情報の入力
         -#商品名
@@ -36,15 +37,16 @@
             %p.absolute 必須
           .edit__box__content__inner__introduction__form__input
           = form_with local: true , class: "edit__box__content__inner__introduction__form__input__text" do |f|
-            = f.text_area :name, class: "edit__box__content__inner__introduction__form__input__text__type", placeholder: "(例)2年前に購入した、一番人気のケルプタンカラーのジャケットです。お店で試着して以来着用しておらずタグもついています。"
+            = f.text_area :introduction, class: "edit__box__content__inner__introduction__form__input__text__type", placeholder: "(例)2年前に購入した、一番人気のケルプタンカラーのジャケットです。お店で試着して以来着用しておらずタグもついています。"
             -#商品の金額
         .edit__box__content__inner__price
           .edit__box__content__inner__price__explain
             %p.price 販売価格
             %p.absolute 必須
           .edit__box__content__inner__price__form__input
-          = form_with local: true , class: "edit__box__content__inner__price__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__price__form__input__text__type", placeholder: "(例)5000円"
+            %p.yen ¥
+            = form_with local: true , class: "edit__box__content__inner__price__form__input__text" do |f|
+              = f.text_field :price, class: "edit__box__content__inner__price__form__input__text__type", placeholder: "(例)5000"
             -#商品のカテゴリー
         .edit__box__content__inner__category
           .edit__box__content__inner__category__explain
@@ -52,7 +54,7 @@
             %p.absolute 必須
           .edit__box__content__inner__category__form__input
           = form_with local: true , class: "edit__box__content__inner__category__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__category__form__input__text__type", placeholder: "(例)ジャケット"
+            = f.text_field :category, class: "edit__box__content__inner__category__form__input__text__type", placeholder: "(例)ジャケット"
             -#商品のブランド
         .edit__box__content__inner__brand
           .edit__box__content__inner__brand__explain
@@ -60,39 +62,66 @@
             %p.absolute 
           .edit__box__content__inner__brand__form__input
           = form_with local: true , class: "edit__box__content__inner__brand__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__brand__form__input__text__type", placeholder: "(例)ザ　ノースフェイス"
+            = f.text_field :brand, class: "edit__box__content__inner__brand__form__input__text__type", placeholder: "(例)ザ　ノースフェイス"
             -#商品の状態
         .edit__box__content__inner__condition
           .edit__box__content__inner__condition__explain
             %p.condition 商品の状態
             %p.absolute 必須
           .edit__box__content__inner__condition__form__input
-          = form_with local: true , class: "edit__box__content__inner__condition__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__condition__form__input__text__type", placeholder: "(例)使用感有り"
+            .edit__box__content__inner__condition__form__input__text
+              .edit__box__content__inner__condition__form__input__text__type
+                = f.select :condition, Item.conditions.keys,{prompt:"選択してください"}
+            -#%select{ name: "", class: "edit__box__content__inner__condition__form__input__text__type" }
+              -#%option{value:"新品、未使用"} 新品、未使用
+              -#%option{value:"未使用に近い"} 未使用に近い
+              -#%option{value:"目立った傷や汚れなし"} 目立った傷や汚れなし
+              -#%option{value:"やや傷や汚れあり"} やや傷や汚れあり
+              -#%option{value:"傷や汚れあり"} 傷や汚れあり
+              -#%option{value:"全体的に状態が悪い"} 全体的に状態が悪い
+          -#= form_with local: true , class: "edit__box__content__inner__condition__form__input__text" do |f|
+            -#= f.text_field :name, class: "edit__box__content__inner__condition__form__input__text__type", placeholder: "(例)使用感有り"
             -#配送量の負担
         .edit__box__content__inner__postage
           .edit__box__content__inner__postage__explain
             %p.postage 配送料のご負担
             %p.absolute 必須
           .edit__box__content__inner__postage__form__input
-          = form_with local: true , class: "edit__box__content__inner__postage__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__postage__form__input__text__type", placeholder: "(例)出品者負担"
+            .edit__box__content__inner__postage__form__input__text
+              .edit__box__content__inner__postage__form__input__text__type
+                = f.select :postage_user, Item.postage_users.keys,{prompt:"選択してください"}
+            -#%select{ name: "", class: "edit__box__content__inner__postage__form__input__text__type" }
+              -#%option{value:"送料込み（出品者負担）"} 送料込み（出品者負担）
+              -#%option{value:"着払い（購入者負担）"} 着払い（購入者負担）
+          -#= form_with local: true , class: "edit__box__content__inner__postage__form__input__text" do |f|
+            -#= f.text_field :name, class: "edit__box__content__inner__postage__form__input__text__type", placeholder: "(例)出品者負担"
             -#発送元の地域
         .edit__box__content__inner__prefecture
           .edit__box__content__inner__prefecture__explain
             %p.prefecture 発送元の地域
             %p.absolute 必須
           .edit__box__content__inner__prefecture__form__input
-          = form_with local: true , class: "edit__box__content__inner__prefecture__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__prefecture__form__input__text__type", placeholder: "(例)東京都"
+            .edit__box__content__inner__prefecture__form__input__text
+              .edit__box__content__inner__prefecture__form__input__text__type
+                = f.select :prefecture_id, Item.prefecture_ids.keys,{prompt:"選択してください"}
+            -#= f.collection_select :prefecture_id, Prefecture.all, :id, :name, {prompt: false}, {class: "edit__box__content__inner__prefecture__form__input__text__type"}
+          -#= form_with local: true , class: "edit__box__content__inner__prefecture__form__input__text" do |f|
+            -#= f.text_field :name, class: "edit__box__content__inner__prefecture__form__input__text__type", placeholder: "(例)東京都"
             -#発送の日数
         .edit__box__content__inner__preparation
           .edit__box__content__inner__preparation__explain
             %p.preparation 発送日の目安
             %p.absolute 必須
           .edit__box__content__inner__preparation__form__input
-          = form_with local: true , class: "edit__box__content__inner__preparation__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__preparation__form__input__text__type", placeholder: "(例)4〜7日"
+            .edit__box__content__inner__preparation__form__input__text
+              .edit__box__content__inner__preparation__form__input__text__type
+                = f.select :preparation, Item.preparations.keys,{prompt:"選択してください"}
+            -#%select{ name: "", class: "edit__box__content__inner__preparation__form__input__text__type" }
+              -#%option{value:"1〜2日で発送"} 1〜2日で発送
+              -#%option{value:"2〜3日で発送"} 2〜3日で発送
+              -#%option{value:"4〜7日で発送"} 4〜7日で発送
+          -#= form_with local: true , class: "edit__box__content__inner__preparation__form__input__text" do |f|
+            -#= f.text_field :name, class: "edit__box__content__inner__preparation__form__input__text__type", placeholder: "(例)4〜7日"
     .edit__box__btn
       .edit__box__btn__inner
         .edit__box__btn__inner__edit

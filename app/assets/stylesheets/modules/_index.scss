@@ -779,6 +779,10 @@ box-sizing: border-box;
     }
     &__icon{
       margin-top:5px;
+      .sell-btn{
+        text-decoration:none;
+        color:white;
+      }
       &__camera{
         width:55px;
         height:55px;
