@@ -26,7 +26,11 @@
         =image_tag "logo-white.png", alt: "no-image", class: "bottom__inner__image__img__logo"
       .bottom__inner__image__company  ©️FURIMA
       -# 出品ボタン
-.purchasebtn
-  .purchasebtn__text 出品する
-  .purchasebtn__icon
-    =image_tag "icon_camera.png", alt: "出品する", class: "purchasebtn__icon__camera"
+- if user_signed_in?
+  .purchasebtn
+    .purchasebtn__text 
+    .purchasebtn__icon
+      = link_to "出品する",new_item_path, method: :get, class: 'sell-btn' 
+      = image_tag "icon_camera.png", alt: "出品する", class: "purchasebtn__icon__camera"
+- else
+

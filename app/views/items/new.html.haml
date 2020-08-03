@@ -1,9 +1,9 @@
 .edit
   .edit__box
     .edit__box__logo
-      = link_to root_path do
       =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
     .edit__box__content
+    = form_with model: @item, local: true, method: :post, class: "edit__box__content" do |f|
       .edit__box__content__inner
         %p.edit-title 商品情報の入力
         -#商品名
@@ -11,23 +11,21 @@
           .edit__box__content__inner__image__explain
             %p.image 商品画像
             %p.absolute 必須
-          %p.img-explain ※最大10枚までアップロード可能です。
+          %p.img-explain ※最大5枚までアップロード可能です。
           .hidden-content
             %p.dragdrop  ドラッグアンドドロップ<br>またはクリックしてファイルをダウンロード
-            -#= form_with local:true , root_path,class"img-picture"do |f|
-              -#= f.fields_for :images do |i|
-              -#= i.file_field :image, class: "hidden-field"
-              -#%input{class:"hidden-field", type: "file", name: "item[images_attributes][1][image]", id: "item_images_attributes_1_image" }
-              -#%input{class:"hidden-field", type: "file", name: "item[images_attributes][2][image]", id: "item_images_attributes_2_image" }
-              -#%input{class:"hidden-field", type: "file", name: "item[images_attributes][3][image]", id: "item_images_attributes_3_image" }
-              -#%input{class:"hidden-field", type: "file", name: "item[images_attributes][4][image]", id: "item_images_attributes_4_image" }
+            = f.fields_for :images do |image|
+              = image.file_field :image, class:"btn-image"
+            %p.dragdrop 
+            = f.fields_for :images do |image|
+              = image.file_field :image, class:"btn-image"
+ 
         -#商品名
         .edit__box__content__inner__name
           .edit__box__content__inner__name__explain
             %p.name 商品名
             %p.absolute 必須
           .edit__box__content__inner__name__form__input
-          = form_with local: true , class: "edit__box__content__inner__name__form__input__text" do |f|
             = f.text_field :name, class: "edit__box__content__inner__name__form__input__text__type", placeholder: "(例）マウンテンライトジャケット"
             -#商品の説明
         .edit__box__content__inner__introduction
@@ -35,70 +33,72 @@
             %p.introduction 商品の説明
             %p.absolute 必須
           .edit__box__content__inner__introduction__form__input
-          = form_with local: true , class: "edit__box__content__inner__introduction__form__input__text" do |f|
-            = f.text_area :name, class: "edit__box__content__inner__introduction__form__input__text__type", placeholder: "(例)2年前に購入した、一番人気のケルプタンカラーのジャケットです。お店で試着して以来着用しておらずタグもついています。"
+            = f.text_area :introduction, class: "edit__box__content__inner__introduction__form__input__text__type", placeholder: "(例)2年前に購入した、一番人気のケルプタンカラーのジャケットです。お店で試着して以来着用しておらずタグもついています。"
             -#商品の金額
         .edit__box__content__inner__price
           .edit__box__content__inner__price__explain
             %p.price 販売価格
             %p.absolute 必須
           .edit__box__content__inner__price__form__input
-          = form_with local: true , class: "edit__box__content__inner__price__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__price__form__input__text__type", placeholder: "(例)5000円"
+            %p.yen ¥
+            = f.text_field :price, class: "edit__box__content__inner__price__form__input__text__type", placeholder: "(例)5000"
             -#商品のカテゴリー
         .edit__box__content__inner__category
           .edit__box__content__inner__category__explain
             %p.category カテゴリー
             %p.absolute 必須
-          .edit__box__content__inner__category__form__input
-          = form_with local: true , class: "edit__box__content__inner__category__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__category__form__input__text__type", placeholder: "(例)ジャケット"
+          -#.edit__box__content__inner__category__form__input
+            -#= f.text_field :category, class: "edit__box__content__inner__category__form__input__text__type", placeholder: "(例)ジャケット"
             -#商品のブランド
         .edit__box__content__inner__brand
           .edit__box__content__inner__brand__explain
             %p.brand ブランド
             %p.absolute 
           .edit__box__content__inner__brand__form__input
-          = form_with local: true , class: "edit__box__content__inner__brand__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__brand__form__input__text__type", placeholder: "(例)ザ　ノースフェイス"
+            = f.text_field :brand, class: "edit__box__content__inner__brand__form__input__text__type", placeholder: "(例)ザ　ノースフェイス"
             -#商品の状態
         .edit__box__content__inner__condition
           .edit__box__content__inner__condition__explain
             %p.condition 商品の状態
             %p.absolute 必須
           .edit__box__content__inner__condition__form__input
-          = form_with local: true , class: "edit__box__content__inner__condition__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__condition__form__input__text__type", placeholder: "(例)使用感有り"
+            .edit__box__content__inner__condition__form__input__text
+              .edit__box__content__inner__condition__form__input__text__type
+                = f.select :condition, Item.conditions.keys,{prompt:"選択してください"}
             -#配送量の負担
         .edit__box__content__inner__postage
           .edit__box__content__inner__postage__explain
             %p.postage 配送料のご負担
             %p.absolute 必須
           .edit__box__content__inner__postage__form__input
-          = form_with local: true , class: "edit__box__content__inner__postage__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__postage__form__input__text__type", placeholder: "(例)出品者負担"
+            .edit__box__content__inner__postage__form__input__text
+              .edit__box__content__inner__postage__form__input__text__type
+                = f.select :postage_user, Item.postage_users.keys,{prompt:"選択してください"}
             -#発送元の地域
         .edit__box__content__inner__prefecture
           .edit__box__content__inner__prefecture__explain
             %p.prefecture 発送元の地域
             %p.absolute 必須
           .edit__box__content__inner__prefecture__form__input
-          = form_with local: true , class: "edit__box__content__inner__prefecture__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__prefecture__form__input__text__type", placeholder: "(例)東京都"
+            .edit__box__content__inner__prefecture__form__input__text
+              .edit__box__content__inner__prefecture__form__input__text__type
+                = f.select :prefecture_id, Item.prefecture_ids.keys,{prompt:"選択してください"}
             -#発送の日数
         .edit__box__content__inner__preparation
           .edit__box__content__inner__preparation__explain
             %p.preparation 発送日の目安
             %p.absolute 必須
           .edit__box__content__inner__preparation__form__input
-          = form_with local: true , class: "edit__box__content__inner__preparation__form__input__text" do |f|
-            = f.text_field :name, class: "edit__box__content__inner__preparation__form__input__text__type", placeholder: "(例)4〜7日"
-    .edit__box__btn
-      .edit__box__btn__inner
-        .edit__box__btn__inner__edit
-          = link_to "出品する", root_path, method: :get, class: 'edit-btn'
-        .edit__box__btn__inner__return
-          = link_to "戻る", root_path, method: :get, class: 'return-btn'
+            .edit__box__content__inner__preparation__form__input__text
+              .edit__box__content__inner__preparation__form__input__text__type
+                = f.select :preparation, Item.preparations.keys,{prompt:"選択してください"}
+      .edit__box__btn
+        .edit__box__btn__inner
+          .edit__box__btn__inner__edit
+            =f.submit "出品する", class: "edit-btn"
+            -#= link_to "出品する", root_path, method: :get, class: 'edit-btn'
+          .edit__box__btn__inner__return
+            = link_to "戻る", root_path, method: :get, class: 'return-btn'
   .edit__footer
     .edit__footer__box
       %p.footer-rule プライバシーポリシー

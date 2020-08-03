@@ -59,17 +59,21 @@
       .New__content__topic__btn{
         display:flex;
         justify-content: center;
+        margin-top: 60px;
         .New__content__topic__pushbtn{
         background-color: #3CCACE;
         height: 40px;
         width: 300px;
-        border-radius: 5px;
+        border-radius: 50px;
         font-size: 17px;
         align-items: center;
-        justify-content: center;
         color: white;
         border: none;
         cursor: pointer;
+        text-decoration:none;
+        text-align:center;
+        padding-top: 7px;
+
         }
       }
     }

@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_hash', '~> 2.3.0'
 gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick'
 gem 'devise'
 gem 'fog-aws'
 gem 'font-awesome-sass', '~> 5.4.1'
@@ -72,3 +73,12 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
+
+gem 'devise'
+
+gem 'active_hash', '~> 2.3.0'
+
+gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'pry-rails'
+
