@@ -30,6 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_hash', '~> 2.3.0'
 gem 'carrierwave', '~> 0.11.2'
+gem 'mini_magick'
 gem 'devise'
 gem 'fog-aws'
 gem 'font-awesome-sass', '~> 5.4.1'
@@ -78,4 +79,6 @@ gem 'devise'
 gem 'active_hash', '~> 2.3.0'
 
 gem 'font-awesome-sass', '~> 5.4.1'
+
+gem 'pry-rails'
 

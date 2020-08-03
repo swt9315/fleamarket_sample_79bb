@@ -322,8 +322,15 @@
           @include parent-btn;
           background: #3CCACE;
           border: 1px solid #3CCACE;
-          .edit-btn{
-            @include btn;
+          input.edit-btn{
+            font-size: 18px;
+            line-height: 48px;
+            color: #fff;
+            font-size: 18px;
+            text-decoration:none;
+            border: 1px solid #3CCACE;
+            background-color:#3CCACE;
+            
           }
         }
         &__return{
