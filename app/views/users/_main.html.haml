@@ -2,6 +2,9 @@
   .Main__contents
     .Main__contents__mypage
       .Main__contents__mypage__profile
+        %p
+          = @name
+          さんのページ
       %ul.Main__contents__mypage__tub
         = link_to "#", class: "Main__contents__mypage__tub__link" do
           %li.Main__contents__mypage__tub__link__news お知らせ

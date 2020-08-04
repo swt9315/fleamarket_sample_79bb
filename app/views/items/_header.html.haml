@@ -16,7 +16,7 @@
     .header__inner__nav__right
       - if user_signed_in?
         .header__inner__nav__right__login
-          = link_to "マイページ", root_path, class: "header__inner__nav__right__login--link"
+          = link_to "マイページ", user_path(current_user.id), method: :get, class: "header__inner__nav__right__login--link"
         .header__inner__nav__right__new
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__inner__nav__right__login--link"
       - else

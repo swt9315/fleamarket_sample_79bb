@@ -20,7 +20,7 @@
         %li.Header__main__action--link__news お知らせ
       = link_to "#", class: "Header__main__action--link" do
         %li.Header__main__action--link__todo やることリスト
-      = link_to "#", class: "Header__main__action--link" do
+      = link_to user_path(current_user.id), class: "Header__main__action--link" do
         %li.Header__main__action--link__mypage マイページ
   .Header__category
     メルカリ  >  マイページ
