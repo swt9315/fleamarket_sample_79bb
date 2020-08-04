@@ -197,8 +197,10 @@
       &__mypage {
         height: 600px;
         &__profile {
+          color: #3c3c3c;
           background-color: #3ccace;
           height: 180px;
+          padding: 10px 7px;
         }
         &__tub {
           display: flex;

@@ -1,10 +1,11 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.new
   end
 
   def new
     if user_signed_in?
-      @item=Item.new
+      @item = Item.new
       @item.images.new
     else
       redirect_to new_user_session_path
@@ -12,7 +13,7 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item=Item.create(item_params)
+    @item = Item.create(item_params)
   end
 
   def show

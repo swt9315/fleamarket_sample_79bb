@@ -1,7 +1,7 @@
 .Menu
   .Menu__box
     %ul.Menu__box__group1
-      = link_to "#", class: "Menu__box__group1__link" do
+      = link_to user_path(current_user.id), class: "Menu__box__group1__link" do
         %li.Menu__box__group1__link__content マイページメニュー
       = link_to "#", class: "Menu__box__group1__link" do
         %li.Menu__box__group1__link__content お知らせ
@@ -43,7 +43,7 @@
         %li.Menu__box__group3__link__content プロフィール
       = link_to "#", class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content 発送元・お届け先住所変更
-      = link_to "#", class: "Menu__box__group3__link" do
+      = link_to edit_user_path(current_user.id), class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content 支払い方法
       = link_to "#", class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content メール/パスワード
@@ -51,5 +51,6 @@
         %li.Menu__box__group3__link__content 本人情報
       = link_to "#", class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content 電話番号の確認
-      = link_to "#", class: "Menu__box__group3__link" do
+      = link_to logout_user_path, method: :get, class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content ログアウト
+
