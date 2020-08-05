@@ -82,3 +82,5 @@ gem 'font-awesome-sass', '~> 5.4.1'
 
 gem 'pry-rails'
 
+gem 'ancestry'
+
