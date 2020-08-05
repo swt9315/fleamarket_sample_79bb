@@ -17,5 +17,5 @@ Rails.application.routes.draw do
   end
   
   resources :items
-
+  get 'category', to: 'items#category'
 end
