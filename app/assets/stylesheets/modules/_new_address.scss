@@ -35,6 +35,12 @@
             border-radius: 10px;
             height: 20px;
           }
+          .attention {
+            margin-top: 5px;
+            font-size: 10px;
+            color: #888;
+            line-height: 15px;
+          }
           p.any {
             font-size:6px;
             background-color: gray;
@@ -93,4 +99,10 @@
   padding-top: 16px;
   margin: 0px 15px;
   }
+
+.attention {
+  margin-top: 5px;
+  font-size: 10px;
+  color: #888;
+  line-height: 15px;
 }

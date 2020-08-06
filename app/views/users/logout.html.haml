@@ -1,0 +1,7 @@
+= render "header"
+.Wrapper
+  = render "menu"
+  .Logout
+    = link_to destroy_user_session_path, method: :delete, class: "Logout--link" do
+      ログアウト
+= render "footer"

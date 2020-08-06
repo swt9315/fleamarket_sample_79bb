@@ -7,13 +7,14 @@
       .New__content__topic__info
         %p.registration__title
           住所情報登録
-          = render 'layouts/error_form', locals: { user: @user }
+          = render 'layouts/error_form_address', locals: { user: @user }
         .registration__form
           .registration__form__label
             %p.title 郵便番号
             %p.require 必須
           .registration__form__input
-            = f.text_field :post_code, class: "registration__form__input__type form-padding", placeholder: "例）123-4567"
+            = f.text_field :post_code, class: "registration__form__input__type form-padding", placeholder: "例）1234567"
+            %p.attention ※ハイフンは含めないでください
         .registration__form
           .registration__form__label
             %p.title 都道府県
@@ -45,5 +46,6 @@
             %p.require 必須
           .registration__form__input
             = f.text_field :phone_number, class: "registration__form__input__type form-padding", placeholder: "例）09012345678"
+            %p.attention ※ハイフンは含めないでください
         .New__content__topic__btn
           = f.submit "新規登録", class: 'New__content__topic__btn__next New__content__topic__pushbtn'

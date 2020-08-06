@@ -29,7 +29,7 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_hash', '~> 2.3.0'
-gem 'carrierwave', '~> 0.11.2'
+gem 'carrierwave'
 gem 'mini_magick'
 gem 'devise'
 gem 'fog-aws'
