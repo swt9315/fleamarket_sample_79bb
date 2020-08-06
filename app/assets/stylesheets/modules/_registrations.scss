@@ -316,15 +316,18 @@
         justify-content: center;
         .New__content__topic__pushbtn{
         background-color: #3CCACE;
-        height: 40px;
+        height: 50px;
         width: 300px;
-        border-radius: 5px;
+        border-radius: 50px;
         font-size: 17px;
-        align-items: center;
         justify-content: center;
         color: white;
         border: none;
         cursor: pointer;
+        margin:30px 0px 50px 0px;
+        text-decoration:none;
+        text-align:center;
+        vertical-align: middle;
         }
       }
   }
