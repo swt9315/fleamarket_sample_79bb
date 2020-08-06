@@ -12,17 +12,24 @@ class ItemsController < ApplicationController
   end
 
   def create
-    if  @item=Item.create!(item_params)
+    @item=Item.new(item_params)
+    if @item.save
     else
-      render :index
+      render :new
     end
   end
+    
 
   def show
     Item.find(params[:id])
     @item = Item.find(params[:id])
   end
 
+
+  def destroy
+    @item = Item.find(params[:id])
+    @item.destroy
+  end
  
 
   def edit
@@ -31,7 +38,10 @@ class ItemsController < ApplicationController
 
   def update
     @item = Item.find(params[:id])
-    @item.update(item_params)
+  if @item.update(item_params)
+    else
+      render :edit
+    end
   end
 
 
