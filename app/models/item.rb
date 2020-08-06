@@ -18,10 +18,11 @@ class Item < ApplicationRecord
 
   #belongs_to :category
   has_many :images, dependent: :destroy
+  validates :images, presence:true
 
   accepts_nested_attributes_for :images, allow_destroy: true
 
-  validates :name, presence: true, uniqueness: true
+  validates :name, presence: true
   validates :introduction, presence: true 
   validates :condition, presence: true  
   validates :postage_user, presence: true
@@ -29,4 +30,8 @@ class Item < ApplicationRecord
   validates :preparation, presence: true
   validates :price, presence: true
   validates :seller_id, presence: true
+
+  validates :name, length: { maximum: 40 }
+  validates :introduction, length: { maximum: 1000 }
+  validates :price, numericality: { only_integer: true, greater_than_or_equal_to: 300, less_than_or_equal_to: 9999999 }
 end

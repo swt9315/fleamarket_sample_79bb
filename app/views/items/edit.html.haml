@@ -3,7 +3,7 @@
     .edit__box__logo
       =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
     .edit__box__content
-    = form_with model: @item, local: true, method: :post, class: "edit__box__content" do |f|
+    = form_with model: @item, local: true, method: :patch, class: "edit__box__content" do |f|
       .edit__box__content__inner
         %p.edit-title 商品情報の入力
         -#商品名
@@ -12,14 +12,11 @@
             %p.image 商品画像
             %p.absolute 必須
           %p.img-explain ※最大10枚までアップロード可能です。
-
-
           #image-box
             #previews
               - if @item.persisted?
                 - @item.images.each_with_index do |image, i|
                   = image_tag image.image.url, data: { index: i }, width: "100", height: '100'
-                  //= images_tag @item.image.url, data: { index: i }, width: "100", height: '100'
             = f.fields_for :images do |image|
               .js-file_group{"data-index" => image.index}
                 = image.file_field :image, class: 'js-file'
@@ -32,7 +29,10 @@
                 = file_field_tag :image, name: "item[images_attributes][#{@item.images.count}][image]", class: 'js-file'
                 .js-remove 削除
 
+  
 
+
+  
         -#商品名
         .edit__box__content__inner__name
           .edit__box__content__inner__name__explain

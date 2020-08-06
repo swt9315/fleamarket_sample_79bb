@@ -63,28 +63,42 @@
         }
       }
       .New__content__topic__btn{
-        display:flex;
-        justify-content: center;
-        margin-top: 60px;
-        .New__content__topic__pushbtn{
+        margin-top: 60px ;
+        &__push{
         background-color: #3CCACE;
-        height: 40px;
-        width: 300px;
+        height: 60px;
+        width: 240px;
         border-radius: 50px;
         font-size: 17px;
-        align-items: center;
         color: white;
-        border: none;
         cursor: pointer;
         text-decoration:none;
-        text-align:center;
-        padding-top: 7px;
+        padding-top: 16px;
+        margin: 0px 15px;
 
         }
       }
     }
   }
 }
+
+//登録完了ボタン
+
+.New__content__topic__btn{
+  margin-top: 60px ;
+  text-align:center;
+  &__push{
+  background-color: #3CCACE;
+  height: 60px;
+  width: 240px;
+  border-radius: 50px;
+  font-size: 17px;
+  color: white;
+  cursor: pointer;
+  text-decoration:none;
+  padding-top: 16px;
+  margin: 0px 15px;
+  }
 
 .attention {
   margin-top: 5px;

@@ -1,11 +1,11 @@
 require 'rails_helper'
      #空だと登録できないこと
-      describe Item do
-        it "is invalid without a name" do
-          item = Item.new(name: nil)
-          item.valid?
-          expect(item.errors[:name]).to include("can't be blank")
-        end
+    describe Item do
+      it "is invalid without a name" do
+        item = Item.new(name: nil)
+        item.valid?
+        expect(item.errors[:name]).to include("can't be blank")
+      end
       it "is invalid without a price" do
         item = Item.new(price: nil)
         item.valid?
