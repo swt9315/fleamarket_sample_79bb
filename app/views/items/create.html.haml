@@ -7,4 +7,5 @@
       %p.registration__title
         出品が完了しました。
     .New__content__topic__btn
-      = link_to "トップへ戻る", root_path, class: 'New__content__topic__pushbtn'
+      = link_to "トップへ戻る", root_path, class: 'New__content__topic__btn__push'
+      = link_to "商品詳細ページへ進む",item_path(@item.id), class: 'New__content__topic__btn__push'

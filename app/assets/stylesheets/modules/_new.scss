@@ -68,6 +68,7 @@
           font-size:24px;
           padding-top:50px;
           font-weight: bold;
+          margin-bottom:80px;
         }
         &__image{
           text-align:center;
@@ -82,23 +83,14 @@
               @include absolute;
             }
           }
-          .hidden-content{
-            width:660px;
-            height:150px;
-            background-color: rgb(244, 244, 244);
-            border:1px dotted rgb(182, 179, 179);
-            margin-bottom:50px;
-            p.dragdrop{
-              font-size:12px;
-              margin-top:40px;
-            }
-          }
+    
           p.img-explain{
             font-size: 12px;
             padding-bottom:0px;
             margin-right:5px;
           }
         }
+       
         &__name{
           &__explain{
             display: flex;
@@ -371,4 +363,25 @@
       }
     }
   }
+}
+
+
+//画像のアップロード箇所のCSS
+#image-box{
+  margin-bottom:50px;
+  #previews{
+    background-color:rgb(233, 231, 231);
+    height:210px;
+    border:1px dotted rgb(182, 178, 178);
+    margin-bottom:50px;
+    .js-file{
+      margin-bottom:30px;
+    }
+  }
+}
+span.js-remove{
+  font-size:12px;
+}
+.js-remove{
+  font-size:12px;
 }
