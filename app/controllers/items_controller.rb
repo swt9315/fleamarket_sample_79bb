@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
+
   def index
-    @items = Item.new
+    @items = Item.all
+  end
+
+  def show
+    @item = Item.find(params[:id])
   end
 
   def new
@@ -14,11 +19,17 @@ class ItemsController < ApplicationController
 
   def create
     @item = Item.create(item_params)
+    if @item.save
+      redirect_to items_path
+    else
+      render :new
+    end
   end
 
-  def show
+  def edit
+    @item = Item.find(params[:id])
   end
-
+  
   def destroy
     @item.destroy
     redirect_to root_path
@@ -28,7 +39,6 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand,images_attributes:[:image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand, images_attributes:[:image]).merge(seller_id: current_user.id)
   end
-
 end
