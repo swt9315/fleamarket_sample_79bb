@@ -361,21 +361,23 @@
             }
             &__edit{
               margin-right: auto;
-              padding: 6px 30px;
+              padding: 6px 20px;
               border-radius: 40px;
               color: white;
               border: 1px solid #3CCACE;
               margin:30px 0px;
               background-color:#3CCACE;
+              text-decoration: none;
             }
               &__destroy{
                 margin-right: auto;
-                padding: 6px 30px;
+                padding: 6px 20px;
                 border-radius: 40px;
                 color: white;
                 border: 1px solid #ffb340;
                 margin:30px 0px;
                 background-color:#ffb340;
+                text-decoration: none;
               }
             &__warning{
               padding: 6px 10px;

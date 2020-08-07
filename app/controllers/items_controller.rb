@@ -21,22 +21,25 @@ class ItemsController < ApplicationController
     @item=Item.new(item_params)
     if @item.save
     else
-      render :new
-    end
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to items_path
-    else
+      flash.now[:alert] = '入力に誤りがあります。'
       render :new
     end
   end
     
+  def destroy
+    unless @item.destroy
+      flash.now[:alert] = '商品出品の削除が失敗しました。'
+      render :show
+    end
+  end
+ 
   def edit
   end
   
   def update
   if @item.update(item_params)
     else
+      flash.now[:alert] = '入力に誤りがあります。'
       render :edit
     end
   end
