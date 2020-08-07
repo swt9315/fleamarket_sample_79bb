@@ -1,7 +1,8 @@
 .edit
   .edit__box
     .edit__box__logo
-      =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
+      = link_to root_path do
+        =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
     .edit__box__content
     = form_with model: @item, local: true, method: :post, class: "edit__box__content" do |f|
       .edit__box__content__inner
@@ -15,11 +16,7 @@
           .hidden-content
             %p.dragdrop  ドラッグアンドドロップ<br>またはクリックしてファイルをダウンロード
             = f.fields_for :images do |image|
-              = image.file_field :image, class:"btn-image"
-            %p.dragdrop 
-            = f.fields_for :images do |image|
-              = image.file_field :image, class:"btn-image"
- 
+              = image.file_field :image, class:"btn-image" 
         -#商品名
         .edit__box__content__inner__name
           .edit__box__content__inner__name__explain
@@ -47,8 +44,8 @@
           .edit__box__content__inner__category__explain
             %p.category カテゴリー
             %p.absolute 必須
-          -#.edit__box__content__inner__category__form__input
-            -#= f.text_field :category, class: "edit__box__content__inner__category__form__input__text__type", placeholder: "(例)ジャケット"
+          .edit__box__content__inner__category__form__input
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '---'}, {id: 'parent_category'}
             -#商品のブランド
         .edit__box__content__inner__brand
           .edit__box__content__inner__brand__explain

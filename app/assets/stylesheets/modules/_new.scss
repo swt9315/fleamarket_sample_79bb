@@ -24,6 +24,7 @@
   cursor: pointer;
   margin-bottom:30px;
   margin-top:5px;
+  padding-left: 10px;
 }
 //ボタン
 @mixin btn{
@@ -142,6 +143,7 @@
                 cursor: pointer;
                 margin-bottom:30px;
                 margin-top:5px;
+                padding: 0 10px;
               }
             }
           }
@@ -176,6 +178,7 @@
                 cursor: pointer;
                 margin-bottom:30px;
                 margin-top:5px;
+                padding-left: 10px;
               }
             }
           }
@@ -193,6 +196,17 @@
             }
           }
           &__form__input{
+            #parent_category {
+              @include text-content;
+              }
+            &__added {
+              #child_category {
+                @include text-content;
+              }
+              #grandchild_category {
+                @include text-content;
+              }
+            }
             &__text{
               &__type{
                 @include text-content;

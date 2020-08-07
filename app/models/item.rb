@@ -15,8 +15,8 @@ class Item < ApplicationRecord
 
   belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id', optional: true
   belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
-
   belongs_to :category
+  
   has_many :images, dependent: :destroy
 
   accepts_nested_attributes_for :images, allow_destroy: true
@@ -29,4 +29,5 @@ class Item < ApplicationRecord
   validates :preparation, presence: true
   validates :price, presence: true
   validates :seller_id, presence: true
+  validates :category_id, presence: true
 end
