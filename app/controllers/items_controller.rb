@@ -9,7 +9,6 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @item = Item.new
       @item.images.new
-      @category_parent_array = ["---"]
       @category_parent_array = Category.where(ancestry: nil)
     else
       redirect_to new_user_session_path
@@ -21,7 +20,6 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
   end
 
   def destroy
