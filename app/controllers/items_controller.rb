@@ -16,9 +16,9 @@ class ItemsController < ApplicationController
     @item=Item.new(item_params)
     if @item.save
     else
+      flash.now[:alert] = '入力に誤りがあります。'
       render :new
     end
-    @item = Item.create(item_params)
   end
     
 
@@ -30,7 +30,11 @@ class ItemsController < ApplicationController
 
   def destroy
     @item = Item.find(params[:id])
-    @item.destroy
+    if @item.destroy
+    else
+      flash.now[:alert] = '商品出品の削除が失敗しました。'
+      render :show
+    end
   end
  
 
@@ -42,6 +46,7 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   if @item.update(item_params)
     else
+      flash.now[:alert] = '入力に誤りがあります。'
       render :edit
     end
   end
