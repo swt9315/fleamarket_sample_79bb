@@ -27,7 +27,6 @@ class ItemsController < ApplicationController
   end
     
   def destroy
-    @item = Item.find(params[:id])
     unless @item.destroy
       flash.now[:alert] = '商品出品の削除が失敗しました。'
       render :show
