@@ -197,10 +197,38 @@
       &__mypage {
         height: 600px;
         &__profile {
-          color: #3c3c3c;
-          background-color: #3ccace;
+          background-color: #bcffdd;
+          opacity: 0.5;
+          border-color: #3ccace;
+          border-width: 2px;
+          border-style: solid;
+          text-align: center;
           height: 180px;
-          padding: 10px 7px;
+          padding: 0 7px;
+          &--myPageIcom {
+            color: #363636;
+            font-size: 50px;
+          }
+          &--userNickname {
+            color: #333333;
+            font-size: 20px;
+            margin-bottom: 20px;
+          }
+          &__numBox {
+            display: flex;    
+            justify-content: center;
+            &--evaluationNum {
+              color: #333333;
+              list-style: none;
+              font-size: 12px;
+            }
+            &--exhibitionNum {
+              color: #333333;
+              list-style: none;
+              font-size: 12px;
+              margin-left: 36px;
+            }
+          }
         }
         &__tub {
           display: flex;
@@ -305,7 +333,6 @@
             text-align: center;
           }
           &--text:hover {
-            text-decoration: underline;
             color: #a0a0a0;
           }
         }
@@ -325,7 +352,6 @@
             text-align: center;
           }
           &--text:hover {
-            text-decoration: underline;
             color: #a0a0a0;
           }
         }
@@ -345,7 +371,6 @@
             text-align: center;
           }
           &--text:hover {
-            text-decoration: underline;
             color: #a0a0a0;
           }
         }

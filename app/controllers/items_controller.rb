@@ -1,8 +1,9 @@
 class ItemsController < ApplicationController
   before_action :set_parents, only: [:new, :create, :category]
+  before_action :set_item, only: [:show, :edit, :update]
 
   def index
-    @items = Item.new
+    @items = Item.all
   end
 
   def new
@@ -16,20 +17,27 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.create(item_params)
+    @item=Item.new(item_params)
+    if @item.save
+    else
+      flash.now[:alert] = '入力に誤りがあります。'
+      render :new
+    end
   end
 
   def show
   end
-
+    
   def destroy
-    @item.destroy
-    redirect_to root_path
+    unless @item.destroy
+      flash.now[:alert] = '商品出品の削除が失敗しました。'
+      render :show
+    end
   end
-
+    
   def category
   end
-
+  
   def search
     respond_to do |format|
       format.html
@@ -50,15 +58,29 @@ class ItemsController < ApplicationController
   def get_category_grandchildren
     @category_grandchildren = Category.find(params[:child_id]).children
   end
-
+  
+  def edit
+  end
+  
+  def update
+  if @item.update(item_params)
+    else
+      flash.now[:alert] = '入力に誤りがあります。'
+      render :edit
+    end
+  end
+ 
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :category_id, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand, images_attributes:[:image]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :category_id, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand,images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
+  def set_item
+    @item = Item.find(params[:id])
+  end
+  
   def set_parents
     @parents = Category.all.order("id ASC").limit(13).where(ancestry: nil)
   end
-
 end
