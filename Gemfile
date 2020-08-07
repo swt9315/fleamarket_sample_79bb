@@ -84,4 +84,4 @@ gem 'pry-rails'
 
 gem 'ancestry'
 
-gem "jquery-rails"
+gem 'jquery-rails'

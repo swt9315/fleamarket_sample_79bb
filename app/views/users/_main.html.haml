@@ -2,9 +2,14 @@
   .Main__contents
     .Main__contents__mypage
       .Main__contents__mypage__profile
-        %p
+        =link_to "#", class: "Main__contents__mypage__profile--myPageIcom" do
+          = icon('fas', 'user-circle')
+        %p.Main__contents__mypage__profile--userNickname
           = @name
           さんのページ
+        .Main__contents__mypage__profile__numBox
+          %li.Main__contents__mypage__profile__numBox--evaluationNum 評価数： 0
+          %li.Main__contents__mypage__profile__numBox--exhibitionNum 出品数： 0
       %ul.Main__contents__mypage__tub
         = link_to "#", class: "Main__contents__mypage__tub__link" do
           %li.Main__contents__mypage__tub__link__news お知らせ
