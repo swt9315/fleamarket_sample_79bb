@@ -1,6 +1,11 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: [:show, :edit, :update]
+
   def index
-    @items = Item.new
+    @items = Item.all
+  end
+
+  def show
   end
 
   def new
@@ -18,40 +23,32 @@ class ItemsController < ApplicationController
     else
       render :new
     end
-    @item = Item.create(item_params)
+    @item = Item.new(item_params)
+    if @item.save
+      redirect_to items_path
+    else
+      render :new
+    end
   end
     
-
-  def show
-    Item.find(params[:id])
-    @item = Item.find(params[:id])
-  end
-
-
-  def destroy
-    @item = Item.find(params[:id])
-    @item.destroy
-  end
- 
-
   def edit
-    @item = Item.find(params[:id])
   end
-
+  
   def update
-    @item = Item.find(params[:id])
   if @item.update(item_params)
     else
       render :edit
     end
   end
-
-
-
+ 
   private
 
   def item_params
     params.require(:item).permit(:name, :introduction, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand,images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+  end
+
+  def set_item
+    @item = Item.find(params[:id])
   end
 
 end

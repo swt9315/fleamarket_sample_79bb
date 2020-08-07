@@ -205,64 +205,36 @@
       &__picture{
         text-align: center;
         &__main{
-          width:400px;
-          height:400px;
           padding-top:10px;
           cursor: pointer;
+          text-align: center;
+          margin: 20px 0;
+        }
+        &__sub{
+          display: flex;
+          justify-content: center;
+          &__img{
+            &__picture{
+              @include picture;
+              margin-right: 5px;
+            }
+          }
         }
       }
-      &__sub{
+      &__priceBox {
         display: flex;
         justify-content: center;
-        &__img2{
-          &__picture{
-            @include picture;
-          }
+        align-items: bottom;
+        &--price {
+          list-style: none;
+          font-size: 40px;
+          font-weight: bold;
         }
-        &__img3{
-          &__picture{
-            @include picture;          
-          }
+        &--enn {
+          list-style: none;
+          padding-top: 26px;
+          margin-left: 6px;
         }
-        &__img4{
-          &__picture{
-            @include picture;          
-          }
-        }
-        &__img5{
-          &__picture{
-            @include picture;
-          }
-        }
-        &__img6{
-          &__picture{
-            @include picture;          
-          }
-        }
-        &__img7{
-          &__picture{
-            @include picture;        
-          }
-        }
-        &__img8{
-          &__picture{
-            @include picture;        
-          }
-        }
-        &__img9{
-          &__picture{
-            @include picture;      
-          }
-        }
-        &__img10{
-          &__picture{
-            @include picture;        
-          }
-        }
-      }
-      &__price{
-        font-size:40px;
-        font-weight:bold;
       }
       &__tax{
         margin-bottom: 20px;
@@ -383,6 +355,9 @@
               color: #3CCACE;
               border: 1px solid #ffb340;
               margin:30px 0px;
+            }
+            a {
+              text-decoration: none;
             }
             &__edit{
               margin-right: auto;
