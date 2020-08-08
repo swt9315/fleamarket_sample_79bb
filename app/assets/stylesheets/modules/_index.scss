@@ -116,10 +116,20 @@ box-sizing: border-box;
       &__left{
         display:flex;
         justify-content: center;
-        &__cat{
+        &__category{
           cursor: pointer;
-          font-size: 14px;
-          margin-right: 40px;
+          &--link {
+            display: flex;
+            text-decoration: none;
+            font-size: 14px;
+          }
+          &--icon {
+            margin-right: 5px;
+          }
+          &--title {
+            font-weight: bold;
+            margin-right: 20px;
+          }
         }
         &__brand{
           cursor: pointer;
@@ -658,6 +668,7 @@ box-sizing: border-box;
   .bottomimage{
     position: relative;
     margin-top: 0px;
+    height: 450px;
     &__visual{
       height: 450px;
       background-size: cover;
@@ -779,10 +790,6 @@ box-sizing: border-box;
     }
     &__icon{
       margin-top:5px;
-      .sell-btn{
-        text-decoration:none;
-        color:white;
-      }
       &__camera{
         width:55px;
         height:55px;

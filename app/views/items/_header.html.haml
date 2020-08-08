@@ -1,7 +1,8 @@
 .header__inner
   .header__inner__main
     .header__inner__main__logo
-      =image_tag "logo.png", alt: "FURIMA：", class: "header__inner__main__logo__img"
+      = link_to root_path do
+        =image_tag "logo.png", alt: "FURIMA：", class: "header__inner__main__logo__img"
     .header__inner__main__searchbox
       .header__inner__main__searchbox__input
         = form_with(url: root_path, local: true, method: :get, class: "header__inner__main__searchbox__input__search") do |form|
@@ -11,16 +12,22 @@
       .header__inner__main__searchbox__btn
   .header__inner__nav
     .header__inner__nav__left
-      .header__inner__nav__left__cat 商品一覧
-      .header__inner__nav__left__brand 　 
+      .header__inner__nav__left__category
+        = link_to category_path ,class: "header__inner__nav__left__category--link" do
+          .header__inner__nav__left__category--icon= icon("fas", "bars")
+          .header__inner__nav__left__category--title カテゴリーから探す
+      .header__inner__nav__left__brand
+        = link_to "#", class: "header__inner__nav__left__category--link" do
+          .header__inner__nav__left__category--icon= icon("fas", "tag")
+          .header__inner__nav__left__category--title ブランドから探す
     .header__inner__nav__right
       - if user_signed_in?
         .header__inner__nav__right__login
-          = link_to "マイページ", user_path(current_user.id), method: :get, class: "header__inner__nav__right__login--link"
+          = link_to "マイページ", root_path, class: "header__inner__nav__right__login--link"
         .header__inner__nav__right__new
           = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__inner__nav__right__login--link"
       - else
         .header__inner__nav__right__login
           = link_to "ログイン", new_user_session_path, class: "header__inner__nav__right__login--link"
         .header__inner__nav__right__new
-          = link_to "新規会員登録", new_user_registration_path, class: "header__inner__nav__right__login--link"
+          = link_to "新規会員登録", new_user_registration_path, class: "header__inner__nav__right__login--link" 
