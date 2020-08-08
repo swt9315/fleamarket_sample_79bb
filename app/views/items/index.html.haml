@@ -65,46 +65,33 @@
         %p.pick-new 新規投稿商品
       .pick-ca__inner__topic
         .pick-ca__inner__topic__main
-          .pick-ca__inner__topic__main--one
-            .pick-ca__inner__topic__main--one__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--one__img__picture"
-            .pick-ca__inner__topic__main--one__content
-              .pick-ca__inner__topic__main--one__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
-          .pick-ca__inner__topic__main--two
-            .pick-ca__inner__topic__main--two__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--two__img__picture"
-            .pick-ca__inner__topic__main--two__content
-              .pick-ca__inner__topic__main--two__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
-          .pick-ca__inner__topic__main--three
-            .pick-ca__inner__topic__main--three__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--three__img__picture"
-            .pick-ca__inner__topic__main--three__content
-              .pick-ca__inner__topic__main--three__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
-          .pick-ca__inner__topic__main--four
-            .pick-ca__inner__topic__main--four__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-ca__inner__topic__main--four__img__picture"
-            .pick-ca__inner__topic__main--four__content
-              .pick-ca__inner__topic__main--four__content__group
-                %li.pick-ca__name カレー
-                .pick-ca__middle
-                  %li.pick-ca__middle__price 1000円
-                  %li.pick-ca__middle__price ★1
-                %li.pick-ca__tax (税込)
+          - @items.first(5).each do |item|
+            .pick-ca__inner__topic__main--one
+              = link_to item_path(item),:style=>"text-decoration:none;" do
+                .pick-ca__inner__topic__main--one__img
+                  = image_tag item.images[0].image.url, class: "pick-ca__inner__topic__main--one__img__picture"
+                .pick-ca__inner__topic__main--one__content
+                  .pick-ca__inner__topic__main--one__content__group
+                    %li.pick-ca__name 
+                      = item.name
+                    .pick-ca__in
+                      .pick-ca__middle
+                        %li.pick-ca__middle__price 
+                          - if item.buyer_id.nil?
+                            = item.price
+                            円
+                          - else
+                            %span
+                            SOLD OUT
+                        %li.pick-ca__middle__price ★1
+                      %li.pick-ca__tax
+                        - if item.buyer_id.nil?
+                          (税込)
+                        - else
+                          落札された商品です
+
+      
+ 
   -# ピックアップブランドのアーカイブ
   .pick-bra
     .pick-bra__inner
@@ -113,46 +100,32 @@
         %p.pick-new アーカイバ
       .pick-bra__inner__topic
         .pick-bra__inner__topic__main
-          .pick-bra__inner__topic__main--one
-            .pick-bra__inner__topic__main--one__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--one__img__picture"
-            .pick-bra__inner__topic__main--one__content
-              .pick-bra__inner__topic__main--one__content__group
-                %li.pick-ca__name カレー
-                .pick-bra__middle
-                  %li.pick-bra__middle__price 1000円
-                  %li.pick-bra__middle__price ★1
-                %li.pick-bra__tax (税込)
-          .pick-bra__inner__topic__main--two
-            .pick-bra__inner__topic__main--two__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--two__img__picture"
-            .pick-bra__inner__topic__main--two__content
-              .pick-bra__inner__topic__main--two__content__group
-                %li.pick-bra__name カレー
-                .pick-bra__middle
-                  %li.pick-bra__middle__price 1000円
-                  %li.pick-bra__middle__price ★1
-                %li.pick-bra__tax (税込)
-          .pick-bra__inner__topic__main--three
-            .pick-bra__inner__topic__main--three__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--three__img__picture"
-            .pick-bra__inner__topic__main--three__content
-              .pick-bra__inner__topic__main--three__content__group
-                %li.pick-bra__name カレー
-                .pick-bra__middle
-                  %li.pick-bra__middle__price 1000円
-                  %li.pick-bra__middle__price ★1
-                %li.pick-bra__tax (税込)
-          .pick-bra__inner__topic__main--four
-            .pick-bra__inner__topic__main--four__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-bra__inner__topic__main--four__img__picture"
-            .pick-bra__inner__topic__main--four__content
-              .pick-bra__inner__topic__main--four__content__group
-                %li.pick-bra__name カレー
-                .pick-bra__middle
-                  %li.pick-bra__middle__price 1000円
-                  %li.pick-bra__middle__price ★1
-                %li.pick-bra__tax (税込)
+          - @items.slice(6..10).each do |item|
+            .pick-bra__inner__topic__main--one
+              = link_to item_path(item),:style=>"text-decoration:none;"  do
+                .pick-bra__inner__topic__main--one__img
+                  = image_tag item.images[0].image.url, class: "pick-bra__inner__topic__main--one__img__picture"
+                .pick-bra__inner__topic__main--one__content
+                  .pick-bra__inner__topic__main--one__content__group
+                    %li.pick-bra__name
+                      = item.name
+                    .pick-bra__in
+                      .pick-bra__middle
+                        %li.pick-bra__middle__price
+                          - if item.buyer_id.nil?
+                            = item.price
+                            円
+                          - else
+                            %span
+                            SOLD OUT
+                        %li.pick-bra__middle__price ★1
+                      %li.pick-bra__tax
+                        - if item.buyer_id.nil?
+                          (税込)
+                        - else
+                          落札された商品です
+             
+
   -# フッター上のイメージ写真
   .footer
     = render "footer"

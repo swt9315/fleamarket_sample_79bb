@@ -387,6 +387,7 @@ box-sizing: border-box;
         }
         p.pick-new{
           @include pick-blue;
+          margin-bottom:30px;
         }
       }
       &__topic{
@@ -403,109 +404,32 @@ box-sizing: border-box;
             }
             &__content{
               &__group{
-                @include pick-group;
-                li.pick-ca__name{
-                  font-size:16px;
-                }
-                .pick-ca__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-ca__middle__price{
-                    font-size:16px;
-                  }
-                  li.pick-ca__middle__star{
-                    font-size:16px;
-                  }
-                }
-                li.pick-ca__tax{
-                  font-size: 10px;
-                }
-              }
-            }
-          }
-          &--two{
-            &__img{
-              &__picture{
+                display:flex;
+                flex-direction:column;
+                justify-content:space-between;
                 width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
+                height:150px;
                 @include pick-group;
                 li.pick-ca__name{
                   font-size:16px;
+                  text-decoration:none;
+                  color:black;
                 }
-                .pick-ca__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-ca__middle__price{
-                    font-size:16px;
+                .pick-ca__in{
+                  color:black;
+                  .pick-ca__middle{
+                    display: flex;
+                    justify-content:space-between;
+                    li.pick-ca__middle__price{
+                      font-size:16px;
+                    }
+                    li.pick-ca__middle__star{
+                      font-size:16px;
+                    }
                   }
-                  li.pick-ca__middle__star{
-                    font-size:16px;
+                  li.pick-ca__tax{
+                    font-size: 10px;
                   }
-                }
-                li.pick-ca__tax{
-                  font-size: 10px;
-                }
-              }
-            }
-          }
-          &--three{
-            &__img{
-              &__picture{
-                width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
-                @include pick-group;
-                li.pick-ca__name{
-                  font-size:16px;
-                }
-                .pick-ca__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-ca__middle__price{
-                    font-size:16px;
-                  }
-                  li.pick-ca__middle__star{
-                    font-size:16px;
-                  }
-                }
-                li.pick-ca__tax{
-                  font-size: 10px;
-                }
-              }
-            }
-          }
-          &--four{
-            &__img{
-              &__picture{
-                width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
-                @include pick-group;
-                li.pick-ca__name{
-                  font-size:16px;
-                }
-                .pick-ca__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-ca__middle__price{
-                    font-size:16px;
-                  }
-                  li.pick-ca__middle__star{
-                    font-size:16px;
-                  }
-                }
-                li.pick-ca__tax{
-                  font-size: 10px;
                 }
               }
             }
@@ -527,6 +451,7 @@ box-sizing: border-box;
         }
         p.pick-new{
           @include pick-blue;
+          margin-bottom:30px;
         }
       }
       &__topic{
@@ -535,121 +460,46 @@ box-sizing: border-box;
           justify-content: center;
           cursor: pointer;
           &--one{
-            &__img{
-              &__picture{
-                width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
-                @include pick-group;
-                li.pick-bra__name{
-                  font-size:16px;
+              &__img{
+                &__picture{
+                  width:200px;
+                  height:200px;
                 }
-                .pick-bra__middle{
-                  display: flex;
+              }
+              &__content{
+                &__group{
+                  display:flex;
+                  flex-direction:column;
                   justify-content:space-between;
-                  li.pick-bra__middle__price{
+                  width:200px;
+                  height:150px;
+                  @include pick-group;
+                  li.pick-bra__name{
                     font-size:16px;
+                    text-decoration:none;
+                    color:black;
                   }
-                  li.pick-bra__middle__star{
-                    font-size:16px;
+                  .pick-bra__in{
+                    color:black;
+                  .pick-bra__middle{
+                    display: flex;
+                    justify-content:space-between;
+                    li.pick-bra__middle__price{
+                      font-size:16px;
+                    }
+                    li.pick-bra__middle__star{
+                      font-size:16px;
+                    }
                   }
-                }
-                li.pick-bra__tax{
-                  font-size: 10px;
+                  li.pick-bra__tax{
+                    font-size: 10px;
+                  }
                 }
               }
-            }
-          }
-          &--two{
-            &__img{
-              &__picture{
-                width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
-                @include pick-group;
-                li.pick-bra__name{
-                  font-size:16px;
-                }
-                .pick-bra__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-bra__middle__price{
-                    font-size:16px;
-                  }
-                  li.pick-bra__middle__star{
-                    font-size:16px;
-                  }
-                }
-                li.pick-bra__tax{
-                  font-size: 10px;
-                }
-              }
-            }
-          }
-          &--three{
-            &__img{
-              &__picture{
-                width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
-                @include pick-group;
-                li.pick-bra__name{
-                  font-size:16px;
-                }
-                .pick-bra__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-bra__middle__price{
-                    font-size:16px;
-                  }
-                  li.pick-bra__middle__star{
-                    font-size:16px;
-                  }
-                }
-                li.pick-bra__tax{
-                  font-size: 10px;
-                }
-              }
-            }
-          }
-          &--four{
-            &__img{
-              &__picture{
-                width:200px;
-                height:200px;
-              }
-            }
-            &__content{
-              &__group{
-                @include pick-group;
-                li.pick-bra__name{
-                  font-size:16px;
-                }
-                .pick-bra__middle{
-                  display: flex;
-                  justify-content:space-between;
-                  li.pick-bra__middle__price{
-                    font-size:16px;
-                  }
-                  li.pick-bra__middle__star{
-                    font-size:16px;
-                  }
-                }
-                li.pick-bra__tax{
-                  font-size: 10px;
-                }
-              }
-            }
-          }
+           }
+          
+        }
+        
         }
       }
     }

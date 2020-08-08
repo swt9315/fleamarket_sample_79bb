@@ -1,0 +1,28 @@
+.pick-ca__inner__topic__main
+  - @items.each do |item|
+  .pick-ca__inner__topic__main--one
+    =item.name
+      =link_to item_path(item.id), class:"new-item" 
+    .pick-ca__inner__topic__main--one__img
+      = image_tag item.images[0].image.url, class: "pick-ca__inner__topic__main--one__img__picture"
+    .pick-ca__inner__topic__main--one__content
+      .pick-ca__inner__topic__main--one__content__group
+        %li.pick-ca__name 
+          = item.name
+        .pick-ca__middle
+          %li.pick-ca__middle__price 
+            = item.price
+            円
+          %li.pick-ca__middle__price ★1
+        %li.pick-ca__tax (税込)
+
+
+-# .Ranking-main
+-#   - @all_ranks.each.with_index(1) do |item,i|
+-#     .ranking__contents
+-#       .ranking__content
+-#         %p.ranking__number No.#{i}
+-#         .ranking__name 
+-#           //= item.name
+-#           = link_to item.name, item_messages_path(item), method: :get, class: 'iine-ranking-btn'
+-#         %p.ranking__iine #{item.likes.count}いいね 
