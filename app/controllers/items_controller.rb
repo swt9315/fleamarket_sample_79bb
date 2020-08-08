@@ -1,12 +1,11 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: [:show, :edit, :update, :destroy]
+  before_action :set_items, only: [:show, :index]
 
   def index
-    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def show
-    @items = Item.includes(:images).order('created_at DESC')
   end
 
   def new
@@ -53,6 +52,10 @@ class ItemsController < ApplicationController
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def set_items
+    @items = @items = Item.includes(:images).order('created_at DESC')
   end
 
 end
