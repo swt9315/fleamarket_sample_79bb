@@ -1,6 +1,9 @@
 class ItemsController < ApplicationController
+
+  before_action :set_parents, only: [:new, :create, :category]
   before_action :set_item, only: [:show, :edit, :update, :destroy]
   before_action :set_items, only: [:show, :index]
+
 
   def index
   end
@@ -12,6 +15,7 @@ class ItemsController < ApplicationController
     if user_signed_in?
       @item = Item.new
       @item.images.new
+      @category_parent_array = Category.where(ancestry: nil)
     else
       redirect_to new_user_session_path
     end
@@ -25,6 +29,9 @@ class ItemsController < ApplicationController
       render :new
     end
   end
+
+  def show
+  end
     
   def destroy
     unless @item.destroy
@@ -32,7 +39,31 @@ class ItemsController < ApplicationController
       render :show
     end
   end
- 
+    
+  def category
+  end
+  
+  def search
+    respond_to do |format|
+      format.html
+      format.json do
+        if params[:parent_id]
+          @childrens = Category.find(params[:parent_id]).children
+        elsif params[:children_id]
+          @grandChilds = Category.find(params[:children_id]).children
+        end
+      end
+    end
+  end
+  
+  def get_category_children
+    @category_children = Category.find(params[:parent_id]).children
+  end
+
+  def get_category_grandchildren
+    @category_grandchildren = Category.find(params[:child_id]).children
+  end
+  
   def edit
   end
   
@@ -47,15 +78,20 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :introduction, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand,images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
+    params.require(:item).permit(:name, :introduction, :category_id, :condition, :postage_user, :price, :preparation, :prefecture_id, :brand,images_attributes: [:image, :_destroy, :id]).merge(seller_id: current_user.id)
   end
 
   def set_item
     @item = Item.find(params[:id])
   end
 
+
   def set_items
     @items = @items = Item.includes(:images).order('created_at DESC')
   end
 
+  
+  def set_parents
+    @parents = Category.all.order("id ASC").limit(13).where(ancestry: nil)
+  end
 end
