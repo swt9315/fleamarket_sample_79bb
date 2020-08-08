@@ -106,7 +106,7 @@
       .pick-more__inner
         .pick-more__inner__topic
           .pick-more__inner__topic__main
-            - @items.slice(13..16).each do |item|
+            - @items.first(5).each do |item|
               .pick-more__inner__topic__main--one
                 = link_to item_path(item),:style=>"text-decoration:none;" do
                   .pick-more__inner__topic__main--one__img
