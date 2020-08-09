@@ -90,7 +90,6 @@ class ItemsController < ApplicationController
     @items = @items = Item.includes(:images).order('created_at DESC')
   end
 
-  
   def set_parents
     @parents = Category.all.order("id ASC").limit(13).where(ancestry: nil)
   end
