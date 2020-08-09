@@ -69,9 +69,9 @@
             .detail__content__inner__information__data__footer__star ★お気に入り０
             - if user_signed_in?
               - if current_user.id == @item.seller_id
-                = link_to edit_item_path(current_user), calss: "editBtn" do
+                = link_to edit_item_path(@item), calss: "editBtn" do
                   .detail__content__inner__information__data__footer__edit 編集する
-                = link_to "#", class: "destroyBtn" do
+                = link_to item_path(@item),method: :delete, class: "destroyBtn" do
                   .detail__content__inner__information__data__footer__destroy 削除する
               - else
             - else
@@ -103,38 +103,35 @@
       %p.more-item  ベビー・キッズをもっと見る
   
     .pick-more
-    .pick-more__inner
-      .pick-more__inner__topic
-        .pick-more__inner__topic__main
-          .pick-more__inner__topic__main--one
-            .pick-more__inner__topic__main--one__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-more__inner__topic__main--one__img__picture"
-            .pick-more__inner__topic__main--one__content
-              .pick-more__inner__topic__main--one__content__group
-                %li.pick-more__name カレー
-                .pick-more__middle
-                  %li.pick-more__middle__price 1000円
-                  %li.pick-more__middle__price ★1
-                %li.pick-more__tax (税込)
-          .pick-more__inner__topic__main--two
-            .pick-more__inner__topic__main--two__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-more__inner__topic__main--two__img__picture"
-            .pick-more__inner__topic__main--two__content
-              .pick-more__inner__topic__main--two__content__group
-                %li.pick-more__name カレー
-                .pick-more__middle
-                  %li.pick-more__middle__price 1000円
-                  %li.pick-more__middle__price ★1
-                %li.pick-more__tax (税込)
-          .pick-more__inner__topic__main--three
-            .pick-more__inner__topic__main--three__img
-              =image_tag "curry.png", alt: "no-image", class: "pick-more__inner__topic__main--three__img__picture"
-            .pick-more__inner__topic__main--three__content
-              .pick-more__inner__topic__main--three__content__group
-                %li.pick-more__name カレー
-                .pick-more__middle
-                  %li.pick-more__middle__price 1000円
-                  %li.pick-more__middle__price ★1
-                %li.pick-more__tax (税込)
+      .pick-more__inner
+        .pick-more__inner__topic
+          .pick-more__inner__topic__main
+            - @items.first(5).each do |item|
+              .pick-more__inner__topic__main--one
+                = link_to item_path(item),:style=>"text-decoration:none;" do
+                  .pick-more__inner__topic__main--one__img
+                    = image_tag item.images[0].image.url, class: "pick-more__inner__topic__main--one__img__picture"
+                  .pick-more__inner__topic__main--one__content
+                    .pick-more__inner__topic__main--one__content__group
+                      %li.pick-more__name 
+                        = item.name
+                      .pick-more__in
+                        .pick-more__middle
+                          %li.pick-more__middle__price
+                            - if item.buyer_id.nil?
+                              = item.price
+                              円
+                            - else
+                              %span
+                              SOLD OUT
+                          %li.pick-more__middle__price ★1
+                        %li.pick-more__tax
+                          - if item.buyer_id.nil?
+                            (税込)
+                          - else
+                            落札された商品です
   .footer
     = render "footer"
+
+
+  
