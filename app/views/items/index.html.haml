@@ -67,7 +67,7 @@
         .pick-ca__inner__topic__main
           - @items.first(5).each do |item|
             .pick-ca__inner__topic__main--one
-              = link_to item_path(item),:style=>"text-decoration:none;" do
+              = link_to item_path(item), class:"link-all"  do
                 .pick-ca__inner__topic__main--one__img
                   = image_tag item.images[0].image.url, class: "pick-ca__inner__topic__main--one__img__picture"
                 .pick-ca__inner__topic__main--one__content
@@ -102,7 +102,7 @@
         .pick-bra__inner__topic__main
           - @items.first(5).each do |item|
             .pick-bra__inner__topic__main--one
-              = link_to item_path(item),:style=>"text-decoration:none;"  do
+              = link_to item_path(item),class:"link-all"  do
                 .pick-bra__inner__topic__main--one__img
                   = image_tag item.images[0].image.url, class: "pick-bra__inner__topic__main--one__img__picture"
                 .pick-bra__inner__topic__main--one__content

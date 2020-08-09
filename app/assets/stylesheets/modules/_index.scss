@@ -648,4 +648,7 @@ box-sizing: border-box;
   }
 }
 
-
+// リンクの下線部を消す記述
+a.link-all{
+  text-decoration:none;
+}
