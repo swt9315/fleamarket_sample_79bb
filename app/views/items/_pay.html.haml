@@ -1,0 +1,14 @@
+-# 購入完了しましたページ
+.pay
+  .mainContents
+    .mainDetails
+      .mainDetails__message 購入が完了しました。
+      .mainDetails__title 購入内容の確認
+      .mainDetails__productBox
+      %ul.links
+        %li.links__top
+          = link_to "トップページに戻る", root_path, class: "links__top__btn"
+        %li.links__index
+          = link_to "購入商品一覧", "#", class: "links__index__btn"
+
+
