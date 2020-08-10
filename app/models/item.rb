@@ -13,8 +13,8 @@ class Item < ApplicationRecord
     "福岡県":40,"佐賀県":41,"長崎県":42,"熊本県":43,"大分県":44,"宮崎県":45,"鹿児島県":46,"沖縄県":47
   }
 
-  belongs_to :buyer, class_name: 'User', :foreign_key => 'buyer_id', optional: true
-  belongs_to :seller, class_name: 'User', :foreign_key => 'seller_id'
+  belongs_to :buyer, class_name: 'User', foreign_key: 'buyer_id', optional: true
+  belongs_to :seller, class_name: 'User', foreign_key: 'seller_id'
 
   #belongs_to :category
   has_many :images, dependent: :destroy
