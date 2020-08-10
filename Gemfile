@@ -29,12 +29,16 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_hash', '~> 2.3.0'
+gem "bootstrap-sass", "~>3.3.6"
 gem 'carrierwave'
-gem 'mini_magick'
 gem 'devise'
 gem 'fog-aws'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem "jquery-rails"
+gem "jquery-ui-rails"
 gem 'haml-rails', '~> 2.0'
+gem 'mini_magick'
+gem 'payjp'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -73,15 +77,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
-
-gem 'devise'
-
-gem 'active_hash', '~> 2.3.0'
-
-gem 'font-awesome-sass', '~> 5.4.1'
-
-gem 'pry-rails'
-
-gem 'jquery-rails'
-
-

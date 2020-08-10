@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'card/new'
+  get 'card/show'
   devise_for :users, controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions',
@@ -15,7 +17,16 @@ Rails.application.routes.draw do
       get 'logout'
     end
   end
+
+  resources :items do
+    member do
+    get 'buy'
+    get 'pay'
+    post 'pay'
+    end
+  end
   
-  resources :items
+  resources :card, only: [:new, :create, :show, :destroy] do
+  end
 
 end
