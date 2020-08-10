@@ -1,10 +1,11 @@
 -# クレジットカード削除後の削除しましたページ
-.destoroy
-  .destoroy__frame
-    .destoroy__frame__message
-      削除が完了しました。
-    %ul.destoroy__frame__btns
-      %li.credit_card_new_link
-        = link_to "クレジットカード新規登録", new_credit_card_path, class: "credit_card_new_link__btn"
-      %li.my_page_link
-        = link_to "マイページに戻る", users_path(current_user.id), class: "my_page_link__btn"
+.New__content
+  .New__content__topic
+    .New__content__topic__logo
+      = link_to root_path do
+        = image_tag “logo.png”, alt: “FURIMA：“, class: "New__content__topic__logo__img"
+    .New__content__topic__info
+      %p.registration__title 削除が完了しました。
+    .New__content__topic__btn
+      = link_to "クレジットカード新規登録", new_credit_card_path, class: "New__content__topic__btn__push"
+      = link_to "マイページに戻る", users_path(current_user.id), class: "New__content__topic__btn__push"

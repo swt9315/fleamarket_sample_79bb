@@ -5,10 +5,19 @@
       .mainDetails__message 購入が完了しました。
       .mainDetails__title 購入内容の確認
       .mainDetails__productBox
+        .mainDetails_productBox_content
+          .mainDetails_productBox_content__img
+            -# =image_tag “curry.png”, alt: “FURIMA：“, class: “img__picture”
+            -#= image_tag item.images[0].image.url, class: “img__picture”
+          .mainDetails_productBox_content__text
+            .mainDetails_productBox_content_text_name カレー
+            .mainDetails_productBox_content_text_price １０００円
       %ul.links
         %li.links__top
-          = link_to "トップページに戻る", root_path, class: "links__top__btn"
+          = link_to "トップページに戻る", root_path, class: "links_top_btn"
         %li.links__index
-          = link_to "購入商品一覧", "#", class: "links__index__btn"
-
-
+          = link_to "購入商品一覧", "#", class: "links_index_btn"
+    .privacy
+      .privacy-policy プライバシーポリシー
+      .privacy-content プライバシー利用規約
+      .privacy-line 特定商取引に関する表記

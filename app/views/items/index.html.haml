@@ -63,6 +63,14 @@
       .pick-ca__inner__title
         %p.pick-ca ピックアップカテゴリー
         %p.pick-new 新規投稿商品
+
+      - @items.each do |item|
+        %p 商品名
+        %p.productName= item.name
+        %p 価格
+        %p.productPrice= item.price
+        = link_to "詳細ページへ", item_path(item.id), method: :get
+
       .pick-ca__inner__topic
         .pick-ca__inner__topic__main
           .pick-ca__inner__topic__main--one
