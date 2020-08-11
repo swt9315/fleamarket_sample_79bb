@@ -36,6 +36,11 @@ require 'rails_helper'
       item.valid?
       expect(item.errors[:preparation]).to include("can't be blank")
     end
+    it "is invalid without an category" do
+      item = Item.new(category: nil)
+      item.valid?
+      expect(item.errors[:category]).to include("must exist")
+    end
 
     #名前が41文字以上だと登録されない
     it "is invalid with a name that has more than 40 characters " do

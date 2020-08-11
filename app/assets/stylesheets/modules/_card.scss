@@ -1,0 +1,270 @@
+//クレジット登録ページ
+.Form {
+  width: 100vw;
+  height: 600px;
+  padding: 20px 30px;
+  display: flex;
+  justify-content: center;
+  &__contents {
+    width: 600px;
+    height: 600px;
+    background-color: #ffffff;
+    &__title {
+      height: 50px;
+      line-height: 50px;
+      text-align: center;
+      text-shadow: 1px 1px 1px #747474;
+      color: #171717;
+      font-size: 16px;
+      border-width: 1px;
+      border-bottom-style: solid;
+      border-bottom-color: #eeeeee;
+      margin-bottom: 20px;
+    }
+    &__main {
+      height: 600px;
+      padding: 0 130px;
+      &__input {
+        &__box {
+          display: flex;
+          margin-bottom: 5px;
+          &--cardNumber {
+            color: #171717;
+            text-shadow: 0.5px 0.5px 1px #747474;
+            font-size: 13px;
+            margin-right: 12px;
+          }
+          &__required {
+            width: 35px;
+            height: 18px;
+            color: #ffffff;
+            background-color: red;
+            font-size: 11px;
+            text-align: center;
+          }
+        }
+        &--number {
+          width: 350px;
+          height: 52px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: #cbcbcb;
+          border-radius: 3px;
+          padding: 0 15px;
+          margin-bottom: 5px;
+          font-size: 14px;
+        }
+        &--mark {
+          &--logo {
+            margin-bottom: 20px;
+          }
+        }
+        &__box2 {
+          display: flex;
+          margin-bottom: 5px;
+          &--expirationDate {
+            color: #171717;
+            text-shadow: 0.5px 0.5px 1px #747474;
+            font-size: 13px;
+            margin-right: 12px;
+          }
+          &--required {
+            width: 35px;
+            height: 18px;
+            color: #ffffff;
+            background-color: red;
+            font-size: 11px;
+            text-align: center;
+          }
+        }
+        &__expirationDate {
+          display: flex;
+          margin-bottom: 20px;
+          .exp {
+            width: 125px;
+            height: 52px;
+            border-width: 1px;
+            border-style: solid;
+            border-color: #cbcbcb;
+            border-radius: 3px;
+            padding-left: 80px;
+            margin-bottom: 5px;
+          }
+          &--month {
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 14px;
+          }
+          &--year {
+            width: 50px;
+            line-height: 50px;
+            text-align: center;
+            font-size: 14px;
+          }
+        }
+        &__box3 {
+          display: flex;
+          margin-bottom: 5px;
+          &--item {
+            color: #171717;
+            text-shadow: 0.5px 0.5px 1px #747474;
+            font-size: 13px;
+            margin-right: 12px;
+          }
+          &__required {
+            width: 35px;
+            height: 18px;
+            color: #ffffff;
+            background-color: red;
+            font-size: 11px;
+            text-align: center;
+          }
+        }
+        &--securityCode {
+          width: 350px;
+          height: 52px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: #cbcbcb;
+          border-radius: 3px;
+          padding: 0 15px;
+          margin-bottom: 5px;
+          font-size: 12px;
+        }
+        &--link {
+          text-decoration: none;
+          &--help {
+            color: #1e90ff;
+            font-size: 12px;
+            text-align: right;
+            margin-bottom: 20px;
+          }
+          &--help:hover {
+            opacity: 0.4;
+          }
+        }
+        &--name {
+          width: 350px;
+          height: 52px;
+          border-width: 1px;
+          border-style: solid;
+          border-color: #cbcbcb;
+          border-radius: 3px;
+          padding: 0 15px;
+          margin-bottom: 50px;
+          font-size: 12px;
+        }
+        &--addBtn {
+          width: 350px;
+          height: 52px;
+          background-color: #3ccace;
+          border-style: none;
+          border-radius: 6px;
+          padding: 0 15px;
+          margin-bottom: 5px;
+          color: #ffffff;
+          font-size: 14px;
+        }
+        &--addBtn:hover {
+          width: 352px;
+          height: 54px;
+          font-weight: bold;
+          box-shadow: 1px 1px 3px #b1b1b1;
+        }
+      }
+    }
+  }
+}
+
+// クレジットカード登録済の場合のクレジット情報詳細ページ
+.show{
+  background-color: rgb(244, 244, 244);
+  text-align: center;
+  padding: 30px 0px 0px 0px;
+  width:100vw;
+  height:700px;
+  &__frame{
+    background-color: white;
+    text-align:center;
+    padding:0px 20px 50px 20px;
+    width:700px;
+    margin: 0 auto;
+    margin-top:80px;
+    &__title{
+      font-size:22px;
+      text-align:center;
+      padding:30px 0px 0px 0px;
+      font-weight:bold;
+    }
+    .credit_card__list{
+      &__title{
+        font-size:16px;
+      text-align:center;
+      font-weight:bold;
+      margin:10px 0px 30px 0px;
+      }
+      &__frame{
+        display:flex;
+        justify-content:center;
+        .credit_card_info{
+          border:1px solid #3CCACE;
+          border-radius:20px;
+          display:flex;
+          justify-content:center;
+          padding:10px;
+          height:100px;
+          width:350px;
+          &__brand{
+            .credit_brand{
+              width:70px;
+              height:70px;
+              margin-right:40px;
+            }
+          }
+          &__numbers{
+            font-weight:bold;
+            margin-top:10px;
+            .number{
+            }
+            .expiration_date{
+              display:flex;
+              justify-content:space-around;
+              font-weight:bold;
+              font-size:16px;
+              margin-top:10px;
+              .expiration_date__title{
+              }
+              .expiration_date__info{
+              }
+            }
+          }
+        }
+        .destroy__function{
+          &__link{
+            display:flex;
+            flex-direction:column;
+              list-style:none;
+            .destroy__function__link__btn{
+              background-color:orange;
+              text-decoration:none;
+              color:white;
+              border-radius:50px;
+              padding:10px 40px;
+              margin:0px 0px 20px 30px;
+            }
+            .mypage__function__link__btn{
+              background-color:#3CCACE;
+              text-decoration:none;
+              color:white;
+              border-radius:50px;
+              padding:10px 40px;
+              margin:0px 0px 20px 30px;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+

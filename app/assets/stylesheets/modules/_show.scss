@@ -190,6 +190,9 @@
       text-align: center;
       padding: 30px 0px 0px 0px;
       width:100vw;
+      .soldout {
+        font-size: 30px;
+      }
       &__inner{
         background-color: white;
         text-align:center;
@@ -516,42 +519,20 @@
               }
               &__content{
                 &__group{
-                  @include pick-group;
-                  li.pick-more__name{
-                    font-size:16px;
-                    text-align: left;
-                  }
-                  .pick-more__middle{
-                    display: flex;
-                    justify-content:space-between;
-                    li.pick-more__middle__price{
-                      font-size:16px;
-                    }
-                    li.pick-more__middle__star{
-                      font-size:16px;
-                    }
-                  }
-                  li.pick-more__tax{
-                    font-size: 10px;
-                    text-align: left;
-                  }
-                }
-              }
-            }
-            &--two{
-              &__img{
-                &__picture{
+                  display:flex;
+                  flex-direction:column;
+                  justify-content:space-between;
                   width:200px;
-                  height:200px;
-                }
-              }
-              &__content{
-                &__group{
+                  height:150px;
+                  color: black;
                   @include pick-group;
                   li.pick-more__name{
                     font-size:16px;
-                    text-align: left;
+                    text-decoration:none;
+                    color:black;
+                    text-align:left;
                   }
+                  .pick-more__in{
                   .pick-more__middle{
                     display: flex;
                     justify-content:space-between;
@@ -564,38 +545,7 @@
                   }
                   li.pick-more__tax{
                     font-size: 10px;
-                    text-align: left;
-                  }
-                }
-              }
-            }
-            &--three{
-              &__img{
-                &__picture{
-                  width:200px;
-                  height:200px;
-                }
-              }
-              &__content{
-                &__group{
-                  @include pick-group;
-                  li.pick-more__name{
-                    font-size:16px;
-                    text-align: left;
-                  }
-                  .pick-more__middle{
-                    display: flex;
-                    justify-content:space-between;
-                    li.pick-more__middle__price{
-                      font-size:16px;
-                    }
-                    li.pick-more__middle__star{
-                      font-size:16px;
-                    }
-                  }
-                  li.pick-more__tax{
-                    font-size: 10px;
-                    text-align: left;
+                    text-align:left;
                   }
                 }
               }
@@ -604,6 +554,7 @@
         }
       }
     }
+  }
     
 //下にあるイメージ画像　誰でも簡単人生をかえるフリマアプリ
   .bottomimage{
