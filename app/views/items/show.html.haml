@@ -124,20 +124,11 @@
             .detail__content__inner__information__data__footer
               .detail__content__inner__information__data__footer__star ★お気に入り０
               - if user_signed_in?
-<<<<<<< Updated upstream
-
-                - if current_user.id != @item.seller_id
-                  - if item.buyer_id.nil?
-                    .perchase
-                      = link_to "購入する", "#", method: :get, class: 'perchase-btn'
-                  - else
-=======
                 - if current_user.id == @item.seller_id
                   = link_to edit_item_path(@item), calss: "editBtn" do
                     .detail__content__inner__information__data__footer__edit 編集する
                   = link_to item_path(@item),method: :delete, class: "destroyBtn" do
                     .detail__content__inner__information__data__footer__destroy 削除する
->>>>>>> Stashed changes
                 - else
               - else
 
