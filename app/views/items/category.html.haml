@@ -1,0 +1,25 @@
+.toppage
+  .header
+    = render "header"
+  .item-page
+    .category-container
+      .category-list
+        %h1.category-list__title カテゴリー一覧
+        %ul.category-list__contents
+          - @parents.each do |parent|
+            %li.category-list__contents__content
+              = link_to "#{parent.name}", "#", class: "category-list__contents__content--detail link-text"
+      .category-field
+        - @parents.each do |parent|
+          .category-box
+            .category-box__parent= parent.name
+            .category-box__children
+              = link_to "すべて", "#", class: "category-box__all link-text"
+              - parent.children.each do |child|
+                .category-box__children--text= child.name
+                .category-box__grandchildren
+                  = link_to "すべて", "#", class: "category-box__link link-text"
+                  - child.children.each do |grandchild|
+                    = link_to "#{grandchild.name}", "#", class: "category-box__link link-text"
+  .footer
+  = render "footer"
