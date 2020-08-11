@@ -1,27 +1,35 @@
-.Header
-  .Header__main
-    .Header__main__top
-      .Header__main__top__logo
-        =link_to root_path, class: "Header__main__top__logo--link" do
-          = image_tag "logo.png", alt: "FURIMA：", class: "Header__main__top__logo--link__image"
-      .Header__main__top__searchBox
-        = form_with(url: root_path, local: true, method: :get, class: "Header__main__top__searchBox__form") do |f|
-          = f.text_field :keyword, placeholder: "キーワードから探す", class: "Header__main__top__searchBox__form__keyword"
-          = f.submit "", class: "Header__main__top__searchBox__form--btn"
-          = icon('fas', 'search', class: 'Header__main__top__searchBox__form--btn--icon')
-
-
-    %ul.Header__main__action
-      = link_to "#", class: "Header__main__action--link" do
-        %li.Header__main__action--link__searchCategory カテゴリーから探す
-      = link_to "#", class: "Header__main__action--link" do
-        %li.Header__main__action--link__searchBrand ブランドから探す
-      = link_to "#", class: "Header__main__action--link" do
-        %li.Header__main__action--link__news お知らせ
-      = link_to "#", class: "Header__main__action--link" do
-        %li.Header__main__action--link__todo やることリスト
-      = link_to user_path(current_user.id), class: "Header__main__action--link" do
-        %li.Header__main__action--link__mypage マイページ
-  .Header__category
-    フリマ  >  マイページ
-    
+.toppage
+  .header
+    .header__inner
+      .header__inner__main
+        .header__inner__main__logo
+          = link_to root_path do
+            =image_tag "logo.png", alt: "FURIMA：", class: "header__inner__main__logo__img"
+        .header__inner__main__searchbox
+          .header__inner__main__searchbox__input
+            = form_with(url: root_path, local: true, method: :get, class: "header__inner__main__searchbox__input__search") do |form|
+              = form.text_field :keyword, placeholder: "キーワードから探す", class: "header__inner__main__searchbox__input__search__keyword"
+              = form.submit ".", class: "search-btn"
+              = image_tag "icon-search 1.png", alt: "検索", class: "search-btn__icon"
+          .header__inner__main__searchbox__btn
+      .header__inner__nav
+        .header__inner__nav__left
+          .header__inner__nav__left__category
+            = link_to category_path ,class: "header__inner__nav__left__category--link" do
+              .header__inner__nav__left__category--icon= icon("fas", "bars")
+              .header__inner__nav__left__category--title カテゴリーから探す
+          .header__inner__nav__left__brand
+            = link_to "#", class: "header__inner__nav__left__category--link" do
+              .header__inner__nav__left__category--icon= icon("fas", "tag")
+              .header__inner__nav__left__category--title ブランドから探す
+        .header__inner__nav__right
+          .header__inner__nav__right__lists
+            = link_to "お知らせ", '#', class: "header__inner__nav__right__lists--link"
+          .header__inner__nav__right__lists
+            = link_to "やることリスト", '#', class: "header__inner__nav__right__lists--link"
+          .header__inner__nav__right__lists
+            = link_to "マイページ", user_path(current_user.id), class: "header__inner__nav__right__lists--link"
+          .header__inner__nav__right__lists
+            = link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header__inner__nav__right__lists--link"
+    .header__crumbs
+      フリマ  >  マイページ

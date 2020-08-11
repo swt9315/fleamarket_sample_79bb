@@ -1,5 +1,5 @@
 class ItemsController < ApplicationController
-  before_action :set_parents, only: [:new, :create, :category]
+  before_action :set_parents, only: [:new, :create, :category, :show]
   before_action :set_item, only: [:show, :edit, :update, :destroy, :buy, :pay]
   before_action :set_items, only: [:show, :index]
   before_action :set_images, only: [:buy, :pay]
