@@ -48,8 +48,14 @@
             .detail__content__inner__information__data__exhibitor__subject                出品者
             %p.detail__content__inner__information__data__exhibitor__content=             @item.seller.name
           .detail__content__inner__information__data__category
-            .detail__content__inner__information__data__category__subject                 カテゴリー
-            %p.detail__content__inner__information__data__category__content=              @item.category_id
+            .detail__content__inner__information__data__category__subject                 
+            %p.detail__content__inner__information__data__category__content=              @item.category.parent.parent.name 
+          .detail__content__inner__information__data__category2
+            .detail__content__inner__information__data__category2__subject2                 カテゴリー
+            %p.detail__content__inner__information__data__category2__content2=              @item.category.parent.name
+          .detail__content__inner__information__data__category3
+            .detail__content__inner__information__data__category3__subject3                 
+            %p.detail__content__inner__information__data__category3__content3=              @item.category.name
           .detail__content__inner__information__data__brand
             .detail__content__inner__information__data__brand__subject                    ブランド
             %p.detail__content__inner__information__data__brand__content=                 @item.brand
@@ -89,8 +95,10 @@
               = f.submit "コメントする", class: "comment__inner__btn "
               - if user_signed_in?
                 - if current_user.id != @item.seller_id
-                  .perchase
-                    = link_to "購入する", "#", method: :get, class: 'perchase-btn'
+                  - if item.buyer_id.nil?
+                    .perchase
+                      = link_to "購入する", "#", method: :get, class: 'perchase-btn'
+                  - else
                 - else
               - else
       - else
@@ -110,6 +118,10 @@
               .pick-more__inner__topic__main--one
                 = link_to item_path(item),:style=>"text-decoration:none;" do
                   .pick-more__inner__topic__main--one__img
+                    - if item.buyer_id.nil?
+                    - else
+                      .soldout 
+                        .soldout-in SOLDOUT
                     = image_tag item.images[0].image.url, class: "pick-more__inner__topic__main--one__img__picture"
                   .pick-more__inner__topic__main--one__content
                     .pick-more__inner__topic__main--one__content__group
