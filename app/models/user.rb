@@ -13,5 +13,7 @@ class User < ApplicationRecord
   validates :birthday_month, presence: true, numericality: { only_integer: true }
   validates :birthday_day, presence: true, numericality: { only_integer: true }
   has_one :address
+  has_one :card, dependent: :destroy
   has_many :items
+  
 end

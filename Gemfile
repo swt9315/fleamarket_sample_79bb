@@ -29,17 +29,21 @@ gem 'jbuilder', '~> 2.7'
 gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_hash', '~> 2.3.0'
+gem 'ancestry'
+gem "bootstrap-sass", "~>3.3.6"
 gem 'carrierwave'
-gem 'mini_magick'
 gem 'devise'
 gem 'fog-aws'
 gem 'font-awesome-sass', '~> 5.4.1'
+gem "jquery-rails"
+gem "jquery-ui-rails"
 gem 'haml-rails', '~> 2.0'
+gem 'mini_magick'
+gem 'payjp'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'pry-rails'
   gem 'capistrano'
   gem 'capistrano-rbenv'
   gem 'capistrano-bundler'
@@ -48,6 +52,7 @@ group :development, :test do
   gem 'capistrano-rails-console'
   gem 'rspec-rails', '~> 4.0.0.beta2'
   gem 'factory_bot_rails'
+  gem 'pry-rails'
 end
 
 group :development do
@@ -73,15 +78,3 @@ gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 group :production do
   gem 'unicorn', '5.4.1'
 end
-
-gem 'devise'
-
-gem 'active_hash', '~> 2.3.0'
-
-gem 'font-awesome-sass', '~> 5.4.1'
-
-gem 'pry-rails'
-
-gem 'ancestry'
-
-gem 'jquery-rails'

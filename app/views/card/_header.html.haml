@@ -1,0 +1,27 @@
+.Header
+  .Header__main
+    .Header__main__top
+      .Header__main__top__logo
+        =link_to root_path, class: "Header__main__top__logo--link" do
+          = image_tag "logo.png", alt: "FURIMA：", class: "Header__main__top__logo--link__image"
+      .Header__main__top__searchBox
+        = form_with(url: root_path, local: true, method: :get, class: "Header__main__top__searchBox__form") do |f|
+          = f.text_field :keyword, placeholder: "キーワードから探す", class: "Header__main__top__searchBox__form__keyword"
+          = f.submit "", class: "Header__main__top__searchBox__form--btn"
+          = icon('fas', 'search', class: 'Header__main__top__searchBox__form--btn--icon')
+
+
+    %ul.Header__main__action
+      = link_to "#", class: "Header__main__action--link" do
+        %li.Header__main__action--link__searchCategory カテゴリーから探す
+      = link_to "#", class: "Header__main__action--link" do
+        %li.Header__main__action--link__searchBrand ブランドから探す
+      = link_to "#", class: "Header__main__action--link" do
+        %li.Header__main__action--link__news お知らせ
+      = link_to "#", class: "Header__main__action--link" do
+        %li.Header__main__action--link__todo やることリスト
+      = link_to user_path(current_user.id), class: "Header__main__action--link" do
+        %li.Header__main__action--link__mypage マイページ
+  .Header__category
+    フリマ  >  マイページ
+    
