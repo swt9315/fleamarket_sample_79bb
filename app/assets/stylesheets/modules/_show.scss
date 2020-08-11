@@ -279,6 +279,35 @@
               color:#3CCACE;
             }
           }
+          &__category2{
+            @include information-parent;
+            &__subject2{
+              //border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;  
+              @include information-subject;
+            }
+            &__content2{
+              @include information-content;
+              //border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              color:#3CCACE;
+            }
+          }
+          &__category3{
+            @include information-parent;
+            &__subject3{
+             // border-top: 1px solid #dedede;
+              border-left:1px solid #dedede;  
+              @include information-subject;
+            }
+            &__content3{
+              @include information-content;
+              //border-top: 1px solid #dedede;
+              border-right: 1px solid #dedede;
+              color:#3CCACE;
+            }
+          }
+
           &__brand{
             @include information-parent;
             &__subject{

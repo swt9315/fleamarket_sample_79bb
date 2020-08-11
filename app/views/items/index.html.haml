@@ -70,6 +70,10 @@
             .pick-ca__inner__topic__main--one
               = link_to item_path(item), class:"link-all"  do
                 .pick-ca__inner__topic__main--one__img
+                  - if item.buyer_id.nil?
+                  - else
+                    .soldout 
+                      .soldout-in SOLDOUT
                   = image_tag item.images[0].image.url, class: "pick-ca__inner__topic__main--one__img__picture"
                 .pick-ca__inner__topic__main--one__content
                   .pick-ca__inner__topic__main--one__content__group
@@ -89,9 +93,7 @@
                         - if item.buyer_id.nil?
                           (税込)
                         - else
-                          落札された商品です
-
-    
+                          落札された商品です 
 
   -# ピックアップブランドのアーカイブ
   .pick-bra
@@ -105,6 +107,10 @@
             .pick-bra__inner__topic__main--one
               = link_to item_path(item),class:"link-all"  do
                 .pick-bra__inner__topic__main--one__img
+                  - if item.buyer_id.nil?
+                  - else
+                    .soldout 
+                      .soldout-in SOLDOUT
                   = image_tag item.images[0].image.url, class: "pick-bra__inner__topic__main--one__img__picture"
                 .pick-bra__inner__topic__main--one__content
                   .pick-bra__inner__topic__main--one__content__group

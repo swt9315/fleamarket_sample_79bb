@@ -340,7 +340,7 @@ box-sizing: border-box;
               text-align: center;
               &__picture{
                 height:30vh;
-                width:20vw;
+                width:10vw;
               }  
             }   
             &__text{
@@ -359,7 +359,7 @@ box-sizing: border-box;
             text-align:center;
             &__picture{
               height:30vh;
-              width:20vw;
+              width:10vw;
             }
           }     
           &__text{
@@ -378,7 +378,7 @@ box-sizing: border-box;
             text-align: center;
             &__picture{
               height:30vh;
-              width:200vw;
+              width:10vw;
             }
           }     
           &__text{
@@ -611,8 +611,8 @@ box-sizing: border-box;
         }
       }
       .bottom__inner__image{
+        text-align:center;
         &__img{
-          text-align:center;
           &__logo{
             width:150px;
             height:45px;
@@ -670,4 +670,25 @@ box-sizing: border-box;
 // リンクの下線部を消す記述
 a.link-all{
   text-decoration:none;
+}
+
+
+.soldout{
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 50px solid red ;
+  border-right: 50px solid transparent;
+  border-bottom: 50px solid transparent;
+  border-left: 50px solid red ;
+  z-index:100;
+  opacity:70%;
+    .soldout-in{
+      transform: rotate(-45deg);
+      margin:-26px -50px 0px -50px;
+      color: #fff;
+      letter-spacing: 1px;
+      font-weight: 600;
+      font-size:16px;
+    }
 }
