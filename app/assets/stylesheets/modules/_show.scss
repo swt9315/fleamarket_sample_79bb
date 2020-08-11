@@ -196,7 +196,7 @@
       &__inner{
         background-color: white;
         text-align:center;
-        padding:0px 20px;
+        padding:0px 0px;
         width:700px;
         margin: 0 auto; 
       &__name{
@@ -379,7 +379,7 @@
           //いいね 、編集、削除、警告
           &__footer{
             display:flex;
-            justify-content: space-between;
+            justify-content: space-around;
             &__star{
               margin-right: auto;
               padding: 6px 10px;
