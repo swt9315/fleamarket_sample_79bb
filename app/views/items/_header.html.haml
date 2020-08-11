@@ -6,7 +6,7 @@
     .header__inner__main__searchbox
       .header__inner__main__searchbox__input
         = form_with(url: root_path, local: true, method: :get, class: "header__inner__main__searchbox__input__search") do |form|
-          = form.text_field :keyword, placeholder: "キーワードから探す", class: "header__inner__main__searchbox__input__search__keyword"
+          = form.text_field :keyword, placeholder: "キーワードから探す", class: "header__inner__main__searchbox__input__search__keyword form-padding"
           = form.submit ".", class: "search-btn"
           = image_tag "icon-search 1.png", alt: "検索", class: "search-btn__icon"
       .header__inner__main__searchbox__btn

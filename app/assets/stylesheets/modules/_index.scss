@@ -112,7 +112,7 @@ box-sizing: border-box;
       //ヘッダー下のカテゴリーボタン
       display: flex;
       justify-content: space-between;
-      margin: 10px;
+      height: 40px;
       &__left{
         display:flex;
         justify-content: center;
@@ -123,6 +123,7 @@ box-sizing: border-box;
             text-decoration: none;
             font-size: 14px;
             color: black;
+            line-height: 40px;
           }
           &--icon {
             margin-right: 5px;
@@ -146,6 +147,7 @@ box-sizing: border-box;
           font-size: 14px;
           margin-left: 20px;
           &--link {
+            line-height: 40px;
             text-decoration: none;
             color: black;
           }
@@ -776,7 +778,7 @@ box-sizing: border-box;
   }
 }
 //出品カメラボタン
-  .purchasebtn{
+  .purchasebtn-index{
     position:fixed;
     bottom: 32px;
     right: 32px;
@@ -784,9 +786,9 @@ box-sizing: border-box;
     height: 120px;
     background-color: #3CCACE;
     border-radius: 4%;
-    padding:15px;
     text-align:center;
     cursor: pointer;
+    // position: relative;
     &:hover{
       opacity:90%;
     }
@@ -797,15 +799,20 @@ box-sizing: border-box;
     }
     &__icon{
       margin-top:5px;
+      position: absolute;
+      top:40px;
+      left: 35px;
       &__camera{
         width:55px;
         height:55px;
       }
     }
     .sell-btn {
+      margin-top: 15px;
       color: white;
+      display: block;
+      height: 100%;
+      width: 100%;
     }
   }
 }
-
-

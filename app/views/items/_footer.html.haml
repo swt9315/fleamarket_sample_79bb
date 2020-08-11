@@ -27,10 +27,10 @@
       .bottom__inner__image__company  ©️FURIMA
       -# 出品ボタン
 - if user_signed_in?
-  .purchasebtn
-    .purchasebtn__text 
-    .purchasebtn__icon
-      = link_to "出品する",new_item_path, method: :get, class: 'sell-btn link-text' 
-      = image_tag "icon_camera.png", alt: "出品する", class: "purchasebtn__icon__camera"
+  .purchasebtn-index
+    = link_to "出品する", new_item_path, method: :get, class: 'sell-btn link-text'
+    .purchasebtn-index__text
+    .purchasebtn-index__icon
+      = image_tag "icon_camera.png", alt: "出品する", class: "purchasebtn-index__icon__camera"
 - else
 
