@@ -9,7 +9,7 @@ require("@rails/ujs").start()
 require("turbolinks").start()
 require("channels")
 require("../category")
-require("../new_items").start()
+require("../new_items")
 require("../payjp")
 require('jquery').start()
 
