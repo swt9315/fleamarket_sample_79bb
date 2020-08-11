@@ -1,0 +1,30 @@
+.BuyContents
+  %h5.BuyContents__title 購入内容の確認
+  .BuyContents__productInfo
+    .BuyContents__productInfo__itemName
+      = @item.name
+    .BuyContents__productInfo__itemPrice
+      = @item.price
+  .BuyContents__payment
+    %h4.BuyContents__payment__title お支払い金額
+    .BuyContents__payment__priceBox
+      .BuyContents__payment__priceBox--amount
+        = "#{@item.price}" + "円"
+  - if @user.card.present?
+    .BuyContents__creditInfo
+      %h6.BuyContents__creditInfo__title クレジットカード情報
+      .BuyContents__creditInfo__insertBox
+        .BuyContents__creditInfo__insertBox__logoBox
+        .BuyContents__creditInfo__insertBox__info
+          .BuyContents__creditInfo__insertBox__info__number
+            = "**** **** **** " + @customer_card.last4
+          .BuyContents__creditInfo__insertBox__info__expirationDate
+            .BuyContents__creditInfo__insertBox__info__expirationDate__title 有効期限
+            .BuyContents__creditInfo__insertBox__info__expirationDate__mmyy
+              = @exp_month + " / " + @exp_year
+    .BuyContents__purchase
+      = link_to "登録クレジットカードで購入する", pay_item_path(item_id: @item.id), method: :post, class: "BuyContents__purchaseBtn"
+  - else
+    .BuyContents__purchaseNonBtn
+      = form_tag(action: :pay, method: :post) do
+        %script.payjp-button{src: "https://checkout.pay.jp", type: "text/javascript" ,"data-text": "購入する" ,"data-key": "pk_test_9a9b5886a32f02092f60b9a4",}

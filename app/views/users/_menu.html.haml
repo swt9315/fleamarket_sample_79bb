@@ -31,20 +31,20 @@
         %li.Menu__box__group1__link__content ガイド
       = link_to "#", class: "Menu__box__group1__link" do
         %li.Menu__box__group1__link__content お問い合わせ
-    %h2.Menu__box__title フリペイ
+    %h4.Menu__box__title フリペイ
     %ul.Menu__box__group2
       = link_to "#", class: "Menu__box__group2__link" do
         %li.Menu__box__group2__link__content 売上・振込申請
       = link_to "#", class: "Menu__box__group2__link" do
         %li.Menu__box__group2__link__content ポイント
-    %h2.Menu__box__title 設定
+    %h4.Menu__box__title 設定
     %ul.Menu__box__group3
       = link_to "#", class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content プロフィール
       = link_to "#", class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content 発送元・お届け先住所変更
-      = link_to edit_user_path(current_user.id), class: "Menu__box__group3__link" do
-        %li.Menu__box__group3__link__content 支払い方法
+      = link_to card_new_path, class: "Menu__box__group3__link" do
+        %li.Menu__box__group3__link__content お支払い方法
       = link_to "#", class: "Menu__box__group3__link" do
         %li.Menu__box__group3__link__content メール/パスワード
       = link_to "#", class: "Menu__box__group3__link" do
