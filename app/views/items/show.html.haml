@@ -98,8 +98,14 @@
               .detail__content__inner__information__data__exhibitor__subject                出品者
               %p.detail__content__inner__information__data__exhibitor__content=             @item.seller.name
             .detail__content__inner__information__data__category
-              .detail__content__inner__information__data__category__subject                 カテゴリー
-              %p.detail__content__inner__information__data__category__content=              #@item.category_id
+              .detail__content__inner__information__data__category__subject                 
+              %p.detail__content__inner__information__data__category__content=              @item.category.parent.parent.name 
+            .detail__content__inner__information__data__category2
+              .detail__content__inner__information__data__category2__subject2                 カテゴリー
+              %p.detail__content__inner__information__data__category2__content2=              @item.category.parent.name
+            .detail__content__inner__information__data__category3
+              .detail__content__inner__information__data__category3__subject3                 
+              %p.detail__content__inner__information__data__category3__content3=              @item.category.name
             .detail__content__inner__information__data__brand
               .detail__content__inner__information__data__brand__subject                    ブランド
               %p.detail__content__inner__information__data__brand__content=                 @item.brand
@@ -118,12 +124,11 @@
             .detail__content__inner__information__data__footer
               .detail__content__inner__information__data__footer__star ★お気に入り０
               - if user_signed_in?
-
-                - if current_user.id != @item.seller_id
-                  - if item.buyer_id.nil?
-                    .perchase
-                      = link_to "購入する", "#", method: :get, class: 'perchase-btn'
-                  - else
+                - if current_user.id == @item.seller_id
+                  = link_to edit_item_path(@item), calss: "editBtn" do
+                    .detail__content__inner__information__data__footer__edit 編集する
+                  = link_to item_path(@item),method: :delete, class: "destroyBtn" do
+                    .detail__content__inner__information__data__footer__destroy 削除する
                 - else
               - else
 
@@ -146,8 +151,7 @@
                 - else
         - else
       - else
-    - else
-      %p.soldout この商品は売り切れました。
+      %p.soldout-content この商品は売り切れました。
         
 
     .more
