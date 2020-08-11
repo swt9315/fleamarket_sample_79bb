@@ -51,16 +51,18 @@
   text-align:left;
   padding: 16px;
   font-size: 14px;
+  margin: 0;
 }
 
 *{
   box-sizing: border-box;
+  text-align: center;
   .detail{
     //ヘッダー
     .header{
       padding-top: 15px;
       &__inner{
-        padding:0px 60px;
+        padding:0px 200px;
         &__main{
           display:flex;
           justify-content: center;
@@ -80,7 +82,7 @@
                 justify-content: right;
                 position:relative;
                 &__keyword{
-                  width: calc(100vw - 350px);
+                  width: calc(100vw - 600px);
                   height: 36px;
                   margin-left:30px;
                   font-size:16px;
@@ -93,7 +95,7 @@
                 .search-btn__icon{
                   position:absolute;
                   top:9px;
-                  left:calc(100vw - 310px);
+                  left:calc(100vw - 560px);
                   width:20px;
                   height:20px;
                   cursor: pointer;
@@ -146,7 +148,7 @@
           text-decoration: none;
           font-size:14px;
           border-top: 1px solid #eee;
-          padding: 20px 60px;
+          padding: 20px 200px;
           box-shadow: 0 3px 3px 0 rgba(0,0,0,0.16);
           li.top{
             text-decoration: none;
@@ -196,7 +198,7 @@
       &__inner{
         background-color: white;
         text-align:center;
-        padding:0px 20px;
+        padding:0px 0px;
         width:700px;
         margin: 0 auto; 
       &__name{
@@ -262,7 +264,7 @@
             &__content{
               @include information-content;
               border-top: 1px solid #dedede;
-              border-right: 1px solid #dedede;             
+              border-right: 1px solid #dedede;
             }
           }
           &__category{
@@ -379,7 +381,7 @@
           //いいね 、編集、削除、警告
           &__footer{
             display:flex;
-            justify-content: space-between;
+            justify-content: space-around;
             &__star{
               margin-right: auto;
               padding: 6px 10px;
@@ -433,7 +435,7 @@
       width:100vw;
       &__inner{
         display:block;
-      text-align:center;      
+        text-align:center;      
         &__text{
           //width: 100%;
           min-height: 104px;

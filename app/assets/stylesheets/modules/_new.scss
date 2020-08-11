@@ -382,20 +382,35 @@
 
 //画像のアップロード箇所のCSS
 #image-box{
+  text-align:center;
   margin-bottom:50px;
   #previews{
     background-color:rgb(233, 231, 231);
     height:210px;
     border:1px dotted rgb(182, 178, 178);
     margin-bottom:50px;
-    .js-file{
-      margin-bottom:30px;
+    text-align:center;
+  }
+  .js-file_group{
+    text-align:center;
+    display:flex;
+    justify-content:center;
+    input.js-file{
+      margin-bottom:20px;
+      display:inline;
     }
   }
+  
 }
 span.js-remove{
   font-size:12px;
+  text-align:center;
 }
 .js-remove{
   font-size:12px;
+  text-align:center;
+}
+
+.js-file_group{
+  text-align:center;
 }
