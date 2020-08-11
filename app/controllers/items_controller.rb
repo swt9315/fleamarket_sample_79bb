@@ -4,7 +4,7 @@ class ItemsController < ApplicationController
   before_action :set_items, only: [:show, :index]
   before_action :set_images, only: [:buy, :pay]
 
-　require "payjp"
+  require "payjp"
 
   def index
   end
