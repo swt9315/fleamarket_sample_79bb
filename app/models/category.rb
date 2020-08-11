@@ -1,4 +1,4 @@
 class Category < ApplicationRecord
   has_many :items
-  has_ancestry :category
+  has_ancestry
 end
