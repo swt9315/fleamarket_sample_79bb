@@ -30,7 +30,7 @@ gem 'bootsnap', '>= 1.4.2', require: false
 
 gem 'active_hash', '~> 2.3.0'
 gem 'ancestry'
-gem "bootstrap-sass", "~>3.3.6"
+gem "bootstrap-sass", "~>3.4.1"
 gem 'carrierwave'
 gem 'devise'
 gem 'fog-aws'
