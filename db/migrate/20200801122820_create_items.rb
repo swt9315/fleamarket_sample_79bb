@@ -12,7 +12,7 @@ class CreateItems < ActiveRecord::Migration[6.0]
       t.references :seller,       foreign_key:  { to_table: :users }
       t.references :buyer,        foreign_key:  { to_table: :users }
       t.datetime :closed_at
-      t.references :category,     null: false, foreign_key: true
+      
       t.timestamps
     end
   end
