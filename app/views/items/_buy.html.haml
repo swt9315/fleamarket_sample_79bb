@@ -11,7 +11,6 @@
           .confirm__inner__box__main__content__img
             - @item.images.first(1).each do |image|
               =image_tag image.image.url, alt: "no-image", size: "150x150"
-            -# =image_tag "curry.png", alt: "FURIMA：", class: "confirm__inner__box__main__content__img__picture"
           .confirm__inner__box__main__content__information
             .confirm__inner__box__main__content__information__name= @item.name
             .confirm__inner__box__main__content__information__price= "#{@item.price}" + "円"
@@ -38,12 +37,16 @@
           .confirm__inner__box__main__address__bound  愛知県名古屋市中区栄３丁目×××
         %p.buy-attention  郵便局/コンビニ受取をご希望の方は、購入後に取引画面から受取場所を変更することが可能です。出品者が発送作業を開始した後は受取場所の変更ができませんので、早めに変更を行ってください。
         -#ボタン
-        .confirm__box__btn
-          .confirm__box__btn__inner
-            .confirm__box__btn__inner__buy
-              = link_to "登録クレジットカードで購入する", pay_item_path(item_id: @item.id), method: :post, class: "purchaseBtn"
-            .confirm__box__btn__inner__return
-              = link_to "戻る", root_path, method: :get, class: 'return-btn'
+        - if @user.card.present?
+          .confirm__box__btn
+            .confirm__box__btn__inner
+              .confirm__box__btn__inner__buy
+                = link_to "登録クレジットカードで購入する", pay_item_path(item_id: @item.id), method: :post, class: "purchaseBtn"
+              .confirm__box__btn__inner__return
+                = link_to "戻る", root_path, method: :get, class: 'return-btn'
+        - else
+          .confirmBox
+            = link_to "戻る", root_path, method: :get, class: 'return-btn'
     -#フッター          
   .confirm__footer
     .confirm__footer__box

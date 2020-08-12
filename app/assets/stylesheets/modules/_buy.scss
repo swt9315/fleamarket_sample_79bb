@@ -167,8 +167,16 @@
                 @include btn;
                 background-color:#ffb340;
               }
-            }
-          }          
+            } 
+          } 
+        }
+        .confirmBox {
+          @include parent-btn;
+          background-color:#ffb340;
+          .return-btn{
+            @include btn;
+            background-color:#ffb340;
+          }
         }
       }
     }

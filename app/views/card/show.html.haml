@@ -1,55 +1,19 @@
--# -# クレジットカード登録済の場合のクレジット情報詳細ページ
--# .show
--#   .show__frame
--#     .show__frame__title
--#       登録クレジットカード情報
--#     .credit_card__list
--#       .credit_card__list__title
--#         クレジットカード一覧
--#       .credit_card__list__frame
--#         .credit_card_info
--#           .credit_card_info__brand
--#             -# # showメソッドで定義した@card_srcを呼び出し
--#             -# # 画像をcardsというフォルダを作り、入れておく
--#             -# = image_tag "cards/#{@card_src}", class: "credit_card_info__brand__img", alt: @card_brand
--#           .credit_card_info__numbers
--#             .number
--#               -# # Pay.jpから取得したカード番号の末尾４桁を取得
--#               = "**** **** **** " + @customer_card.last4
--#             .expiration_date
--#               .expiration_date__title
--#                 有効期限
--#               .expiration_date__info
--#                 -# # showメソッドで定義した有効期限の年と月を取得
--#                 = @exp_month + " / " + @exp_year
--#         .destroy__function
--#           .destroy__function__link
--#             -# # 削除ボタンを作成、押すとdestroyメソッドが働くように
--#             = link_to "削除する", card_path(current_user.id), method: :delete, class: "destroy__function__link__btn", alert: "削除しました。"
--#             = link_to "マイページへ戻る", user_path(current_user.id), class: ""
--# クレジットカード登録済の場合のクレジット情報詳細ページ
-.show
-  .show__frame
-    .show__frame__title 登録クレジットカード情報
-    .credit_card__list
-      .credit_card__list__title クレジットカード一覧
-      .credit_card__list__frame
-        .credit_card_info
-          .credit_card_info__brand
-            -# =image_tag “curry.png”, alt: “FURIMA：“, class: “credit_brand”
-            -# # showメソッドで定義した@card_srcを呼び出し
-            -# # 画像をcardsというフォルダを作り、入れておく
-            -# = image_tag “cards/#{@card_src}“, class: “credit_card_info__brand__img”, alt: @card_brand
-          .credit_card_info__numbers
-            .number
-            **** **** **** 0505
-            -#= “**** **** **** ” + @customer_card.last4
-            .expiration_date
-              .expiration_date__title 有効期限
-              .expiration_date__info 6/10
-              -#= @exp_month + ” / ” + @exp_year
-        .destroy__function
-          .destroy__function__link
-            -# # 削除ボタンを作成、押すとdestroyメソッドが働くように
-            = link_to "削除する", card_path(current_user.id), method: :delete, class: "destroy__function__link__btn", alert: "削除しました。"
-            = link_to "マイページへ戻る", user_path(current_user.id), class: "mypage__function__link__btn"
+.show__frame
+  .show__frame__title 登録クレジットカード情報
+  .credit_card__list
+    .credit_card__list__title クレジットカード一覧
+    .credit_card__list__frame
+      .credit_card_info
+        .credit_card_info__brand
+          -# # showメソッドで定義した@card_srcを呼び出し
+          -# # 画像をcardsというフォルダを作り、入れておく
+          -# = image_tag “cards/#{@card_src}“, class: “credit_card_info__brand__img”, alt: @card_brand
+        .credit_card_info__numbers
+          .number= "**** **** **** " + @customer_card.last4
+          .expiration_date
+            .expiration_date__title 有効期限
+            .expiration_date__info= @exp_month + " / " + @exp_year
+      .destroy__function
+        .destroy__function__link
+          = link_to "削除する", card_path(current_user.id), method: :delete, class: "destroy__function__link__btn", alert: "削除しました。"
+          = link_to "マイページへ戻る", user_path(current_user.id), class: "mypage__function__link__btn"
