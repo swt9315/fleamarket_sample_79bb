@@ -7,11 +7,11 @@
       .mainDetails__productBox
         .mainDetails_productBox_content
           .mainDetails_productBox_content__img
-            -# =image_tag “curry.png”, alt: “FURIMA：“, class: “img__picture”
-            -#= image_tag item.images[0].image.url, class: “img__picture”
+            - @item.images.first(1).each do |image|
+              =image_tag image.image.url, alt: "no-image", size: "150x150"
           .mainDetails_productBox_content__text
             .mainDetails_productBox_content_text_name= @item.name
-            .mainDetails_productBox_content_text_price= @item.price
+            .mainDetails_productBox_content_text_price= "#{@item.price}円"
       %ul.links
         %li.links__top
           = link_to "トップページに戻る", root_path, class: "links_top_btn"
