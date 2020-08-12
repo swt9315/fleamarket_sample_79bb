@@ -61,8 +61,8 @@
           .edit__box__content__inner__category__explain
             %p.category カテゴリー
             %p.absolute 必須
-          -#.edit__box__content__inner__category__form__input
-            -#= f.text_field :category, class: "edit__box__content__inner__category__form__input__text__type", placeholder: "(例)ジャケット"
+          .edit__box__content__inner__category__form__input
+            = f.collection_select :category_id, Category.where(ancestry: nil), :id, :name, {prompt: '選択してください'}, {id: 'parent_category'}
             -#商品のブランド
         .edit__box__content__inner__brand
           .edit__box__content__inner__brand__explain
