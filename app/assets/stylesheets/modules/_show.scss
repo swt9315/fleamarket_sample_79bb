@@ -56,7 +56,6 @@
 
 *{
   box-sizing: border-box;
-  text-align: center;
   .detail{
     //ヘッダー
     .header{
@@ -675,11 +674,12 @@
       }
       .bottom__inner__image{
         &__img{
-          text-align:center;
-          &__logo{
-            width:150px;
-            height:45px;
+          text-align: center;
+          .img-logo{
+            width: 150px;
+            height: 45px;
             cursor: pointer;
+            text-align: center;
           }
         }
         &__company{
