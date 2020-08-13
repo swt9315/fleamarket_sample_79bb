@@ -103,7 +103,7 @@
         %p.pick-new アーカイバ
       .pick-bra__inner__topic
         .pick-bra__inner__topic__main
-          - @items.first(5).each do |item|
+          - @items.slice(6..10).each do |item|
             .pick-bra__inner__topic__main--one
               = link_to item_path(item),class:"link-all"  do
                 .pick-bra__inner__topic__main--one__img
