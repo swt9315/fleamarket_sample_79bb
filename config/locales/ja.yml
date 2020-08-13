@@ -1,6 +1,21 @@
 ---
 ja:
   activerecord:
+      # 追加
+    attributes:
+      item:
+        name: 商品名
+        price: 金額
+        images: 画像
+        condition: 商品の状態
+        introduction: 商品説明文
+        postage_user: 配送料のご負担
+        prefecture_id: 発送元の地域
+        preparation: 発送日の目安
+        category_id: カテゴリー
+        category: カテゴリー
+    # ここまで
+
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

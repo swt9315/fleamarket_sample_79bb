@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
     @item = Item.new(item_params)
     if @item.save
     else
-      flash.now[:alert] = '入力に誤りがあります。'
       render :new
     end
   end

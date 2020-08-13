@@ -1,11 +1,11 @@
 .edit
-  = render partial: 'layouts/flash'
   .edit__box
     .edit__box__logo
       = link_to root_path do
         =image_tag "logo.png", alt: "FURIMA：", class: "edit__box__logo__img"
     .edit__box__content
     = form_with model: @item, local: true, method: :post, class: "edit__box__content" do |f|
+      = render 'layouts/error_messages', model: f.object
       .edit__box__content__inner
         %p.edit-title 商品情報の入力
         -#商品名
